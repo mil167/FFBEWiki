@@ -10,9 +10,7 @@
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 </head>
 <body>
-	<table>
-		<tr>
-			<td>
+
 				<%@ page language="java" import="java.sql.*" %>
 				<%
 				try {
@@ -21,8 +19,8 @@
 					Connection con = DriverManager.getConnection(dbURL);
 				%>
 				<%
-				Statement statement = con.createStatement();
-				ResultSet rs = statement.executeQuery("SELECT * FROM public.armor");
+				Statement statement_lshield = con.createStatement();
+				ResultSet rs_lshield = statement_lshield.executeQuery("SELECT * FROM public.lshield");
 				
 				%>
 				<ul id="navbar">
@@ -30,40 +28,307 @@
 					<li><a class="active" href="armor">Armors</a></li>
 					<li><a href="accessory">Accessories</a></li>
 				</ul>
-
-				<table id="arms">
+				<button onclick="backToTop()" id="topBtn" title="Scroll to Top">Top</button>				
+				<br>
+				<div id="listcontents">
+					<p><strong>&nbsp;&nbsp;Contents&nbsp;&nbsp;&nbsp;&nbsp;<a onclick="hide()" id="hide">[hide]</a></strong></p>
+					<ol id="contents">
+						<li><a href="#Light Shields">Light Shields</a></li>
+						<li><a href="#Heavy Shields">Heavy Shields</a></li>
+						<li><a href="#Hats">Hats</a></li>
+						<li><a href="#Helms">Helms</a></li>
+						<li><a href="#Clothes">Clothes</a></li>
+						<li><a href="#Light Armors">Light Armors</a></li>
+						<li><a href="#Heavy Armors">Heavy Armors</a></li>
+						<li><a href="#Robes">Robes</a></li>
+					</ol>
+				</div>				
+				
+				<h2 id="Light Shields">Light Shields</h2>
+				<table id="lshield">
 					<tr>
-						<th onclick="sortTable(0)" style="cursor:pointer">Armor Name</th>
-						<th onclick="sortTable(1)" style="cursor:pointer">Base HP </th>
-						<th onclick="sortTable(2)" style="cursor:pointer">Base MP </th>
-						<th onclick="sortTable(3)" style="cursor:pointer">Base ATK </th>
-						<th onclick="sortTable(4)" style="cursor:pointer">Base MAG </th>
-						<th onclick="sortTable(5)" style="cursor:pointer">Base DEF </th>
-						<th onclick="sortTable(6)" style="cursor:pointer">Base SPR </th>
-						<th onclick="sortTable(7)" style="cursor:pointer">Armor Type </th>
+						<th onclick="sortTable(0,'lshield')" style="cursor:pointer">Armor Name</th>
+						<th onclick="sortTable(1,'lshield')" style="cursor:pointer">Base HP </th>
+						<th onclick="sortTable(2,'lshield')" style="cursor:pointer">Base MP </th>
+						<th onclick="sortTable(3,'lshield')" style="cursor:pointer">Base ATK </th>
+						<th onclick="sortTable(4,'lshield')" style="cursor:pointer">Base MAG </th>
+						<th onclick="sortTable(5,'lshield')" style="cursor:pointer">Base DEF </th>
+						<th onclick="sortTable(6,'lshield')" style="cursor:pointer">Base SPR </th>
+						<th>Additional Effects</th>
 					</tr>
 					<%
-					while(rs.next()) {
+					while(rs_lshield.next()) {
 					%>
 					<tr>
-						<td align="center"><%= rs.getString("name") %></td>
-						<td align="center"><%= rs.getInt("basehp") %></td>
-						<td align="center"><%= rs.getInt("basemp") %></td>
-						<td align="center"><%= rs.getInt("baseatk") %></td>
-						<td align="center"><%= rs.getInt("basemag") %></td>
-						<td align="center"><%= rs.getInt("basedef") %></td>
-						<td align="center"><%= rs.getInt("basespr") %></td>
-						<td align="center"><%= rs.getString("aid") %></td>
+						<td align="center"><%= rs_lshield.getString("name") %></td>
+						<td align="center"><%= rs_lshield.getInt("basehp") %></td>
+						<td align="center"><%= rs_lshield.getInt("basemp") %></td>
+						<td align="center"><%= rs_lshield.getInt("baseatk") %></td>
+						<td align="center"><%= rs_lshield.getInt("basemag") %></td>
+						<td align="center"><%= rs_lshield.getInt("basedef") %></td>
+						<td align="center"><%= rs_lshield.getInt("basespr") %></td>
+						<td align="left" style="white-space: pre-wrap"><%= rs_lshield.getString("effects") %></td>
 					</tr>
 					<% }
 					%>
 				</table>
+				<br>
 				<%
-
+				Statement statement_hshield = con.createStatement();
+				ResultSet rs_hshield = statement_hshield.executeQuery("SELECT * FROM public.hshield");
+				%>
+				<h2 id="Heavy Shields">Heavy Shields</h2>
+				<table id="hshield">
+					<tr>
+						<th onclick="sortTable(0,'hshield')" style="cursor:pointer">Armor Name</th>
+						<th onclick="sortTable(1,'hshield')" style="cursor:pointer">Base HP </th>
+						<th onclick="sortTable(2,'hshield')" style="cursor:pointer">Base MP </th>
+						<th onclick="sortTable(3,'hshield')" style="cursor:pointer">Base ATK </th>
+						<th onclick="sortTable(4,'hshield')" style="cursor:pointer">Base MAG </th>
+						<th onclick="sortTable(5,'hshield')" style="cursor:pointer">Base DEF </th>
+						<th onclick="sortTable(6,'hshield')" style="cursor:pointer">Base SPR </th>
+						<th>Additional Effects</th>
+					</tr>
+					<%
+					while(rs_hshield.next()) {
+					%>
+					<tr>
+						<td align="center"><%= rs_hshield.getString("name") %></td>
+						<td align="center"><%= rs_hshield.getInt("basehp") %></td>
+						<td align="center"><%= rs_hshield.getInt("basemp") %></td>
+						<td align="center"><%= rs_hshield.getInt("baseatk") %></td>
+						<td align="center"><%= rs_hshield.getInt("basemag") %></td>
+						<td align="center"><%= rs_hshield.getInt("basedef") %></td>
+						<td align="center"><%= rs_hshield.getInt("basespr") %></td>
+						<td align="left" style="white-space: pre-wrap"><%= rs_hshield.getString("effects") %></td>
+					</tr>
+					<% }
+					%>
+				</table>
+				<br>	
+				<%
+				Statement statement_hat = con.createStatement();
+				ResultSet rs_hat = statement_hat.executeQuery("SELECT * FROM public.hat");
+				%>
+				<h2 id="Hats">Hats</h2>
+				<table id="hat">
+					<tr>
+						<th onclick="sortTable(0,'hat')" style="cursor:pointer">Armor Name</th>
+						<th onclick="sortTable(1,'hat')" style="cursor:pointer">Base HP </th>
+						<th onclick="sortTable(2,'hat')" style="cursor:pointer">Base MP </th>
+						<th onclick="sortTable(3,'hat')" style="cursor:pointer">Base ATK </th>
+						<th onclick="sortTable(4,'hat')" style="cursor:pointer">Base MAG </th>
+						<th onclick="sortTable(5,'hat')" style="cursor:pointer">Base DEF </th>
+						<th onclick="sortTable(6,'hat')" style="cursor:pointer">Base SPR </th>
+						<th>Additional Effects</th>
+					</tr>
+					<%
+					while(rs_hat.next()) {
+					%>
+					<tr>
+						<td align="center"><%= rs_hat.getString("name") %></td>
+						<td align="center"><%= rs_hat.getInt("basehp") %></td>
+						<td align="center"><%= rs_hat.getInt("basemp") %></td>
+						<td align="center"><%= rs_hat.getInt("baseatk") %></td>
+						<td align="center"><%= rs_hat.getInt("basemag") %></td>
+						<td align="center"><%= rs_hat.getInt("basedef") %></td>
+						<td align="center"><%= rs_hat.getInt("basespr") %></td>
+						<td align="left" style="white-space: pre-wrap"><%= rs_hat.getString("effects") %></td>
+					</tr>
+					<% }
+					%>
+				</table>
+				<br>	
+				<%
+				Statement statement_helm = con.createStatement();
+				ResultSet rs_helm = statement_helm.executeQuery("SELECT * FROM public.helm");
+				%>
+				<h2 id="Helms">Helms</h2>
+				<table id="helm">
+					<tr>
+						<th onclick="sortTable(0,'helm')" style="cursor:pointer">Armor Name</th>
+						<th onclick="sortTable(1,'helm')" style="cursor:pointer">Base HP </th>
+						<th onclick="sortTable(2,'helm')" style="cursor:pointer">Base MP </th>
+						<th onclick="sortTable(3,'helm')" style="cursor:pointer">Base ATK </th>
+						<th onclick="sortTable(4,'helm')" style="cursor:pointer">Base MAG </th>
+						<th onclick="sortTable(5,'helm')" style="cursor:pointer">Base DEF </th>
+						<th onclick="sortTable(6,'helm')" style="cursor:pointer">Base SPR </th>
+						<th>Additional Effects</th>
+					</tr>
+					<%
+					while(rs_helm.next()) {
+					%>
+					<tr>
+						<td align="center"><%= rs_helm.getString("name") %></td>
+						<td align="center"><%= rs_helm.getInt("basehp") %></td>
+						<td align="center"><%= rs_helm.getInt("basemp") %></td>
+						<td align="center"><%= rs_helm.getInt("baseatk") %></td>
+						<td align="center"><%= rs_helm.getInt("basemag") %></td>
+						<td align="center"><%= rs_helm.getInt("basedef") %></td>
+						<td align="center"><%= rs_helm.getInt("basespr") %></td>
+						<td align="left" style="white-space: pre-wrap"><%= rs_helm.getString("effects") %></td>
+					</tr>
+					<% }
+					%>
+				</table>
+				<br>	
+				<%
+				Statement statement_clothes = con.createStatement();
+				ResultSet rs_clothes = statement_clothes.executeQuery("SELECT * FROM public.clothes");
+				%>
+				<h2 id="Clothes">Clothes</h2>
+				<table id="clothes">
+					<tr>
+						<th onclick="sortTable(0,'clothes')" style="cursor:pointer">Armor Name</th>
+						<th onclick="sortTable(1,'clothes')" style="cursor:pointer">Base HP </th>
+						<th onclick="sortTable(2,'clothes')" style="cursor:pointer">Base MP </th>
+						<th onclick="sortTable(3,'clothes')" style="cursor:pointer">Base ATK </th>
+						<th onclick="sortTable(4,'clothes')" style="cursor:pointer">Base MAG </th>
+						<th onclick="sortTable(5,'clothes')" style="cursor:pointer">Base DEF </th>
+						<th onclick="sortTable(6,'clothes')" style="cursor:pointer">Base SPR </th>
+						<th>Additional Effects</th>
+					</tr>
+					<%
+					while(rs_clothes.next()) {
+					%>
+					<tr>
+						<td align="center"><%= rs_clothes.getString("name") %></td>
+						<td align="center"><%= rs_clothes.getInt("basehp") %></td>
+						<td align="center"><%= rs_clothes.getInt("basemp") %></td>
+						<td align="center"><%= rs_clothes.getInt("baseatk") %></td>
+						<td align="center"><%= rs_clothes.getInt("basemag") %></td>
+						<td align="center"><%= rs_clothes.getInt("basedef") %></td>
+						<td align="center"><%= rs_clothes.getInt("basespr") %></td>
+						<td align="left" style="white-space: pre-wrap"><%= rs_clothes.getString("effects") %></td>
+					</tr>
+					<% }
+					%>
+				</table>
+				<br>
+				<%
+				Statement statement_larmor = con.createStatement();
+				ResultSet rs_larmor = statement_larmor.executeQuery("SELECT * FROM public.larmor");
+				%>
+				<h2 id="Light Armors">Light Armors</h2>
+				<table id="larmor">
+					<tr>
+						<th onclick="sortTable(0,'larmor')" style="cursor:pointer">Armor Name</th>
+						<th onclick="sortTable(1,'larmor')" style="cursor:pointer">Base HP </th>
+						<th onclick="sortTable(2,'larmor')" style="cursor:pointer">Base MP </th>
+						<th onclick="sortTable(3,'larmor')" style="cursor:pointer">Base ATK </th>
+						<th onclick="sortTable(4,'larmor')" style="cursor:pointer">Base MAG </th>
+						<th onclick="sortTable(5,'larmor')" style="cursor:pointer">Base DEF </th>
+						<th onclick="sortTable(6,'larmor')" style="cursor:pointer">Base SPR </th>
+						<th>Additional Effects</th>
+					</tr>
+					<%
+					while(rs_larmor.next()) {
+					%>
+					<tr>
+						<td align="center"><%= rs_larmor.getString("name") %></td>
+						<td align="center"><%= rs_larmor.getInt("basehp") %></td>
+						<td align="center"><%= rs_larmor.getInt("basemp") %></td>
+						<td align="center"><%= rs_larmor.getInt("baseatk") %></td>
+						<td align="center"><%= rs_larmor.getInt("basemag") %></td>
+						<td align="center"><%= rs_larmor.getInt("basedef") %></td>
+						<td align="center"><%= rs_larmor.getInt("basespr") %></td>
+						<td align="left" style="white-space: pre-wrap"><%= rs_larmor.getString("effects") %></td>
+					</tr>
+					<% }
+					%>
+				</table>
+				<br>
+				<%
+				Statement statement_harmor = con.createStatement();
+				ResultSet rs_harmor = statement_harmor.executeQuery("SELECT * FROM public.harmor");
+				%>
+				<h2 id="Heavy Armors">Heavy Armors</h2>
+				<table id="harmor">
+					<tr>
+						<th onclick="sortTable(0,'harmor')" style="cursor:pointer">Armor Name</th>
+						<th onclick="sortTable(1,'harmor')" style="cursor:pointer">Base HP </th>
+						<th onclick="sortTable(2,'harmor')" style="cursor:pointer">Base MP </th>
+						<th onclick="sortTable(3,'harmor')" style="cursor:pointer">Base ATK </th>
+						<th onclick="sortTable(4,'harmor')" style="cursor:pointer">Base MAG </th>
+						<th onclick="sortTable(5,'harmor')" style="cursor:pointer">Base DEF </th>
+						<th onclick="sortTable(6,'harmor')" style="cursor:pointer">Base SPR </th>
+						<th>Additional Effects</th>
+					</tr>
+					<%
+					while(rs_harmor.next()) {
+					%>
+					<tr>
+						<td align="center"><%= rs_harmor.getString("name") %></td>
+						<td align="center"><%= rs_harmor.getInt("basehp") %></td>
+						<td align="center"><%= rs_harmor.getInt("basemp") %></td>
+						<td align="center"><%= rs_harmor.getInt("baseatk") %></td>
+						<td align="center"><%= rs_harmor.getInt("basemag") %></td>
+						<td align="center"><%= rs_harmor.getInt("basedef") %></td>
+						<td align="center"><%= rs_harmor.getInt("basespr") %></td>
+						<td align="left" style="white-space: pre-wrap"><%= rs_harmor.getString("effects") %></td>
+					</tr>
+					<% }
+					%>
+				</table>
+				<br>
+				<%
+				Statement statement_robe = con.createStatement();
+				ResultSet rs_robe = statement_robe.executeQuery("SELECT * FROM public.robe");
+				%>
+				<h2 id="Robes">Robes</h2>
+				<table id="robe">
+					<tr>
+						<th onclick="sortTable(0,'robe')" style="cursor:pointer">Armor Name</th>
+						<th onclick="sortTable(1,'robe')" style="cursor:pointer">Base HP </th>
+						<th onclick="sortTable(2,'robe')" style="cursor:pointer">Base MP </th>
+						<th onclick="sortTable(3,'robe')" style="cursor:pointer">Base ATK </th>
+						<th onclick="sortTable(4,'robe')" style="cursor:pointer">Base MAG </th>
+						<th onclick="sortTable(5,'robe')" style="cursor:pointer">Base DEF </th>
+						<th onclick="sortTable(6,'robe')" style="cursor:pointer">Base SPR </th>
+						<th>Additional Effects</th>
+					</tr>
+					<%
+					while(rs_robe.next()) {
+					%>
+					<tr>
+						<td align="center"><%= rs_robe.getString("name") %></td>
+						<td align="center"><%= rs_robe.getInt("basehp") %></td>
+						<td align="center"><%= rs_robe.getInt("basemp") %></td>
+						<td align="center"><%= rs_robe.getInt("baseatk") %></td>
+						<td align="center"><%= rs_robe.getInt("basemag") %></td>
+						<td align="center"><%= rs_robe.getInt("basedef") %></td>
+						<td align="center"><%= rs_robe.getInt("basespr") %></td>
+						<td align="left" style="white-space: pre-wrap"><%= rs_robe.getString("effects") %></td>
+					</tr>
+					<% }
+					%>
+				</table>
+				<br>																																			
+				<%
+				rs_lshield.close();
+				statement_lshield.close();
 				
+				rs_hshield.close();
+				statement_hshield.close();
 				
-				rs.close();
-				statement.close();
+				rs_hat.close();
+				statement_hat.close();
+				
+				rs_helm.close();
+				statement_helm.close();
+				
+				rs_clothes.close();
+				statement_clothes.close();
+				
+				rs_larmor.close();
+				statement_larmor.close();
+				
+				rs_harmor.close();
+				statement_harmor.close();
+				
+				rs_robe.close();
+				statement_robe.close();
+				
 				con.close();
 				}
 				catch(SQLException e) {
@@ -72,16 +337,13 @@
 				finally {
 				}
 				%>
-			</td>
-		</tr>
-	</table>
 
 </body>
 
 <script type="text/javascript">
-function sortTable(n) {
+function sortTable(n,name) {
 	  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
-	  table = document.getElementById("arms");
+	  table = document.getElementById(name);
 	  switching = true;
 	  //Set the sorting direction to ascending:
 	  dir = "asc"; 
@@ -150,6 +412,30 @@ function sortTable(n) {
 	  }
 }
 
+window.onscroll = function() {activateBtn()};
+
+function activateBtn() {
+	if(document.documentElement.scrollTop > 50) {
+		document.getElementById("topBtn").style.display = "block";
+	}
+	else {
+		document.getElementById("topBtn").style.display = "none";
+	}
+}
+
+function backToTop() {
+	document.documentElement.scrollTop = 0;
+}
+
+function hide() {
+	let list = document.getElementById("contents");
+	if(list.style.display == "none") {
+		list.style.display = "block";
+	}
+	else {
+		list.style.display = "none";
+	}
+}
 	
 </script>
 </html>

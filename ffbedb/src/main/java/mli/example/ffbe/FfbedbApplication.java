@@ -22,5 +22,7 @@ public class FfbedbApplication {
 		resolver.setViewClass(JstlView.class);
 		return resolver;
 	}
+	
+	
 }
 

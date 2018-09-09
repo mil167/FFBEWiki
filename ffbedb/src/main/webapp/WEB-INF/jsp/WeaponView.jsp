@@ -7,10 +7,11 @@
 <meta charset="ISO-8859-1">
 <style><%@include file="/WEB-INF/css/WeaponView.css"%></style>
 <title>FFBE Weapon View</title>
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<link rel="icon" type="image/png" sizes="16x16" href="resources/favicon.ico">
+<link rel="manifest" href="/manifest.json">
 </head>
 <body>
-	<!--  table tr td here -->
 				<%@ page language="java" import="java.sql.*" %>
 				<%
 				try {
@@ -24,12 +25,36 @@
 				
 				%>
 				<ul id="navbar">
-					<li><a class="active" href="weapon">Weapons</a></li>
-					<li><a href="armor">Armors</a></li>
-					<li><a href="accessory">Accessories</a></li>
+					<li id="navbar"><a class="active" href="weapon">Weapons</a></li>
+					<li id="navbar"><a href="armor">Armors</a></li>
+					<li id="navbar"><a href="accessory">Accessories</a></li>
 				</ul>
+				<button onclick="backToTop()" id="topBtn" title="Scroll to Top">Top</button>
 				<br>
-				<h2>Daggers</h2>
+				<div id="listcontents">
+					<p><strong>&nbsp;&nbsp;Contents&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a onclick="hide()" id="hide">[hide]</a></strong></p>
+					<ol id="contents">
+						<li><a href="#Daggers">Daggers</a></li>
+						<li><a href="#Swords">Swords</a></li>
+						<li><a href="#Great Swords">Great Swords</a></li>
+						<li><a href="#Katanas">Katanas</a></li>
+						<li><a href="#Staves">Staves</a></li>
+						<li><a href="#Rods">Rods</a></li>
+						<li><a href="#Bows">Bows</a></li>
+						<li><a href="#Axes">Axes</a></li>
+						<li><a href="#Hammers">Hammers</a></li>
+						<li><a href="#Spears">Spears</a></li>
+						<li><a href="#Harps">Harps</a></li>
+						<li><a href="#Whips">Whips</a></li>
+						<li><a href="#Throwing Weapons">Throwing Weapons</a></li>
+						<li><a href="#Guns">Guns</a></li>
+						<li><a href="#Maces">Maces</a></li>
+						<li><a href="#Fists">Fists</a></li>
+					</ol>
+				</div>
+				<br>
+				
+				<h2 id="Daggers">Daggers</h2>
 				<table id="dagger">
 					<tr>
 						<th onclick="sortTable(0,'dagger')" style="cursor:pointer">Weapon Name</th>
@@ -62,7 +87,7 @@
 				Statement statement_sword = con.createStatement();
 				ResultSet rs_sword = statement_sword.executeQuery("SELECT * FROM public.sword");
 				%>
-				<h2>Swords</h2>
+				<h2 id="Swords">Swords</h2>
 				<table id="sword">
 					<tr>
 						<th onclick="sortTable(0,'sword')" style="cursor:pointer">Weapon Name</th>
@@ -95,7 +120,7 @@
 				Statement statement_gsword = con.createStatement();
 				ResultSet rs_gsword = statement_gsword.executeQuery("SELECT * FROM public.gsword");
 				%>
-				<h2>Greatswords</h2>
+				<h2 id="Great Swords">Great Swords</h2>
 				<table id="gsword">
 					<tr>
 						<th onclick="sortTable(0,'gsword')" style="cursor:pointer">Weapon Name</th>
@@ -129,7 +154,7 @@
 				Statement statement_staff = con.createStatement();
 				ResultSet rs_staff = statement_staff.executeQuery("SELECT * FROM public.staff");
 				%>
-				<h2>Staves</h2>
+				<h2 id="Staves">Staves</h2>
 				<table id="staff">
 					<tr>
 						<th onclick="sortTable(0,'staff')" style="cursor:pointer">Weapon Name</th>
@@ -162,7 +187,7 @@
 				Statement statement_katana = con.createStatement();
 				ResultSet rs_katana = statement_katana.executeQuery("SELECT * FROM public.katana");
 				%>
-				<h2>Katanas</h2>
+				<h2 id="Katanas">Katanas</h2>
 				<table id="katana">
 					<tr>
 						<th onclick="sortTable(0,'katana')" style="cursor:pointer">Weapon Name</th>
@@ -195,7 +220,7 @@
 				Statement statement_rod = con.createStatement();
 				ResultSet rs_rod = statement_rod.executeQuery("SELECT * FROM public.rod");
 				%>
-				<h2>Rods</h2>
+				<h2 id="Rods">Rods</h2>
 				<table id="rod">
 					<tr>
 						<th onclick="sortTable(0,'rod')" style="cursor:pointer">Weapon Name</th>
@@ -228,7 +253,7 @@
 				Statement statement_bow = con.createStatement();
 				ResultSet rs_bow = statement_bow.executeQuery("SELECT * FROM public.bow");
 				%>
-				<h2>Bows</h2>
+				<h2 id="Bows">Bows</h2>
 				<table id="bow">
 					<tr>
 						<th onclick="sortTable(0,'bow')" style="cursor:pointer">Weapon Name</th>
@@ -261,7 +286,7 @@
 				Statement statement_axe = con.createStatement();
 				ResultSet rs_axe = statement_axe.executeQuery("SELECT * FROM public.axe");
 				%>
-				<h2>Axes</h2>
+				<h2 id="Axes">Axes</h2>
 				<table id="axe">
 					<tr>
 						<th onclick="sortTable(0,'axe')" style="cursor:pointer">Weapon Name</th>
@@ -294,7 +319,7 @@
 				Statement statement_hammer = con.createStatement();
 				ResultSet rs_hammer = statement_hammer.executeQuery("SELECT * FROM public.hammer");
 				%>
-				<h2>Hammers</h2>
+				<h2 id="Hammers">Hammers</h2>
 				<table id="hammer">
 					<tr>
 						<th onclick="sortTable(0,'hammer')" style="cursor:pointer">Weapon Name</th>
@@ -327,7 +352,7 @@
 				Statement statement_spear = con.createStatement();
 				ResultSet rs_spear = statement_spear.executeQuery("SELECT * FROM public.spear");
 				%>
-				<h2>Spears</h2>
+				<h2 id="Spears">Spears</h2>
 				<table id="spear">
 					<tr>
 						<th onclick="sortTable(0,'spear')" style="cursor:pointer">Weapon Name</th>
@@ -360,7 +385,7 @@
 				Statement statement_harp = con.createStatement();
 				ResultSet rs_harp = statement_harp.executeQuery("SELECT * FROM public.harp");
 				%>
-				<h2>Harps</h2>
+				<h2 id="Harps">Harps</h2>
 				<table id="harp">
 					<tr>
 						<th onclick="sortTable(0,'harp')" style="cursor:pointer">Weapon Name</th>
@@ -393,7 +418,7 @@
 				Statement statement_whip = con.createStatement();
 				ResultSet rs_whip = statement_whip.executeQuery("SELECT * FROM public.whip");
 				%>
-				<h2>Whips</h2>
+				<h2 id="Whips">Whips</h2>
 				<table id="whip">
 					<tr>
 						<th onclick="sortTable(0,'whip')" style="cursor:pointer">Weapon Name</th>
@@ -426,7 +451,7 @@
 				Statement statement_tw = con.createStatement();
 				ResultSet rs_tw = statement_tw.executeQuery("SELECT * FROM public.tw");
 				%>
-				<h2>Throwing Weapons</h2>
+				<h2 id="Throwing Weapons">Throwing Weapons</h2>
 				<table id="tw">
 					<tr>
 						<th onclick="sortTable(0,'tw')" style="cursor:pointer">Weapon Name</th>
@@ -459,7 +484,7 @@
 				Statement statement_gun = con.createStatement();
 				ResultSet rs_gun = statement_gun.executeQuery("SELECT * FROM public.gun");
 				%>
-				<h2>Guns</h2>
+				<h2 id="Guns">Guns</h2>
 				<table id="gun">
 					<tr>
 						<th onclick="sortTable(0,'gun')" style="cursor:pointer">Weapon Name</th>
@@ -492,7 +517,7 @@
 				Statement statement_mace = con.createStatement();
 				ResultSet rs_mace = statement_mace.executeQuery("SELECT * FROM public.mace");
 				%>
-				<h2>Maces</h2>
+				<h2 id="Maces">Maces</h2>
 				<table id="mace">
 					<tr>
 						<th onclick="sortTable(0,'mace')" style="cursor:pointer">Weapon Name</th>
@@ -525,7 +550,7 @@
 				Statement statement_fist = con.createStatement();
 				ResultSet rs_fist = statement_fist.executeQuery("SELECT * FROM public.fist");
 				%>
-				<h2>Fists</h2>
+				<h2 id="Fists">Fists</h2>
 				<table id="fist">
 					<tr>
 						<th onclick="sortTable(0,'fist')" style="cursor:pointer">Weapon Name</th>
@@ -610,9 +635,6 @@
 				finally {
 				}
 				%>
-				<!-- td tr table here -->
-
-
 </body>
 
 <script type="text/javascript">
@@ -686,6 +708,31 @@ function sortTable(n,name) {
 	      }
 	    }
 	  }
+}
+
+window.onscroll = function() {activateBtn()};
+
+function activateBtn() {
+	if(document.documentElement.scrollTop > 50) {
+		document.getElementById("topBtn").style.display = "block";
+	}
+	else {
+		document.getElementById("topBtn").style.display = "none";
+	}
+}
+
+function backToTop() {
+	document.documentElement.scrollTop = 0;
+}
+
+function hide() {
+	let list = document.getElementById("contents");
+	if(list.style.display == "none") {
+		list.style.display = "block";
+	}
+	else {
+		list.style.display = "none";
+	}
 }
 </script>
 </html>

@@ -9,10 +9,8 @@
 <title>FFBE Accessory View</title>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 </head>
-<body>
-	<table>
-		<tr>
-			<td>
+<body style="background-image:/ffbedb/src/main/webapp/WEB-INF/images/FFBE_Farplane_BG_1.jpg">
+
 				<%@ page language="java" import="java.sql.*" %>
 				<%
 				try {
@@ -30,7 +28,9 @@
 					<li><a href="armor">Armors</a></li>
 					<li><a class="active" href="accessory">Accessories</a></li>
 				</ul>
-
+				<button onclick="backToTop()" id="topBtn" title="Scroll to Top">Top</button>
+				<br>
+				<h2>Accessories</h2>
 				<table id="accs">
 					<tr>
 						<th onclick="sortTable(0)" style="cursor:pointer">Accessory Name</th>
@@ -40,6 +40,7 @@
 						<th onclick="sortTable(4)" style="cursor:pointer">Base MAG </th>
 						<th onclick="sortTable(5)" style="cursor:pointer">Base DEF </th>
 						<th onclick="sortTable(6)" style="cursor:pointer">Base SPR </th>
+						<th>Additional Effects</th>
 					</tr>
 					<%
 					while(rs.next()) {
@@ -52,6 +53,7 @@
 						<td align="center"><%= rs.getInt("basemag") %></td>
 						<td align="center"><%= rs.getInt("basedef") %></td>
 						<td align="center"><%= rs.getInt("basespr") %></td>
+						<td align="left" style="white-space: pre-wrap"><%= rs.getString("effects") %></td>
 					</tr>
 					<% }
 					%>
@@ -70,9 +72,6 @@
 				finally {
 				}
 				%>
-			</td>
-		</tr>
-	</table>
 
 </body>
 
@@ -146,6 +145,21 @@ function sortTable(n) {
 	      }
 	    }
 	  }
+}
+
+window.onscroll = function() {activateBtn()};
+
+function activateBtn() {
+	if(document.documentElement.scrollTop > 50) {
+		document.getElementById("topBtn").style.display = "block";
+	}
+	else {
+		document.getElementById("topBtn").style.display = "none";
+	}
+}
+
+function backToTop() {
+	document.documentElement.scrollTop = 0;
 }
 </script>
 </html>
