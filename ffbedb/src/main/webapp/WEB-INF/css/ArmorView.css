@@ -5,6 +5,8 @@ table{
 	width: 100%;
 	border: 1px solid #ddd;
 	align: center;
+	z-index: 1;
+	background-color: #fffff0;
 }
 
 th{ 
@@ -70,6 +72,7 @@ ul > li a:hover:not(.active) {
 	    display:inline-block;
         border:1px solid #000;
         padding:2px;
+        background-color: #fffff0;
 }
 
 #hide {
@@ -79,4 +82,8 @@ ul > li a:hover:not(.active) {
 
 #hide:hover {
 	cursor: pointer;
+}
+
+body {
+	background-image: url("resources/FFBE_Farplane_BG_1.jpg");
 }

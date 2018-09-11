@@ -8,6 +8,8 @@
 <style><%@include file="/WEB-INF/css/ArmorView.css"%></style>
 <title>FFBE Armor View</title>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+ <link rel="icon" type="image/png" sizes="16x16" href="resources/favicon.ico">
+ <link rel="manifest" href="/manifest.json">
 </head>
 <body>
 
