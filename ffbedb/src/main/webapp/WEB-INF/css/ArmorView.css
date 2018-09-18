@@ -94,3 +94,9 @@ ul > li a:hover:not(.active) {
 body {
 	background-image: url("resources/FFBE_Farplane_BG_1.jpg");
 }
+
+caption {
+	font-size: 30px;
+	background-color: #fffff0;
+	text-align: left;
+}

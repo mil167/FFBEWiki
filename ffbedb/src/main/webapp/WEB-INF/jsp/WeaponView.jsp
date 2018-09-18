@@ -53,9 +53,9 @@
 					</ol>
 				</div>
 				<br>
-				
-				<h2 id="Daggers">Daggers</h2>
+				<br>
 				<table id="dagger">
+					<caption><strong>Daggers</strong></caption>
 					<tr>
 						<th onclick="sortTable(0,'dagger')" style="cursor:pointer">Weapon Name</th>
 						<th onclick="sortTable(1,'dagger')" style="cursor:pointer">Base HP </th>
@@ -83,12 +83,13 @@
 					%>
 				</table>
 				<br>
+				<br>
 				<%
 				Statement statement_sword = con.createStatement();
 				ResultSet rs_sword = statement_sword.executeQuery("SELECT * FROM public.sword");
 				%>
-				<h2 id="Swords">Swords</h2>
 				<table id="sword">
+					<caption><strong>Swords</strong></caption>
 					<tr>
 						<th onclick="sortTable(0,'sword')" style="cursor:pointer">Weapon Name</th>
 						<th onclick="sortTable(1,'sword')" style="cursor:pointer">Base HP </th>
@@ -116,12 +117,13 @@
 					%>	
 				</table>
 				<br>
+				<br>
 				<%
 				Statement statement_gsword = con.createStatement();
 				ResultSet rs_gsword = statement_gsword.executeQuery("SELECT * FROM public.gsword");
 				%>
-				<h2 id="Great Swords">Great Swords</h2>
 				<table id="gsword">
+					<caption><strong>Great Swords</strong></caption>
 					<tr>
 						<th onclick="sortTable(0,'gsword')" style="cursor:pointer">Weapon Name</th>
 						<th onclick="sortTable(1,'gsword')" style="cursor:pointer">Base HP </th>
@@ -150,12 +152,13 @@
 												
 				</table>
 				<br>
+				<br>
 				<%
 				Statement statement_staff = con.createStatement();
 				ResultSet rs_staff = statement_staff.executeQuery("SELECT * FROM public.staff");
 				%>
-				<h2 id="Staves">Staves</h2>
 				<table id="staff">
+					<caption><strong>Staves</strong></caption>
 					<tr>
 						<th onclick="sortTable(0,'staff')" style="cursor:pointer">Weapon Name</th>
 						<th onclick="sortTable(1,'staff')" style="cursor:pointer">Base HP </th>
@@ -183,12 +186,13 @@
 					%>	
 				</table>					
 				<br>
+				<br>
 				<%
 				Statement statement_katana = con.createStatement();
 				ResultSet rs_katana = statement_katana.executeQuery("SELECT * FROM public.katana");
 				%>
-				<h2 id="Katanas">Katanas</h2>
 				<table id="katana">
+					<caption><strong>Katanas</strong></caption>
 					<tr>
 						<th onclick="sortTable(0,'katana')" style="cursor:pointer">Weapon Name</th>
 						<th onclick="sortTable(1,'katana')" style="cursor:pointer">Base HP </th>
@@ -216,12 +220,13 @@
 					%>	
 				</table>	
 				<br>
+				<br>
 				<%
 				Statement statement_rod = con.createStatement();
 				ResultSet rs_rod = statement_rod.executeQuery("SELECT * FROM public.rod");
 				%>
-				<h2 id="Rods">Rods</h2>
 				<table id="rod">
+					<caption><strong>Rods</strong></caption>
 					<tr>
 						<th onclick="sortTable(0,'rod')" style="cursor:pointer">Weapon Name</th>
 						<th onclick="sortTable(1,'rod')" style="cursor:pointer">Base HP </th>
@@ -249,12 +254,13 @@
 					%>	
 				</table>		
 				<br>
+				<br>
 				<%
 				Statement statement_bow = con.createStatement();
 				ResultSet rs_bow = statement_bow.executeQuery("SELECT * FROM public.bow");
 				%>
-				<h2 id="Bows">Bows</h2>
 				<table id="bow">
+					<caption><strong>Bows</strong></caption>
 					<tr>
 						<th onclick="sortTable(0,'bow')" style="cursor:pointer">Weapon Name</th>
 						<th onclick="sortTable(1,'bow')" style="cursor:pointer">Base HP </th>
@@ -282,12 +288,13 @@
 					%>	
 				</table>		
 				<br>
+				<br>
 				<%
 				Statement statement_axe = con.createStatement();
 				ResultSet rs_axe = statement_axe.executeQuery("SELECT * FROM public.axe");
 				%>
-				<h2 id="Axes">Axes</h2>
 				<table id="axe">
+					<caption><strong>Axes</strong></caption>
 					<tr>
 						<th onclick="sortTable(0,'axe')" style="cursor:pointer">Weapon Name</th>
 						<th onclick="sortTable(1,'axe')" style="cursor:pointer">Base HP </th>
@@ -315,12 +322,13 @@
 					%>	
 				</table>
 				<br>
+				<br>
 				<%
 				Statement statement_hammer = con.createStatement();
 				ResultSet rs_hammer = statement_hammer.executeQuery("SELECT * FROM public.hammer");
 				%>
-				<h2 id="Hammers">Hammers</h2>
 				<table id="hammer">
+					<caption><strong>Hammers</strong></caption>
 					<tr>
 						<th onclick="sortTable(0,'hammer')" style="cursor:pointer">Weapon Name</th>
 						<th onclick="sortTable(1,'hammer')" style="cursor:pointer">Base HP </th>
@@ -348,12 +356,13 @@
 					%>	
 				</table>	
 				<br>
+				<br>
 				<%
 				Statement statement_spear = con.createStatement();
 				ResultSet rs_spear = statement_spear.executeQuery("SELECT * FROM public.spear");
 				%>
-				<h2 id="Spears">Spears</h2>
 				<table id="spear">
+					<caption><strong>Spears</strong></caption>
 					<tr>
 						<th onclick="sortTable(0,'spear')" style="cursor:pointer">Weapon Name</th>
 						<th onclick="sortTable(1,'spear')" style="cursor:pointer">Base HP </th>
@@ -381,12 +390,13 @@
 					%>	
 				</table>
 				<br>
+				<br>
 				<%
 				Statement statement_harp = con.createStatement();
 				ResultSet rs_harp = statement_harp.executeQuery("SELECT * FROM public.harp");
 				%>
-				<h2 id="Harps">Harps</h2>
 				<table id="harp">
+					<caption><strong>Harps</strong></caption>
 					<tr>
 						<th onclick="sortTable(0,'harp')" style="cursor:pointer">Weapon Name</th>
 						<th onclick="sortTable(1,'harp')" style="cursor:pointer">Base HP </th>
@@ -414,12 +424,13 @@
 					%>	
 				</table>
 				<br>
+				<br>
 				<%
 				Statement statement_whip = con.createStatement();
 				ResultSet rs_whip = statement_whip.executeQuery("SELECT * FROM public.whip");
 				%>
-				<h2 id="Whips">Whips</h2>
 				<table id="whip">
+					<caption><strong>Whips</strong></caption>
 					<tr>
 						<th onclick="sortTable(0,'whip')" style="cursor:pointer">Weapon Name</th>
 						<th onclick="sortTable(1,'whip')" style="cursor:pointer">Base HP </th>
@@ -447,12 +458,13 @@
 					%>	
 				</table>
 				<br>
+				<br>
 				<%
 				Statement statement_tw = con.createStatement();
 				ResultSet rs_tw = statement_tw.executeQuery("SELECT * FROM public.tw");
 				%>
-				<h2 id="Throwing Weapons">Throwing Weapons</h2>
 				<table id="tw">
+					<caption><strong>Throwing Weapons</strong></caption>
 					<tr>
 						<th onclick="sortTable(0,'tw')" style="cursor:pointer">Weapon Name</th>
 						<th onclick="sortTable(1,'tw')" style="cursor:pointer">Base HP </th>
@@ -480,12 +492,13 @@
 					%>	
 				</table>
 				<br>
+				<br>
 				<%
 				Statement statement_gun = con.createStatement();
 				ResultSet rs_gun = statement_gun.executeQuery("SELECT * FROM public.gun");
 				%>
-				<h2 id="Guns">Guns</h2>
 				<table id="gun">
+					<caption><strong>Guns</strong></caption>
 					<tr>
 						<th onclick="sortTable(0,'gun')" style="cursor:pointer">Weapon Name</th>
 						<th onclick="sortTable(1,'gun')" style="cursor:pointer">Base HP </th>
@@ -513,12 +526,13 @@
 					%>	
 				</table>
 				<br>
+				<br>
 				<%
 				Statement statement_mace = con.createStatement();
 				ResultSet rs_mace = statement_mace.executeQuery("SELECT * FROM public.mace");
 				%>
-				<h2 id="Maces">Maces</h2>
 				<table id="mace">
+					<caption><strong>Maces</strong></caption>
 					<tr>
 						<th onclick="sortTable(0,'mace')" style="cursor:pointer">Weapon Name</th>
 						<th onclick="sortTable(1,'mace')" style="cursor:pointer">Base HP </th>
@@ -546,12 +560,13 @@
 					%>	
 				</table>	
 				<br>
+				<br>
 				<%
 				Statement statement_fist = con.createStatement();
 				ResultSet rs_fist = statement_fist.executeQuery("SELECT * FROM public.fist");
 				%>
-				<h2 id="Fists">Fists</h2>
 				<table id="fist">
+					<caption><strong>Fists</strong></caption>
 					<tr>
 						<th onclick="sortTable(0,'fist')" style="cursor:pointer">Weapon Name</th>
 						<th onclick="sortTable(1,'fist')" style="cursor:pointer">Base HP </th>

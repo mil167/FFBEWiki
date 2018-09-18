@@ -44,10 +44,12 @@
 						<li><a href="#Heavy Armors">Heavy Armors</a></li>
 						<li><a href="#Robes">Robes</a></li>
 					</ol>
-				</div>				
+				</div>		
+				<br>
+				<br>		
 				
-				<h2 id="Light Shields">Light Shields</h2>
 				<table id="lshield">
+					<caption><strong>Light Shields</strong></caption>
 					<tr>
 						<th onclick="sortTable(0,'lshield')" style="cursor:pointer">Armor Name</th>
 						<th onclick="sortTable(1,'lshield')" style="cursor:pointer">Base HP </th>
@@ -75,12 +77,13 @@
 					%>
 				</table>
 				<br>
+				<br>
 				<%
 				Statement statement_hshield = con.createStatement();
 				ResultSet rs_hshield = statement_hshield.executeQuery("SELECT * FROM public.hshield");
 				%>
-				<h2 id="Heavy Shields">Heavy Shields</h2>
 				<table id="hshield">
+					<caption><strong>Heavy Shields</strong></caption>
 					<tr>
 						<th onclick="sortTable(0,'hshield')" style="cursor:pointer">Armor Name</th>
 						<th onclick="sortTable(1,'hshield')" style="cursor:pointer">Base HP </th>
@@ -108,12 +111,13 @@
 					%>
 				</table>
 				<br>	
+				<br>
 				<%
 				Statement statement_hat = con.createStatement();
 				ResultSet rs_hat = statement_hat.executeQuery("SELECT * FROM public.hat");
 				%>
-				<h2 id="Hats">Hats</h2>
 				<table id="hat">
+					<caption><strong>Hats</strong></caption>
 					<tr>
 						<th onclick="sortTable(0,'hat')" style="cursor:pointer">Armor Name</th>
 						<th onclick="sortTable(1,'hat')" style="cursor:pointer">Base HP </th>
@@ -140,13 +144,14 @@
 					<% }
 					%>
 				</table>
+				<br>
 				<br>	
 				<%
 				Statement statement_helm = con.createStatement();
 				ResultSet rs_helm = statement_helm.executeQuery("SELECT * FROM public.helm");
 				%>
-				<h2 id="Helms">Helms</h2>
 				<table id="helm">
+					<caption><strong>Helms</strong></caption>
 					<tr>
 						<th onclick="sortTable(0,'helm')" style="cursor:pointer">Armor Name</th>
 						<th onclick="sortTable(1,'helm')" style="cursor:pointer">Base HP </th>
@@ -173,13 +178,14 @@
 					<% }
 					%>
 				</table>
+				<br>
 				<br>	
 				<%
 				Statement statement_clothes = con.createStatement();
 				ResultSet rs_clothes = statement_clothes.executeQuery("SELECT * FROM public.clothes");
 				%>
-				<h2 id="Clothes">Clothes</h2>
 				<table id="clothes">
+					<caption><strong>Clothes</strong></caption>
 					<tr>
 						<th onclick="sortTable(0,'clothes')" style="cursor:pointer">Armor Name</th>
 						<th onclick="sortTable(1,'clothes')" style="cursor:pointer">Base HP </th>
@@ -207,12 +213,13 @@
 					%>
 				</table>
 				<br>
+				<br>
 				<%
 				Statement statement_larmor = con.createStatement();
 				ResultSet rs_larmor = statement_larmor.executeQuery("SELECT * FROM public.larmor");
 				%>
-				<h2 id="Light Armors">Light Armors</h2>
 				<table id="larmor">
+					<caption><strong>Light Armors</strong></caption>
 					<tr>
 						<th onclick="sortTable(0,'larmor')" style="cursor:pointer">Armor Name</th>
 						<th onclick="sortTable(1,'larmor')" style="cursor:pointer">Base HP </th>
@@ -240,12 +247,13 @@
 					%>
 				</table>
 				<br>
+				<br>
 				<%
 				Statement statement_harmor = con.createStatement();
 				ResultSet rs_harmor = statement_harmor.executeQuery("SELECT * FROM public.harmor");
 				%>
-				<h2 id="Heavy Armors">Heavy Armors</h2>
 				<table id="harmor">
+					<caption><strong>Heavy Armors</strong></caption>
 					<tr>
 						<th onclick="sortTable(0,'harmor')" style="cursor:pointer">Armor Name</th>
 						<th onclick="sortTable(1,'harmor')" style="cursor:pointer">Base HP </th>
@@ -273,12 +281,13 @@
 					%>
 				</table>
 				<br>
+				<br>
 				<%
 				Statement statement_robe = con.createStatement();
 				ResultSet rs_robe = statement_robe.executeQuery("SELECT * FROM public.robe");
 				%>
-				<h2 id="Robes">Robes</h2>
 				<table id="robe">
+					<caption><strong>Robes</strong></caption>
 					<tr>
 						<th onclick="sortTable(0,'robe')" style="cursor:pointer">Armor Name</th>
 						<th onclick="sortTable(1,'robe')" style="cursor:pointer">Base HP </th>
@@ -305,7 +314,8 @@
 					<% }
 					%>
 				</table>
-				<br>																																			
+				<br>	
+				<br>																																		
 				<%
 				rs_lshield.close();
 				statement_lshield.close();
