@@ -5,15 +5,15 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<style><%@include file="/WEB-INF/css/AccessoryView.css"%></style>
-<title>FFBE Accessory View</title>
+<style><%@include file="/WEB-INF/css/AdvSearch.css"%></style>
+<title>FFBE Advanced Search</title>
 
 
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
  <link rel="icon" type="image/png" sizes="16x16" href="resources/favicon.ico">
  <link rel="manifest" href="/manifest.json">
 </head>
-<body style="background-image:/ffbedb/src/main/webapp/WEB-INF/images/FFBE_Farplane_BG_1.jpg">
+<body>
 
 				<%@ page language="java" import="java.sql.*" %>
 				<%
@@ -30,11 +30,38 @@
 				<ul id="navbar">
 					<li><a href="weapon">Weapons</a></li>
 					<li><a href="armor">Armors</a></li>
-					<li><a class="active" href="accessory">Accessories</a></li>
-					<li><a href="filter">Filter</a></li>
+					<li><a href="accessory">Accessories</a></li>
+					<li><a class="active" href="filter">Filter</a></li>
 				</ul>
 				<button onclick="backToTop()" id="topBtn" title="Scroll to Top">Top</button>
 				<br>
+				<p> PAGE IS UNDER CONSTRUCTION (PLACEHOLDER IS ACCESSORY PAGE) </p>
+				
+				<div class="row">
+					<div class="column">
+						<img src="../../resources/dagger.png" alt="dagger">
+						<img src="../../resources/sword.png" alt="sword">
+						<img src="../../resources/gsword.png" alt="gsword">
+						<img src="../../resources/katana.png" alt="katana">
+						<img src="../../resources/staff.png" alt="staff">
+						<img src="../../resources/rod.png" alt="rod">	
+						<img src="../../resources/bow.png" alt="bow">
+						<img src="../../resources/axe.png" alt="axe">
+					</div>
+					<div class="column">
+						<img src="../../resources/hammer.png" alt="hammer">
+						<img src="../../resources/spear.png" alt="spear">
+						<img src="../../resources/harp.png" alt="harp">
+						<img src="../../resources/whip.png" alt="whip">
+						<img src="../../resources/tw.png" alt="tw">
+						<img src="../../resources/gun.png" alt="gun">	
+						<img src="../../resources/mace.png" alt="mace">
+						<img src="../../resources/fist.png" alt="fist">
+					</div>					
+						
+				</div>							
+						
+				
 				<h2>Accessories</h2>
 				<table id="accs">
 					<tr>

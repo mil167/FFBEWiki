@@ -22,5 +22,8 @@ public class FFBEController implements WebMvcConfigurer{
 		return "AccessoryView";
 	}
 
-		
+	@RequestMapping("/filter")
+	public String filter() {
+		return "AdvSearch";
+	}
 }

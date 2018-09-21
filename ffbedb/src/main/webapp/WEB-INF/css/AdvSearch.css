@@ -1,5 +1,31 @@
 @charset "UTF-8";
 
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+    float: none;
+    width: 33.3%;
+    padding: 3px;
+}
+
+.column img {
+    margin-top: 12px;
+}
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
 table{
 	border-spacing: 0;
 	width: 100%;
@@ -91,13 +117,6 @@ ul > li a:hover:not(.active) {
 	cursor: pointer;
 }
 
-html { 
-  background: url("resources/FFBE_Farplane_BG_1.jpg") no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
 
 caption {
 	font-size: 30px;

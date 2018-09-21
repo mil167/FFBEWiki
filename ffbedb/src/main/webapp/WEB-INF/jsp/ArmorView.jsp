@@ -7,6 +7,8 @@
 <meta charset="ISO-8859-1">
 <style><%@include file="/WEB-INF/css/ArmorView.css"%></style>
 <title>FFBE Armor View</title>
+
+
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
  <link rel="icon" type="image/png" sizes="16x16" href="resources/favicon.ico">
  <link rel="manifest" href="/manifest.json">
@@ -29,6 +31,7 @@
 					<li><a href="weapon">Weapons</a></li>
 					<li><a class="active" href="armor">Armors</a></li>
 					<li><a href="accessory">Accessories</a></li>
+					<li><a href="filter">Filter</a></li>
 				</ul>
 				<button onclick="backToTop()" id="topBtn" title="Scroll to Top">Top</button>				
 				<br>
