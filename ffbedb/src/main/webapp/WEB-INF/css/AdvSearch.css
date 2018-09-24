@@ -123,3 +123,7 @@ caption {
 	background-color: #fffff0;
 	text-align: left;
 }
+
+img:hover {
+	cursor: pointer;	
+}

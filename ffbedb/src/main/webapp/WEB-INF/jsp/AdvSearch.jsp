@@ -23,8 +23,8 @@
 					Connection con = DriverManager.getConnection(dbURL);
 				%>
 				<%
-				Statement statement = con.createStatement();
-				ResultSet rs = statement.executeQuery("SELECT * FROM public.accessory");
+				Statement statement_dagger = con.createStatement();
+				ResultSet rs_dagger = statement_dagger.executeQuery("SELECT * FROM public.dagger");
 				
 				%>
 				<ul id="navbar">
@@ -35,67 +35,103 @@
 				</ul>
 				<button onclick="backToTop()" id="topBtn" title="Scroll to Top">Top</button>
 				<br>
-				<p> PAGE IS UNDER CONSTRUCTION (PLACEHOLDER IS ACCESSORY PAGE) </p>
+				<p> PAGE IS UNDER CONSTRUCTION (WIP) </p>
 				
 				<div class="row">
 					<div class="column">
-						<img src="../../resources/dagger.png" alt="dagger">
-						<img src="../../resources/sword.png" alt="sword">
-						<img src="../../resources/gsword.png" alt="gsword">
-						<img src="../../resources/katana.png" alt="katana">
-						<img src="../../resources/staff.png" alt="staff">
-						<img src="../../resources/rod.png" alt="rod">	
-						<img src="../../resources/bow.png" alt="bow">
-						<img src="../../resources/axe.png" alt="axe">
+						<img src="../../resources/dagger.png" alt="dagger" id="dagger" onclick="switchImg('dagger')">
+						<img src="../../resources/sword.png" alt="sword" id="sword" onclick="switchImg('sword')">
+						<img src="../../resources/gsword.png" alt="gsword" id="gsword" onclick="switchImg('gsword')">
+						<img src="../../resources/katana.png" alt="katana" id="katana" onclick="switchImg('katana')">
+						<img src="../../resources/staff.png" alt="staff" id="staff" onclick="switchImg('staff')">
+						<img src="../../resources/rod.png" alt="rod" id="rod" onclick="switchImg('rod')">	
+						<img src="../../resources/bow.png" alt="bow" id="bow" onclick="switchImg('bow')">
+						<img src="../../resources/axe.png" alt="axe" id="axe" onclick="switchImg('axe')">
 					</div>
 					<div class="column">
-						<img src="../../resources/hammer.png" alt="hammer">
-						<img src="../../resources/spear.png" alt="spear">
-						<img src="../../resources/harp.png" alt="harp">
-						<img src="../../resources/whip.png" alt="whip">
-						<img src="../../resources/tw.png" alt="tw">
-						<img src="../../resources/gun.png" alt="gun">	
-						<img src="../../resources/mace.png" alt="mace">
-						<img src="../../resources/fist.png" alt="fist">
-					</div>					
-						
+						<img src="../../resources/hammer.png" alt="hammer" id="hammer" onclick="switchImg('hammer')">
+						<img src="../../resources/spear.png" alt="spear" id="spear" onclick="switchImg('spear')">
+						<img src="../../resources/harp.png" alt="harp" id="harp" onclick="switchImg('harp')">
+						<img src="../../resources/whip.png" alt="whip" id="whip" onclick="switchImg('whip')">
+						<img src="../../resources/tw.png" alt="tw" id="tw" onclick="switchImg('tw')">
+						<img src="../../resources/gun.png" alt="gun" id="gun" onclick="switchImg('gun')">	
+						<img src="../../resources/mace.png" alt="mace" id="mace" onclick="switchImg('mace')">
+						<img src="../../resources/fist.png" alt="fist" id="fist" onclick="switchImg('fist')">
+					</div>							
 				</div>							
 						
-				
-				<h2>Accessories</h2>
-				<table id="accs">
+				<table id="dagger">
+					<caption><strong>Daggers</strong></caption>
 					<tr>
-						<th onclick="sortTable(0)" style="cursor:pointer">Accessory Name</th>
-						<th onclick="sortTable(1)" style="cursor:pointer">Base HP </th>
-						<th onclick="sortTable(2)" style="cursor:pointer">Base MP </th>
-						<th onclick="sortTable(3)" style="cursor:pointer">Base ATK </th>
-						<th onclick="sortTable(4)" style="cursor:pointer">Base MAG </th>
-						<th onclick="sortTable(5)" style="cursor:pointer">Base DEF </th>
-						<th onclick="sortTable(6)" style="cursor:pointer">Base SPR </th>
+						<th onclick="sortTable(0,'dagger')" style="cursor:pointer">Weapon Name</th>
+						<th onclick="sortTable(1,'dagger')" style="cursor:pointer">Base HP </th>
+						<th onclick="sortTable(2,'dagger')" style="cursor:pointer">Base MP </th>
+						<th onclick="sortTable(3,'dagger')" style="cursor:pointer">Base ATK </th>
+						<th onclick="sortTable(4,'dagger')" style="cursor:pointer">Base MAG </th>
+						<th onclick="sortTable(5,'dagger')" style="cursor:pointer">Base DEF </th>
+						<th onclick="sortTable(6,'dagger')" style="cursor:pointer">Base SPR </th>
 						<th>Additional Effects</th>
 					</tr>
 					<%
-					while(rs.next()) {
+					while(rs_dagger.next()) {
 					%>
 					<tr>
-						<td align="center"><%= rs.getString("name") %></td>
-						<td align="center"><%= rs.getInt("basehp") %></td>
-						<td align="center"><%= rs.getInt("basemp") %></td>
-						<td align="center"><%= rs.getInt("baseatk") %></td>
-						<td align="center"><%= rs.getInt("basemag") %></td>
-						<td align="center"><%= rs.getInt("basedef") %></td>
-						<td align="center"><%= rs.getInt("basespr") %></td>
-						<td align="left" style="white-space: pre-wrap"><%= rs.getString("effects") %></td>
+						<td align="center"><%= rs_dagger.getString("name") %></td>
+						<td align="center"><%= rs_dagger.getInt("basehp") %></td>
+						<td align="center"><%= rs_dagger.getInt("basemp") %></td>
+						<td align="center"><%= rs_dagger.getInt("baseatk") %></td>
+						<td align="center"><%= rs_dagger.getInt("basemag") %></td>
+						<td align="center"><%= rs_dagger.getInt("basedef") %></td>
+						<td align="center"><%= rs_dagger.getInt("basespr") %></td>
+						<td align="left" style="white-space: pre-wrap"><%= rs_dagger.getString("effects") %></td>
 					</tr>
 					<% }
 					%>
 				</table>
+				<br>
+				<br>
+				
 				<%
-
+				Statement st_wep = con.createStatement();
+				ResultSet rs_wep = st_wep.executeQuery("select * from public.wp_list");
 				
+				Statement st_elem = con.createStatement();
+				ResultSet rs_elem = st_elem.executeQuery("select * from public.element");
+				%>
 				
-				rs.close();
-				statement.close();
+				<form name="weaponSelect" method="post" action="filter">
+					<select name="wep" id="wep">
+						<option>Select a Weapon type: </option>
+						<%
+							while(rs_wep.next()) {
+						%>
+								<option><%= rs_wep.getString("wid")%></option>
+						<%
+							}
+						%>
+					</select>
+					<select name="element" id="element">
+						<option>Select an Element: </option>
+						<%
+							while(rs_elem.next()) {
+						%>
+							<option><%= rs_elem.getString("elem")%></option>
+						<% 	
+							}
+						%>
+					</select>
+					<input type="Submit" value="Submit"></input>
+				</form> 
+				<%
+				String wid = request.getParameter("wep");
+				String element = request.getParameter("element");
+				System.out.println("wid is: " + wid);
+				System.out.println("element is: " + element);
+				
+				%>
+				<% 
+				rs_dagger.close();
+				statement_dagger.close();
 				con.close();
 				}
 				catch(SQLException e) {
@@ -192,6 +228,18 @@ function activateBtn() {
 
 function backToTop() {
 	document.documentElement.scrollTop = 0;
+}
+
+function switchImg(filter_type) {
+	let brightImg = "../../resources/" + filter_type + ".png"
+	if(document.getElementById(filter_type).getAttribute('src') == brightImg) {
+		let darkImg = "../../resources/dark" + filter_type + ".png";
+		document.getElementById(filter_type).src = darkImg;
+	}
+	else {
+		document.getElementById(filter_type).src = brightImg;	
+	}
+	
 }
 </script>
 </html>
