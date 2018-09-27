@@ -57,8 +57,12 @@
 				</div>
 				<br>
 				<br>
+				<div id="daggerDiv">
+				<h1><strong>Daggers</strong></h1>
+				<input id="CBdaggerTMR" type="checkbox" name="daggerTMR">Ignore TMR(s)
+				<input id="CBdaggerSTMR" type="checkbox" name="daggerSTMR">Ignore STMR(s)
+				<input id="CBdaggerLT" type="checkbox" name="daggerLT">Ignore Limited Time Item(s)
 				<table id="dagger">
-					<caption><strong>Daggers</strong></caption>
 					<tr>
 						<th onclick="sortTable(0,'dagger')" style="cursor:pointer">Weapon Name</th>
 						<th onclick="sortTable(1,'dagger')" style="cursor:pointer">Base HP </th>
@@ -68,6 +72,9 @@
 						<th onclick="sortTable(5,'dagger')" style="cursor:pointer">Base DEF </th>
 						<th onclick="sortTable(6,'dagger')" style="cursor:pointer">Base SPR </th>
 						<th>Additional Effects</th>
+						<th style="display: none">TMR</th>
+						<th style="display: none">STMR</th>
+						<th style="display: none">Time Limited</th>
 					</tr>
 					<%
 					while(rs_dagger.next()) {
@@ -81,10 +88,14 @@
 						<td align="center"><%= rs_dagger.getInt("basedef") %></td>
 						<td align="center"><%= rs_dagger.getInt("basespr") %></td>
 						<td align="left" style="white-space: pre-wrap"><%= rs_dagger.getString("effects") %></td>
+						<td style="display: none"><%= rs_dagger.getBoolean("tmr") %></td>
+						<td style="display: none"><%= rs_dagger.getBoolean("stmr") %></td>
+						<td style="display: none"><%= rs_dagger.getBoolean("limitedtime") %></td>
 					</tr>
 					<% }
 					%>
 				</table>
+				</div>
 				<br>
 				<br>
 				<%
@@ -658,7 +669,7 @@
 <script type="text/javascript">
 
 function sortTable(n,name) {
-	  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+	  let table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
 	  table = document.getElementById(name);
 	  switching = true;
 	  //Set the sorting direction to ascending:
@@ -752,5 +763,81 @@ function hide() {
 		list.style.display = "none";
 	}
 }
+
+let daggerTMRCB = document.querySelector("input[name=daggerTMR]");
+daggerTMRCB.addEventListener('change', function() {
+	let table = document.getElementById("dagger");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[8];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[8];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
+
+let daggerSTMRCB = document.querySelector("input[name=daggerSTMR]");
+daggerSTMRCB.addEventListener('change', function() {
+	let table = document.getElementById("dagger");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[9];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[9];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
+
+let daggerLTCB = document.querySelector("input[name=daggerLT]");
+daggerLTCB.addEventListener('change', function() {
+	let table = document.getElementById("dagger");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[10];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[10];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
+
 </script>
 </html>

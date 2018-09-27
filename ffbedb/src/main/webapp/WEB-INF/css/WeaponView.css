@@ -99,6 +99,10 @@ html {
   background-size: cover;
 }
 
+#daggerDiv {
+	background-color: #fffff0;
+}
+
 caption {
 	font-size: 30px;
 	background-color: #fffff0;
