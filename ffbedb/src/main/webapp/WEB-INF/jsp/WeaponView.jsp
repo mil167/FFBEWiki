@@ -61,7 +61,7 @@
 				<h1><strong>Daggers</strong></h1>
 				<input id="CBdaggerTMR" type="checkbox" name="daggerTMR">Ignore TMR(s)
 				<input id="CBdaggerSTMR" type="checkbox" name="daggerSTMR">Ignore STMR(s)
-				<input id="CBdaggerLT" type="checkbox" name="daggerLT">Ignore Limited Time Item(s)
+				<input id="CBdaggerLT" type="checkbox" name="daggerLT">Ignore Limited Time Item(s) (i.e. King Mog, Story Event, Premium Bundles, etc.)
 				<table id="dagger">
 					<tr>
 						<th onclick="sortTable(0,'dagger')" style="cursor:pointer">Weapon Name</th>
@@ -102,8 +102,12 @@
 				Statement statement_sword = con.createStatement();
 				ResultSet rs_sword = statement_sword.executeQuery("SELECT * FROM public.sword");
 				%>
+				<div id = "swordDiv">
+				<h1><strong>Swords</strong></h1>
+				<input id="CBswordTMR" type="checkbox" name="swordTMR">Ignore TMR(s)
+				<input id="CBswordSTMR" type="checkbox" name="swordSTMR">Ignore STMR(s)
+				<input id="CBswordLT" type="checkbox" name="swordLT">Ignore Limited Time Item(s) (i.e. King Mog, Story Event, Premium Bundles, etc.)
 				<table id="sword">
-					<caption><strong>Swords</strong></caption>
 					<tr>
 						<th onclick="sortTable(0,'sword')" style="cursor:pointer">Weapon Name</th>
 						<th onclick="sortTable(1,'sword')" style="cursor:pointer">Base HP </th>
@@ -130,14 +134,19 @@
 					<% }
 					%>	
 				</table>
+				</div>
 				<br>
 				<br>
 				<%
 				Statement statement_gsword = con.createStatement();
 				ResultSet rs_gsword = statement_gsword.executeQuery("SELECT * FROM public.gsword");
 				%>
+				<div id ="gswordDiv">
+				<h1><strong>Swords</strong></h1>
+				<input id="CBgswordTMR" type="checkbox" name="gswordTMR">Ignore TMR(s)
+				<input id="CBgswordSTMR" type="checkbox" name="gswordSTMR">Ignore STMR(s)
+				<input id="CBgswordLT" type="checkbox" name="gswordLT">Ignore Limited Time Item(s) (i.e. King Mog, Story Event, Premium Bundles, etc.)
 				<table id="gsword">
-					<caption><strong>Great Swords</strong></caption>
 					<tr>
 						<th onclick="sortTable(0,'gsword')" style="cursor:pointer">Weapon Name</th>
 						<th onclick="sortTable(1,'gsword')" style="cursor:pointer">Base HP </th>
@@ -165,14 +174,19 @@
 					%>						
 												
 				</table>
+				</div>
 				<br>
 				<br>
 				<%
 				Statement statement_staff = con.createStatement();
 				ResultSet rs_staff = statement_staff.executeQuery("SELECT * FROM public.staff");
 				%>
+				<div id = "staffDiv">
+				<h1><strong>Staves</strong></h1>
+				<input id="CBstaffTMR" type="checkbox" name="staffTMR">Ignore TMR(s)
+				<input id="CBstaffSTMR" type="checkbox" name="staffSTMR">Ignore STMR(s)
+				<input id="CBstaffLT" type="checkbox" name="staffLT">Ignore Limited Time Item(s) (i.e. King Mog, Story Event, Premium Bundles, etc.)
 				<table id="staff">
-					<caption><strong>Staves</strong></caption>
 					<tr>
 						<th onclick="sortTable(0,'staff')" style="cursor:pointer">Weapon Name</th>
 						<th onclick="sortTable(1,'staff')" style="cursor:pointer">Base HP </th>
@@ -198,15 +212,20 @@
 					</tr>
 					<% }
 					%>	
-				</table>					
+				</table>		
+				</div>			
 				<br>
 				<br>
 				<%
 				Statement statement_katana = con.createStatement();
 				ResultSet rs_katana = statement_katana.executeQuery("SELECT * FROM public.katana");
 				%>
+				<div id = "katanaDiv">
+				<h1><strong>Katanas</strong></h1>
+				<input id="CBkatanaTMR" type="checkbox" name="katanaTMR">Ignore TMR(s)
+				<input id="CBkatanaSTMR" type="checkbox" name="katanaSTMR">Ignore STMR(s)
+				<input id="CBkatanaLT" type="checkbox" name="katanaLT">Ignore Limited Time Item(s) (i.e. King Mog, Story Event, Premium Bundles, etc.)
 				<table id="katana">
-					<caption><strong>Katanas</strong></caption>
 					<tr>
 						<th onclick="sortTable(0,'katana')" style="cursor:pointer">Weapon Name</th>
 						<th onclick="sortTable(1,'katana')" style="cursor:pointer">Base HP </th>
@@ -233,14 +252,19 @@
 					<% }
 					%>	
 				</table>	
+				</div>
 				<br>
 				<br>
 				<%
 				Statement statement_rod = con.createStatement();
 				ResultSet rs_rod = statement_rod.executeQuery("SELECT * FROM public.rod");
 				%>
+				<div id = "rodDiv">
+				<h1><strong>Rods</strong></h1>
+				<input id="CBrodTMR" type="checkbox" name="rodTMR">Ignore TMR(s)
+				<input id="CBrodSTMR" type="checkbox" name="rodSTMR">Ignore STMR(s)
+				<input id="CBrodLT" type="checkbox" name="rodLT">Ignore Limited Time Item(s) (i.e. King Mog, Story Event, Premium Bundles, etc.)
 				<table id="rod">
-					<caption><strong>Rods</strong></caption>
 					<tr>
 						<th onclick="sortTable(0,'rod')" style="cursor:pointer">Weapon Name</th>
 						<th onclick="sortTable(1,'rod')" style="cursor:pointer">Base HP </th>
@@ -267,14 +291,19 @@
 					<% }
 					%>	
 				</table>		
+				</div>
 				<br>
 				<br>
 				<%
 				Statement statement_bow = con.createStatement();
 				ResultSet rs_bow = statement_bow.executeQuery("SELECT * FROM public.bow");
 				%>
+				<div id = "bowDiv">
+				<h1><strong>Bows</strong></h1>
+				<input id="CBbowTMR" type="checkbox" name="bowTMR">Ignore TMR(s)
+				<input id="CBbowSTMR" type="checkbox" name="bowSTMR">Ignore STMR(s)
+				<input id="CBbowLT" type="checkbox" name="bowLT">Ignore Limited Time Item(s) (i.e. King Mog, Story Event, Premium Bundles, etc.)
 				<table id="bow">
-					<caption><strong>Bows</strong></caption>
 					<tr>
 						<th onclick="sortTable(0,'bow')" style="cursor:pointer">Weapon Name</th>
 						<th onclick="sortTable(1,'bow')" style="cursor:pointer">Base HP </th>
@@ -300,15 +329,20 @@
 					</tr>
 					<% }
 					%>	
-				</table>		
+				</table>
+				</div>		
 				<br>
 				<br>
 				<%
 				Statement statement_axe = con.createStatement();
 				ResultSet rs_axe = statement_axe.executeQuery("SELECT * FROM public.axe");
 				%>
+				<div id = "axeDiv">
+				<h1><strong>Axes</strong></h1>
+				<input id="CBaxeTMR" type="checkbox" name="axeTMR">Ignore TMR(s)
+				<input id="CBaxeSTMR" type="checkbox" name="axeSTMR">Ignore STMR(s)
+				<input id="CBaxeLT" type="checkbox" name="axeLT">Ignore Limited Time Item(s) (i.e. King Mog, Story Event, Premium Bundles, etc.)
 				<table id="axe">
-					<caption><strong>Axes</strong></caption>
 					<tr>
 						<th onclick="sortTable(0,'axe')" style="cursor:pointer">Weapon Name</th>
 						<th onclick="sortTable(1,'axe')" style="cursor:pointer">Base HP </th>
@@ -335,14 +369,19 @@
 					<% }
 					%>	
 				</table>
+				</div>
 				<br>
 				<br>
 				<%
 				Statement statement_hammer = con.createStatement();
 				ResultSet rs_hammer = statement_hammer.executeQuery("SELECT * FROM public.hammer");
 				%>
+				<div id = "hammerDiv">
+				<h1><strong>Hammers</strong></h1>
+				<input id="CBhammerTMR" type="checkbox" name="hammerTMR">Ignore TMR(s)
+				<input id="CBhammerSTMR" type="checkbox" name="hammerSTMR">Ignore STMR(s)
+				<input id="CBhammerLT" type="checkbox" name="hammerLT">Ignore Limited Time Item(s) (i.e. King Mog, Story Event, Premium Bundles, etc.)
 				<table id="hammer">
-					<caption><strong>Hammers</strong></caption>
 					<tr>
 						<th onclick="sortTable(0,'hammer')" style="cursor:pointer">Weapon Name</th>
 						<th onclick="sortTable(1,'hammer')" style="cursor:pointer">Base HP </th>
@@ -369,14 +408,19 @@
 					<% }
 					%>	
 				</table>	
+				</div>
 				<br>
 				<br>
 				<%
 				Statement statement_spear = con.createStatement();
 				ResultSet rs_spear = statement_spear.executeQuery("SELECT * FROM public.spear");
 				%>
+				<div id = "spearDiv">
+				<h1><strong>Spears</strong></h1>
+				<input id="CBspearTMR" type="checkbox" name="spearTMR">Ignore TMR(s)
+				<input id="CBspearSTMR" type="checkbox" name="spearSTMR">Ignore STMR(s)
+				<input id="CBspearLT" type="checkbox" name="spearLT">Ignore Limited Time Item(s) (i.e. King Mog, Story Event, Premium Bundles, etc.)
 				<table id="spear">
-					<caption><strong>Spears</strong></caption>
 					<tr>
 						<th onclick="sortTable(0,'spear')" style="cursor:pointer">Weapon Name</th>
 						<th onclick="sortTable(1,'spear')" style="cursor:pointer">Base HP </th>
@@ -403,14 +447,19 @@
 					<% }
 					%>	
 				</table>
+				</div>
 				<br>
 				<br>
 				<%
 				Statement statement_harp = con.createStatement();
 				ResultSet rs_harp = statement_harp.executeQuery("SELECT * FROM public.harp");
 				%>
+				<div id = "harpDiv">
+				<h1><strong>Harps</strong></h1>
+				<input id="CBharpTMR" type="checkbox" name="harpTMR">Ignore TMR(s)
+				<input id="CBharpSTMR" type="checkbox" name="harpSTMR">Ignore STMR(s)
+				<input id="CBharpLT" type="checkbox" name="harpLT">Ignore Limited Time Item(s) (i.e. King Mog, Story Event, Premium Bundles, etc.)
 				<table id="harp">
-					<caption><strong>Harps</strong></caption>
 					<tr>
 						<th onclick="sortTable(0,'harp')" style="cursor:pointer">Weapon Name</th>
 						<th onclick="sortTable(1,'harp')" style="cursor:pointer">Base HP </th>
@@ -437,14 +486,19 @@
 					<% }
 					%>	
 				</table>
+				</div>
 				<br>
 				<br>
 				<%
 				Statement statement_whip = con.createStatement();
 				ResultSet rs_whip = statement_whip.executeQuery("SELECT * FROM public.whip");
 				%>
+				<div id = "whipDiv">
+				<h1><strong>Whips</strong></h1>
+				<input id="CBwhipTMR" type="checkbox" name="whipTMR">Ignore TMR(s)
+				<input id="CBwhipSTMR" type="checkbox" name="whipSTMR">Ignore STMR(s)
+				<input id="CBwhipLT" type="checkbox" name="whipLT">Ignore Limited Time Item(s) (i.e. King Mog, Story Event, Premium Bundles, etc.)
 				<table id="whip">
-					<caption><strong>Whips</strong></caption>
 					<tr>
 						<th onclick="sortTable(0,'whip')" style="cursor:pointer">Weapon Name</th>
 						<th onclick="sortTable(1,'whip')" style="cursor:pointer">Base HP </th>
@@ -471,14 +525,19 @@
 					<% }
 					%>	
 				</table>
+				</div>
 				<br>
 				<br>
 				<%
 				Statement statement_tw = con.createStatement();
 				ResultSet rs_tw = statement_tw.executeQuery("SELECT * FROM public.tw");
 				%>
+				<div id = "twDiv">
+				<h1><strong>Throwing Weapons</strong></h1>
+				<input id="CBtwTMR" type="checkbox" name="twTMR">Ignore TMR(s)
+				<input id="CBtwSTMR" type="checkbox" name="twSTMR">Ignore STMR(s)
+				<input id="CBtwLT" type="checkbox" name="twLT">Ignore Limited Time Item(s) (i.e. King Mog, Story Event, Premium Bundles, etc.)
 				<table id="tw">
-					<caption><strong>Throwing Weapons</strong></caption>
 					<tr>
 						<th onclick="sortTable(0,'tw')" style="cursor:pointer">Weapon Name</th>
 						<th onclick="sortTable(1,'tw')" style="cursor:pointer">Base HP </th>
@@ -505,14 +564,19 @@
 					<% }
 					%>	
 				</table>
+				</div>
 				<br>
 				<br>
 				<%
 				Statement statement_gun = con.createStatement();
 				ResultSet rs_gun = statement_gun.executeQuery("SELECT * FROM public.gun");
 				%>
+				<div id = "gunDiv">
+				<h1><strong>Guns</strong></h1>
+				<input id="CBgunTMR" type="checkbox" name="gunTMR">Ignore TMR(s)
+				<input id="CBgunSTMR" type="checkbox" name="gunSTMR">Ignore STMR(s)
+				<input id="CBgunLT" type="checkbox" name="gunLT">Ignore Limited Time Item(s) (i.e. King Mog, Story Event, Premium Bundles, etc.)
 				<table id="gun">
-					<caption><strong>Guns</strong></caption>
 					<tr>
 						<th onclick="sortTable(0,'gun')" style="cursor:pointer">Weapon Name</th>
 						<th onclick="sortTable(1,'gun')" style="cursor:pointer">Base HP </th>
@@ -539,14 +603,19 @@
 					<% }
 					%>	
 				</table>
+				</div>
 				<br>
 				<br>
 				<%
 				Statement statement_mace = con.createStatement();
 				ResultSet rs_mace = statement_mace.executeQuery("SELECT * FROM public.mace");
 				%>
+				<div id = "maceDiv">
+				<h1><strong>Maces</strong></h1>
+				<input id="CBmaceTMR" type="checkbox" name="maceTMR">Ignore TMR(s)
+				<input id="CBmaceSTMR" type="checkbox" name="maceSTMR">Ignore STMR(s)
+				<input id="CBmaceLT" type="checkbox" name="maceLT">Ignore Limited Time Item(s) (i.e. King Mog, Story Event, Premium Bundles, etc.)
 				<table id="mace">
-					<caption><strong>Maces</strong></caption>
 					<tr>
 						<th onclick="sortTable(0,'mace')" style="cursor:pointer">Weapon Name</th>
 						<th onclick="sortTable(1,'mace')" style="cursor:pointer">Base HP </th>
@@ -572,15 +641,20 @@
 					</tr>
 					<% }
 					%>	
-				</table>	
+				</table>
+				</div>	
 				<br>
 				<br>
 				<%
 				Statement statement_fist = con.createStatement();
 				ResultSet rs_fist = statement_fist.executeQuery("SELECT * FROM public.fist");
 				%>
+				<div id = "fistDiv">
+				<h1><strong>Fists</strong></h1>
+				<input id="CBfistTMR" type="checkbox" name="fistTMR">Ignore TMR(s)
+				<input id="CBfistSTMR" type="checkbox" name="fistSTMR">Ignore STMR(s)
+				<input id="CBfistLT" type="checkbox" name="fistLT">Ignore Limited Time Item(s) (i.e. King Mog, Story Event, Premium Bundles, etc.)
 				<table id="fist">
-					<caption><strong>Fists</strong></caption>
 					<tr>
 						<th onclick="sortTable(0,'fist')" style="cursor:pointer">Weapon Name</th>
 						<th onclick="sortTable(1,'fist')" style="cursor:pointer">Base HP </th>
@@ -606,7 +680,8 @@
 					</tr>
 					<% }
 					%>	
-				</table>																																															
+				</table>	
+				</div>																																														
 				<%
 				rs_dagger.close();
 				statement_dagger.close();
