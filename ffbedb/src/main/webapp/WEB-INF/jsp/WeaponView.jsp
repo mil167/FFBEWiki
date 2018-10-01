@@ -117,6 +117,9 @@
 						<th onclick="sortTable(5,'sword')" style="cursor:pointer">Base DEF </th>
 						<th onclick="sortTable(6,'sword')" style="cursor:pointer">Base SPR </th>
 						<th>Additional Effects</th>
+						<th style="display: none">TMR</th>
+						<th style="display: none">STMR</th>
+						<th style="display: none">Time Limited</th>
 					</tr>
 					<%
 					while(rs_sword.next()) {
@@ -130,6 +133,9 @@
 						<td align="center"><%= rs_sword.getInt("basedef") %></td>
 						<td align="center"><%= rs_sword.getInt("basespr") %></td>
 						<td align="left" style="white-space: pre-wrap"><%= rs_sword.getString("effects") %></td>
+						<td style="display: none"><%= rs_sword.getBoolean("tmr") %></td>
+						<td style="display: none"><%= rs_sword.getBoolean("stmr") %></td>
+						<td style="display: none"><%= rs_sword.getBoolean("limitedtime") %></td>						
 					</tr>
 					<% }
 					%>	
@@ -156,6 +162,9 @@
 						<th onclick="sortTable(5,'gsword')" style="cursor:pointer">Base DEF </th>
 						<th onclick="sortTable(6,'gsword')" style="cursor:pointer">Base SPR </th>
 						<th>Additional Effects</th>
+						<th style="display: none">TMR</th>
+						<th style="display: none">STMR</th>
+						<th style="display: none">Time Limited</th>
 					</tr>
 					<%
 					while(rs_gsword.next()) {
@@ -169,6 +178,9 @@
 						<td align="center"><%= rs_gsword.getInt("basedef") %></td>
 						<td align="center"><%= rs_gsword.getInt("basespr") %></td>
 						<td align="left" style="white-space: pre-wrap"><%= rs_gsword.getString("effects") %></td>
+						<td style="display: none"><%= rs_gsword.getBoolean("tmr") %></td>
+						<td style="display: none"><%= rs_gsword.getBoolean("stmr") %></td>
+						<td style="display: none"><%= rs_gsword.getBoolean("limitedtime") %></td>							
 					</tr>
 					<% }
 					%>						
@@ -196,6 +208,9 @@
 						<th onclick="sortTable(5,'staff')" style="cursor:pointer">Base DEF </th>
 						<th onclick="sortTable(6,'staff')" style="cursor:pointer">Base SPR </th>
 						<th>Additional Effects</th>
+						<th style="display: none">TMR</th>
+						<th style="display: none">STMR</th>
+						<th style="display: none">Time Limited</th>						
 					</tr>
 					<%
 					while(rs_staff.next()) {
@@ -209,6 +224,9 @@
 						<td align="center"><%= rs_staff.getInt("basedef") %></td>
 						<td align="center"><%= rs_staff.getInt("basespr") %></td>
 						<td align="left" style="white-space: pre-wrap"><%= rs_staff.getString("effects") %></td>
+						<td style="display: none"><%= rs_staff.getBoolean("tmr") %></td>
+						<td style="display: none"><%= rs_staff.getBoolean("stmr") %></td>
+						<td style="display: none"><%= rs_staff.getBoolean("limitedtime") %></td>							
 					</tr>
 					<% }
 					%>	
@@ -235,6 +253,9 @@
 						<th onclick="sortTable(5,'katana')" style="cursor:pointer">Base DEF </th>
 						<th onclick="sortTable(6,'katana')" style="cursor:pointer">Base SPR </th>
 						<th>Additional Effects</th>
+						<th style="display: none">TMR</th>
+						<th style="display: none">STMR</th>
+						<th style="display: none">Time Limited</th>						
 					</tr>
 					<%
 					while(rs_katana.next()) {
@@ -248,6 +269,9 @@
 						<td align="center"><%= rs_katana.getInt("basedef") %></td>
 						<td align="center"><%= rs_katana.getInt("basespr") %></td>
 						<td align="left" style="white-space: pre-wrap"><%= rs_katana.getString("effects") %></td>
+						<td style="display: none"><%= rs_katana.getBoolean("tmr") %></td>
+						<td style="display: none"><%= rs_katana.getBoolean("stmr") %></td>
+						<td style="display: none"><%= rs_katana.getBoolean("limitedtime") %></td>							
 					</tr>
 					<% }
 					%>	
@@ -274,6 +298,9 @@
 						<th onclick="sortTable(5,'rod')" style="cursor:pointer">Base DEF </th>
 						<th onclick="sortTable(6,'rod')" style="cursor:pointer">Base SPR </th>
 						<th>Additional Effects</th>
+						<th style="display: none">TMR</th>
+						<th style="display: none">STMR</th>
+						<th style="display: none">Time Limited</th>						
 					</tr>
 					<%
 					while(rs_rod.next()) {
@@ -287,6 +314,9 @@
 						<td align="center"><%= rs_rod.getInt("basedef") %></td>
 						<td align="center"><%= rs_rod.getInt("basespr") %></td>
 						<td align="left" style="white-space: pre-wrap"><%= rs_rod.getString("effects") %></td>
+						<td style="display: none"><%= rs_rod.getBoolean("tmr") %></td>
+						<td style="display: none"><%= rs_rod.getBoolean("stmr") %></td>
+						<td style="display: none"><%= rs_rod.getBoolean("limitedtime") %></td>							
 					</tr>
 					<% }
 					%>	
@@ -313,6 +343,9 @@
 						<th onclick="sortTable(5,'bow')" style="cursor:pointer">Base DEF </th>
 						<th onclick="sortTable(6,'bow')" style="cursor:pointer">Base SPR </th>
 						<th>Additional Effects</th>
+						<th style="display: none">TMR</th>
+						<th style="display: none">STMR</th>
+						<th style="display: none">Time Limited</th>						
 					</tr>
 					<%
 					while(rs_bow.next()) {
@@ -326,6 +359,9 @@
 						<td align="center"><%= rs_bow.getInt("basedef") %></td>
 						<td align="center"><%= rs_bow.getInt("basespr") %></td>
 						<td align="left" style="white-space: pre-wrap"><%= rs_bow.getString("effects") %></td>
+						<td style="display: none"><%= rs_bow.getBoolean("tmr") %></td>
+						<td style="display: none"><%= rs_bow.getBoolean("stmr") %></td>
+						<td style="display: none"><%= rs_bow.getBoolean("limitedtime") %></td>							
 					</tr>
 					<% }
 					%>	
@@ -352,6 +388,9 @@
 						<th onclick="sortTable(5,'axe')" style="cursor:pointer">Base DEF </th>
 						<th onclick="sortTable(6,'axe')" style="cursor:pointer">Base SPR </th>
 						<th>Additional Effects</th>
+						<th style="display: none">TMR</th>
+						<th style="display: none">STMR</th>
+						<th style="display: none">Time Limited</th>						
 					</tr>
 					<%
 					while(rs_axe.next()) {
@@ -365,6 +404,9 @@
 						<td align="center"><%= rs_axe.getInt("basedef") %></td>
 						<td align="center"><%= rs_axe.getInt("basespr") %></td>
 						<td align="left" style="white-space: pre-wrap"><%= rs_axe.getString("effects") %></td>
+						<td style="display: none"><%= rs_axe.getBoolean("tmr") %></td>
+						<td style="display: none"><%= rs_axe.getBoolean("stmr") %></td>
+						<td style="display: none"><%= rs_axe.getBoolean("limitedtime") %></td>							
 					</tr>
 					<% }
 					%>	
@@ -391,6 +433,9 @@
 						<th onclick="sortTable(5,'hammer')" style="cursor:pointer">Base DEF </th>
 						<th onclick="sortTable(6,'hammer')" style="cursor:pointer">Base SPR </th>
 						<th>Additional Effects</th>
+						<th style="display: none">TMR</th>
+						<th style="display: none">STMR</th>
+						<th style="display: none">Time Limited</th>						
 					</tr>
 					<%
 					while(rs_hammer.next()) {
@@ -404,6 +449,9 @@
 						<td align="center"><%= rs_hammer.getInt("basedef") %></td>
 						<td align="center"><%= rs_hammer.getInt("basespr") %></td>
 						<td align="left" style="white-space: pre-wrap"><%= rs_hammer.getString("effects") %></td>
+						<td style="display: none"><%= rs_hammer.getBoolean("tmr") %></td>
+						<td style="display: none"><%= rs_hammer.getBoolean("stmr") %></td>
+						<td style="display: none"><%= rs_hammer.getBoolean("limitedtime") %></td>							
 					</tr>
 					<% }
 					%>	
@@ -430,6 +478,9 @@
 						<th onclick="sortTable(5,'spear')" style="cursor:pointer">Base DEF </th>
 						<th onclick="sortTable(6,'spear')" style="cursor:pointer">Base SPR </th>
 						<th>Additional Effects</th>
+						<th style="display: none">TMR</th>
+						<th style="display: none">STMR</th>
+						<th style="display: none">Time Limited</th>						
 					</tr>
 					<%
 					while(rs_spear.next()) {
@@ -443,6 +494,9 @@
 						<td align="center"><%= rs_spear.getInt("basedef") %></td>
 						<td align="center"><%= rs_spear.getInt("basespr") %></td>
 						<td align="left" style="white-space: pre-wrap"><%= rs_spear.getString("effects") %></td>
+						<td style="display: none"><%= rs_spear.getBoolean("tmr") %></td>
+						<td style="display: none"><%= rs_spear.getBoolean("stmr") %></td>
+						<td style="display: none"><%= rs_spear.getBoolean("limitedtime") %></td>							
 					</tr>
 					<% }
 					%>	
@@ -469,6 +523,9 @@
 						<th onclick="sortTable(5,'harp')" style="cursor:pointer">Base DEF </th>
 						<th onclick="sortTable(6,'harp')" style="cursor:pointer">Base SPR </th>
 						<th>Additional Effects</th>
+						<th style="display: none">TMR</th>
+						<th style="display: none">STMR</th>
+						<th style="display: none">Time Limited</th>						
 					</tr>
 					<%
 					while(rs_harp.next()) {
@@ -482,6 +539,9 @@
 						<td align="center"><%= rs_harp.getInt("basedef") %></td>
 						<td align="center"><%= rs_harp.getInt("basespr") %></td>
 						<td align="left" style="white-space: pre-wrap"><%= rs_harp.getString("effects") %></td>
+						<td style="display: none"><%= rs_harp.getBoolean("tmr") %></td>
+						<td style="display: none"><%= rs_harp.getBoolean("stmr") %></td>
+						<td style="display: none"><%= rs_harp.getBoolean("limitedtime") %></td>							
 					</tr>
 					<% }
 					%>	
@@ -508,6 +568,9 @@
 						<th onclick="sortTable(5,'whip')" style="cursor:pointer">Base DEF </th>
 						<th onclick="sortTable(6,'whip')" style="cursor:pointer">Base SPR </th>
 						<th>Additional Effects</th>
+						<th style="display: none">TMR</th>
+						<th style="display: none">STMR</th>
+						<th style="display: none">Time Limited</th>						
 					</tr>
 					<%
 					while(rs_whip.next()) {
@@ -521,6 +584,9 @@
 						<td align="center"><%= rs_whip.getInt("basedef") %></td>
 						<td align="center"><%= rs_whip.getInt("basespr") %></td>
 						<td align="left" style="white-space: pre-wrap"><%= rs_whip.getString("effects") %></td>
+						<td style="display: none"><%= rs_whip.getBoolean("tmr") %></td>
+						<td style="display: none"><%= rs_whip.getBoolean("stmr") %></td>
+						<td style="display: none"><%= rs_whip.getBoolean("limitedtime") %></td>							
 					</tr>
 					<% }
 					%>	
@@ -547,6 +613,9 @@
 						<th onclick="sortTable(5,'tw')" style="cursor:pointer">Base DEF </th>
 						<th onclick="sortTable(6,'tw')" style="cursor:pointer">Base SPR </th>
 						<th>Additional Effects</th>
+						<th style="display: none">TMR</th>
+						<th style="display: none">STMR</th>
+						<th style="display: none">Time Limited</th>						
 					</tr>
 					<%
 					while(rs_tw.next()) {
@@ -560,6 +629,9 @@
 						<td align="center"><%= rs_tw.getInt("basedef") %></td>
 						<td align="center"><%= rs_tw.getInt("basespr") %></td>
 						<td align="left" style="white-space: pre-wrap"><%= rs_tw.getString("effects") %></td>
+						<td style="display: none"><%= rs_tw.getBoolean("tmr") %></td>
+						<td style="display: none"><%= rs_tw.getBoolean("stmr") %></td>
+						<td style="display: none"><%= rs_tw.getBoolean("limitedtime") %></td>							
 					</tr>
 					<% }
 					%>	
@@ -586,6 +658,9 @@
 						<th onclick="sortTable(5,'gun')" style="cursor:pointer">Base DEF </th>
 						<th onclick="sortTable(6,'gun')" style="cursor:pointer">Base SPR </th>
 						<th>Additional Effects</th>
+						<th style="display: none">TMR</th>
+						<th style="display: none">STMR</th>
+						<th style="display: none">Time Limited</th>						
 					</tr>
 					<%
 					while(rs_gun.next()) {
@@ -599,6 +674,9 @@
 						<td align="center"><%= rs_gun.getInt("basedef") %></td>
 						<td align="center"><%= rs_gun.getInt("basespr") %></td>
 						<td align="left" style="white-space: pre-wrap"><%= rs_gun.getString("effects") %></td>
+						<td style="display: none"><%= rs_gun.getBoolean("tmr") %></td>
+						<td style="display: none"><%= rs_gun.getBoolean("stmr") %></td>
+						<td style="display: none"><%= rs_gun.getBoolean("limitedtime") %></td>							
 					</tr>
 					<% }
 					%>	
@@ -625,6 +703,9 @@
 						<th onclick="sortTable(5,'mace')" style="cursor:pointer">Base DEF </th>
 						<th onclick="sortTable(6,'mace')" style="cursor:pointer">Base SPR </th>
 						<th>Additional Effects</th>
+						<th style="display: none">TMR</th>
+						<th style="display: none">STMR</th>
+						<th style="display: none">Time Limited</th>					
 					</tr>
 					<%
 					while(rs_mace.next()) {
@@ -638,6 +719,9 @@
 						<td align="center"><%= rs_mace.getInt("basedef") %></td>
 						<td align="center"><%= rs_mace.getInt("basespr") %></td>
 						<td align="left" style="white-space: pre-wrap"><%= rs_mace.getString("effects") %></td>
+						<td style="display: none"><%= rs_mace.getBoolean("tmr") %></td>
+						<td style="display: none"><%= rs_mace.getBoolean("stmr") %></td>
+						<td style="display: none"><%= rs_mace.getBoolean("limitedtime") %></td>							
 					</tr>
 					<% }
 					%>	
@@ -664,6 +748,9 @@
 						<th onclick="sortTable(5,'fist')" style="cursor:pointer">Base DEF </th>
 						<th onclick="sortTable(6,'fist')" style="cursor:pointer">Base SPR </th>
 						<th>Additional Effects</th>
+						<th style="display: none">TMR</th>
+						<th style="display: none">STMR</th>
+						<th style="display: none">Time Limited</th>						
 					</tr>
 					<%
 					while(rs_fist.next()) {
@@ -677,6 +764,9 @@
 						<td align="center"><%= rs_fist.getInt("basedef") %></td>
 						<td align="center"><%= rs_fist.getInt("basespr") %></td>
 						<td align="left" style="white-space: pre-wrap"><%= rs_fist.getString("effects") %></td>
+						<td style="display: none"><%= rs_fist.getBoolean("tmr") %></td>
+						<td style="display: none"><%= rs_fist.getBoolean("stmr") %></td>
+						<td style="display: none"><%= rs_fist.getBoolean("limitedtime") %></td>							
 					</tr>
 					<% }
 					%>	
