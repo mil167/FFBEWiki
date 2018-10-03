@@ -26,4 +26,9 @@ public class FFBEController implements WebMvcConfigurer{
 	public String filter() {
 		return "AdvSearch";
 	}
+	
+	@RequestMapping("/filter2")
+	public String filter2() {
+		return "AdvSearch2";
+	}
 }

@@ -6,7 +6,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <style><%@include file="/WEB-INF/css/AdvSearch.css"%></style>
-<title>FFBE Advanced Search</title>
+<title>FFBE Advanced Weapon Search</title>
 
 
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -19,7 +19,8 @@
 				<%
 				try {
 					Class.forName("org.postgresql.Driver");
-					String dbURL = "jdbc:postgresql://localhost:5432/springffbe?user=postgres&password=cse132b";
+					//String dbURL = "jdbc:postgresql://localhost:5432/springffbe?user=postgres&password=cse132b";
+					String dbURL = "jdbc:postgresql://ec2-54-235-90-0.compute-1.amazonaws.com:5432/ddpko2antmanq7?user=yqajgjdfdywxwf&password=c0d32a119c31956b3159809231b8167066e7ae0af40f09dea640db5ede8e0dde";
 					Connection con = DriverManager.getConnection(dbURL);
 				%>
 				<%
@@ -31,7 +32,8 @@
 					<li><a href="weapon">Weapons</a></li>
 					<li><a href="armor">Armors</a></li>
 					<li><a href="accessory">Accessories</a></li>
-					<li><a class="active" href="filter">Filter</a></li>
+					<li><a class="active" href="filter">Weapon Search</a></li>
+					<li><a href="filter2">Armor Search</a></li>
 				</ul>
 				<button onclick="backToTop()" id="topBtn" title="Scroll to Top">Top</button>
 				<br>
@@ -958,6 +960,7 @@ let swordIcon = document.querySelector("img[id=swordicon]");
 swordIcon.addEventListener('click', function() {
 	let brightImg = "../../resources/sword.png";
 	let darkImg = "../../resources/darksword.png";
+	// Include swords in search
 	if(document.getElementById("swordicon").getAttribute('src') == darkImg) {
 		document.getElementById("swordicon").src = brightImg;
 		document.getElementById("CBsword").checked = true;
@@ -1010,6 +1013,7 @@ swordIcon.addEventListener('click', function() {
 			}
 		}
 	}
+	// Ignore swords in search
 	else {
 		document.getElementById("swordicon").src = darkImg;	
 		document.getElementById("CBsword").checked = false;
@@ -1028,6 +1032,7 @@ let gswordIcon = document.querySelector("img[id=gswordicon]");
 gswordIcon.addEventListener('click', function() {
 	let brightImg = "../../resources/gsword.png";
 	let darkImg = "../../resources/darkgsword.png";
+	// Include great swords in search
 	if(document.getElementById("gswordicon").getAttribute('src') == darkImg) {
 		document.getElementById("gswordicon").src = brightImg;
 		document.getElementById("CBgsword").checked = true;
@@ -1080,6 +1085,7 @@ gswordIcon.addEventListener('click', function() {
 			}
 		}
 	}
+	// Ignore great swords in search
 	else {
 		document.getElementById("gswordicon").src = darkImg;	
 		document.getElementById("CBgsword").checked = false;
@@ -1098,6 +1104,7 @@ let katanaIcon = document.querySelector("img[id=katanaicon]");
 katanaIcon.addEventListener('click', function() {
 	let brightImg = "../../resources/katana.png";
 	let darkImg = "../../resources/darkkatana.png";
+	// Include katanas in search
 	if(document.getElementById("katanaicon").getAttribute('src') == darkImg) {
 		document.getElementById("katanaicon").src = brightImg;
 		document.getElementById("CBkatana").checked = true;
@@ -1150,6 +1157,7 @@ katanaIcon.addEventListener('click', function() {
 			}
 		}
 	}
+	// Ignore katanas in search
 	else {
 		document.getElementById("katanaicon").src = darkImg;	
 		document.getElementById("CBkatana").checked = false;
@@ -1168,6 +1176,7 @@ let staffIcon = document.querySelector("img[id=stafficon]");
 staffIcon.addEventListener('click', function() {
 	let brightImg = "../../resources/staff.png";
 	let darkImg = "../../resources/darkstaff.png";
+	// Include staves in search
 	if(document.getElementById("stafficon").getAttribute('src') == darkImg) {
 		document.getElementById("stafficon").src = brightImg;
 		document.getElementById("CBstaff").checked = true;
@@ -1220,6 +1229,7 @@ staffIcon.addEventListener('click', function() {
 			}
 		}
 	}
+	// Ignore staves in search
 	else {
 		document.getElementById("stafficon").src = darkImg;	
 		document.getElementById("CBstaff").checked = false;
@@ -1238,6 +1248,7 @@ let rodIcon = document.querySelector("img[id=rodicon]");
 rodIcon.addEventListener('click', function() {
 	let brightImg = "../../resources/rod.png";
 	let darkImg = "../../resources/darkrod.png";
+	// Include rods in search
 	if(document.getElementById("rodicon").getAttribute('src') == darkImg) {
 		document.getElementById("rodicon").src = brightImg;
 		document.getElementById("CBrod").checked = true;
@@ -1290,6 +1301,7 @@ rodIcon.addEventListener('click', function() {
 			}
 		}
 	}
+	// Ignore rods in search
 	else {
 		document.getElementById("rodicon").src = darksImg;	
 		document.getElementById("CBrod").checked = false;
@@ -1308,6 +1320,7 @@ let bowIcon = document.querySelector("img[id=bowicon]");
 bowIcon.addEventListener('click', function() {
 	let brightImg = "../../resources/bow.png";
 	let darkImg = "../../resources/darkbow.png";
+	// Include bows in search
 	if(document.getElementById("bowicon").getAttribute('src') == darkImg) {
 		document.getElementById("bowicon").src = brightImg;
 		document.getElementById("CBbow").checked = true;
@@ -1360,6 +1373,7 @@ bowIcon.addEventListener('click', function() {
 			}
 		}
 	}
+	// Ignore bows in search
 	else {
 		document.getElementById("bowicon").src = darkImg;	
 		document.getElementById("CBbow").checked = false;
@@ -1378,6 +1392,7 @@ let axeIcon = document.querySelector("img[id=axeicon]");
 axeIcon.addEventListener('click', function() {
 	let brightImg = "../../resources/axe.png";
 	let darkImg = "../../resources/darkaxe.png";
+	// Include axes in search
 	if(document.getElementById("axeicon").getAttribute('src') == darkImg) {
 		document.getElementById("axeicon").src = brightImg;
 		document.getElementById("CBaxe").checked = true;
@@ -1430,6 +1445,7 @@ axeIcon.addEventListener('click', function() {
 			}
 		}
 	}
+	// Ignore axes in search
 	else {
 		document.getElementById("axeicon").src = darkImg;	
 		document.getElementById("CBaxe").checked = false;
@@ -1448,6 +1464,7 @@ let hammerIcon = document.querySelector("img[id=hammericon]");
 hammerIcon.addEventListener('click', function() {
 	let brightImg = "../../resources/hammer.png";
 	let darkImg = "../../resources/darkhammer.png";
+	// Include hammers in search
 	if(document.getElementById("hammericon").getAttribute('src') == darkImg) {
 		document.getElementById("hammericon").src = brightImg;
 		document.getElementById("CBhammer").checked = true;
@@ -1500,6 +1517,7 @@ hammerIcon.addEventListener('click', function() {
 			}
 		}
 	}
+	// Ignore hammers in search
 	else {
 		document.getElementById("hammericon").src = darkImg;	
 		document.getElementById("CBhammer").checked = false;
@@ -1518,6 +1536,7 @@ let spearIcon = document.querySelector("img[id=spearicon]");
 spearIcon.addEventListener('click', function() {
 	let brightImg = "../../resources/spear.png";
 	let darkImg = "../../resources/darkspear.png";
+	// Include spears in search
 	if(document.getElementById("spearicon").getAttribute('src') == darkImg) {
 		document.getElementById("spearicon").src = brightImg;
 		document.getElementById("CBspear").checked = true;
@@ -1570,6 +1589,7 @@ spearIcon.addEventListener('click', function() {
 			}
 		}
 	}
+	// Ignore spears in search
 	else {
 		document.getElementById("spearicon").src = darkImg;	
 		document.getElementById("CBspear").checked = false;
@@ -1588,6 +1608,7 @@ let harpIcon = document.querySelector("img[id=harpicon]");
 harpIcon.addEventListener('click', function() {
 	let brightImg = "../../resources/harp.png";
 	let darkImg = "../../resources/darkharp.png";
+	// Include harps in search
 	if(document.getElementById("harpicon").getAttribute('src') == darkImg) {
 		document.getElementById("harpicon").src = brightImg;
 		document.getElementById("CBharp").checked = true;
@@ -1640,6 +1661,7 @@ harpIcon.addEventListener('click', function() {
 			}
 		}
 	}
+	// Ignore harps in search
 	else {
 		document.getElementById("harpicon").src = darkImg;	
 		document.getElementById("CBharp").checked = false;
@@ -1658,6 +1680,7 @@ let whipIcon = document.querySelector("img[id=whipicon]");
 whipIcon.addEventListener('click', function() {
 	let brightImg = "../../resources/whip.png";
 	let darkImg = "../../resources/darkwhip.png";
+	// Include whips in search
 	if(document.getElementById("whipicon").getAttribute('src') == darkImg) {
 		document.getElementById("whipicon").src = brightImg;
 		document.getElementById("CBwhip").checked = true;
@@ -1710,6 +1733,7 @@ whipIcon.addEventListener('click', function() {
 			}
 		}
 	}
+	// Ignore whips in search
 	else {
 		document.getElementById("whipicon").src = darkImg;	
 		document.getElementById("CBwhip").checked = false;
@@ -1728,6 +1752,7 @@ let twIcon = document.querySelector("img[id=twicon]");
 twIcon.addEventListener('click', function() {
 	let brightImg = "../../resources/tw.png";
 	let darkImg = "../../resources/darktw.png";
+	// Include throwing weapons in search
 	if(document.getElementById("twicon").getAttribute('src') == darkImg) {
 		document.getElementById("twicon").src = brightImg;
 		document.getElementById("CBtw").checked = true;
@@ -1780,6 +1805,7 @@ twIcon.addEventListener('click', function() {
 			}
 		}
 	}
+	// Ignore throwing weapons in search
 	else {
 		document.getElementById("twicon").src = darkImg;	
 		document.getElementById("CBtw").checked = false;
@@ -1798,6 +1824,7 @@ let gunIcon = document.querySelector("img[id=gunicon]");
 gunIcon.addEventListener('click', function() {
 	let brightImg = "../../resources/gun.png";
 	let darkImg = "../../resources/darkgun.png";
+	// Include guns in search
 	if(document.getElementById("gunicon").getAttribute('src') == darkImg) {
 		document.getElementById("gunicon").src = brightImg;
 		document.getElementById("CBgun").checked = true;
@@ -1850,6 +1877,7 @@ gunIcon.addEventListener('click', function() {
 			}
 		}
 	}
+	// Ignore guns in search
 	else {
 		document.getElementById("gunicon").src = darkImg;	
 		document.getElementById("CBgun").checked = false;
@@ -1868,6 +1896,7 @@ let maceIcon = document.querySelector("img[id=maceicon]");
 maceIcon.addEventListener('click', function() {
 	let brightImg = "../../resources/mace.png";
 	let darkImg = "../../resources/darkmace.png";
+	// Include maces in search
 	if(document.getElementById("maceicon").getAttribute('src') == darkImg) {
 		document.getElementById("maceicon").src = brightImg;
 		document.getElementById("CBmace").checked = true;
@@ -1920,6 +1949,7 @@ maceIcon.addEventListener('click', function() {
 			}
 		}
 	}
+	// Ignore maces in search
 	else {
 		document.getElementById("maceicon").src = darkImg;	
 		document.getElementById("CBmace").checked = false;
@@ -1938,6 +1968,7 @@ let fistIcon = document.querySelector("img[id=fisticon]");
 fistIcon.addEventListener('click', function() {
 	let brightImg = "../../resources/fist.png";
 	let darkImg = "../../resources/darkfist.png";
+	// Include fists in search
 	if(document.getElementById("fisticon").getAttribute('src') == darkImg) {
 		document.getElementById("fisticon").src = brightImg;
 		document.getElementById("CBfist").checked = true;
@@ -1990,6 +2021,7 @@ fistIcon.addEventListener('click', function() {
 			}
 		}
 	}
+	// Ignore fists in search
 	else {
 		document.getElementById("fisticon").src = darkImg;	
 		document.getElementById("CBfist").checked = false;
