@@ -19,8 +19,8 @@
 				<%
 				try {
 					Class.forName("org.postgresql.Driver");
-					//String dbURL = "jdbc:postgresql://localhost:5432/springffbe?user=postgres&password=cse132b";
-					String dbURL = "jdbc:postgresql://ec2-54-235-90-0.compute-1.amazonaws.com:5432/ddpko2antmanq7?user=yqajgjdfdywxwf&password=c0d32a119c31956b3159809231b8167066e7ae0af40f09dea640db5ede8e0dde";
+					String dbURL = "jdbc:postgresql://localhost:5432/springffbe?user=postgres&password=cse132b";
+					//String dbURL = "jdbc:postgresql://ec2-54-235-90-0.compute-1.amazonaws.com:5432/ddpko2antmanq7?user=yqajgjdfdywxwf&password=c0d32a119c31956b3159809231b8167066e7ae0af40f09dea640db5ede8e0dde";
 					Connection con = DriverManager.getConnection(dbURL);
 				%>
 				<%
@@ -39,28 +39,82 @@
 				<br>
 				<p> Advanced Weapon Search (WIP) </p>
 				
-				<div class="row">
-					<div class="column">
-						<img src="../../resources/darkdagger.png" alt="dagger" id="daggericon">
-						<img src="../../resources/darksword.png" alt="sword" id="swordicon">
-						<img src="../../resources/darkgsword.png" alt="gsword" id="gswordicon">
-						<img src="../../resources/darkkatana.png" alt="katana" id="katanaicon">
-						<img src="../../resources/darkstaff.png" alt="staff" id="stafficon">
-						<img src="../../resources/darkrod.png" alt="rod" id="rodicon">	
-						<img src="../../resources/darkbow.png" alt="bow" id="bowicon">
-						<img src="../../resources/darkaxe.png" alt="axe" id="axeicon">
+				<div class="col-container">
+					<div class="col">
+						<div class="row">
+							<div class="column">
+								<img src="../../resources/darkdagger.png" alt="dagger" id="daggericon">
+								<img src="../../resources/darksword.png" alt="sword" id="swordicon">
+								<img src="../../resources/darkgsword.png" alt="gsword" id="gswordicon">
+								<img src="../../resources/darkkatana.png" alt="katana" id="katanaicon">
+							</div>
+							<div class="column">
+								<img src="../../resources/darkstaff.png" alt="staff" id="stafficon">
+								<img src="../../resources/darkrod.png" alt="rod" id="rodicon">	
+								<img src="../../resources/darkbow.png" alt="bow" id="bowicon">
+								<img src="../../resources/darkaxe.png" alt="axe" id="axeicon">
+							</div>
+							<div class="column">
+								<img src="../../resources/darkhammer.png" alt="hammer" id="hammericon">
+								<img src="../../resources/darkspear.png" alt="spear" id="spearicon">
+								<img src="../../resources/darkharp.png" alt="harp" id="harpicon">
+								<img src="../../resources/darkwhip.png" alt="whip" id="whipicon">
+							</div>
+							<div class="column">
+								<img src="../../resources/darktw.png" alt="tw" id="twicon">
+								<img src="../../resources/darkgun.png" alt="gun" id="gunicon">	
+								<img src="../../resources/darkmace.png" alt="mace" id="maceicon">
+								<img src="../../resources/darkfist.png" alt="fist" id="fisticon">
+							</div>							
+						</div>	
 					</div>
-					<div class="column">
-						<img src="../../resources/darkhammer.png" alt="hammer" id="hammericon">
-						<img src="../../resources/darkspear.png" alt="spear" id="spearicon">
-						<img src="../../resources/darkharp.png" alt="harp" id="harpicon">
-						<img src="../../resources/darkwhip.png" alt="whip" id="whipicon">
-						<img src="../../resources/darktw.png" alt="tw" id="twicon">
-						<img src="../../resources/darkgun.png" alt="gun" id="gunicon">	
-						<img src="../../resources/darkmace.png" alt="mace" id="maceicon">
-						<img src="../../resources/darkfist.png" alt="fist" id="fisticon">
-					</div>							
-				</div>	
+					<div class="col">
+						<div class="row">
+							<div class="column">
+								<img src ="../../resources/darkfire.png" alt="fire" id="fireicon">
+								<img src ="../../resources/darkice.png" alt="ice" id="iceicon">
+							</div>
+							<div class="column">
+								<img src ="../../resources/darklightning.png" alt="lightning" id="lightningicon">
+								<img src ="../../resources/darkwater.png" alt="water" id="watericon">
+							</div>
+							<div class="column">
+								<img src ="../../resources/darkwind.png" alt="wind" id="windicon">
+								<img src ="../../resources/darkearth.png" alt="earth" id="earthicon">							
+							</div>
+							<div class="column">
+								<img src ="../../resources/darklight.png" alt="light" id="lighticon">
+								<img src ="../../resources/darkdark.png" alt="dark" id="darkicon">							
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="row">
+							<img src ="../../resources/darkevade.png" alt="evade" id="evadeicon">
+						</div>
+						<div class="row">
+							<input id="CBTMR" type="checkbox" name="daggerTMR">Ignore TMR(s)
+							<label class="switch">
+								<input type="checkbox">
+								<span class="slider"></span>
+							</label>
+						</div>
+						<div class="row">
+							<input id="CBSTMR" type="checkbox" name="daggerSTMR">Ignore STMR(s)			
+							<label class="switch">
+								<input type="checkbox">
+								<span class="slider"></span>
+							</label>			
+						</div>
+						<div class="row">
+							<input id="CBLT" type="checkbox" name="daggerLT">Ignore Limited Time Item(s) (i.e. King Mog, Story Event, Premium Bundles, etc.)
+							<label class="switch">
+								<input type="checkbox">
+								<span class="slider"></span>
+							</label>						
+						</div>
+					</div>
+				</div>
 				
 				<input id="CBdagger" type="checkbox" name="CBdagger" style="display:none">
 				<input id="CBsword" type="checkbox" name="CBsword" style="display:none">
@@ -77,20 +131,7 @@
 				<input id="CBtw" type="checkbox" name="CBtw" style="display:none">
 				<input id="CBgun" type="checkbox" name="CBgun" style="display:none">
 				<input id="CBmace" type="checkbox" name="CBmace" style="display:none">
-				<input id="CBfist" type="checkbox" name="CBfist" style="display:none">
-				
-				<div class="row">
-					<div class="column">
-						<img src ="../../resources/darkfire.png" alt="fire" id="fireicon">
-						<img src ="../../resources/darkice.png" alt="ice" id="iceicon">
-						<img src ="../../resources/darklightning.png" alt="lightning" id="lightningicon">
-						<img src ="../../resources/darkwater.png" alt="water" id="watericon">
-						<img src ="../../resources/darkwind.png" alt="wind" id="windicon">
-						<img src ="../../resources/darkearth.png" alt="earth" id="earthicon">
-						<img src ="../../resources/darklight.png" alt="light" id="lighticon">
-						<img src ="../../resources/darkdark.png" alt="dark" id="darkicon">
-					</div>
-				</div>		
+				<input id="CBfist" type="checkbox" name="CBfist" style="display:none">	
 				
 				<input id="CBfire"	type="checkbox" name="CBfire" style="display:none">
 				<input id="CBice"	type="checkbox" name="CBice" style="display:none">

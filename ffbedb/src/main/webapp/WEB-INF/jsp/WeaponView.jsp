@@ -18,8 +18,8 @@
 				<%
 				try {
 					Class.forName("org.postgresql.Driver");
-					//String dbURL = "jdbc:postgresql://localhost:5432/springffbe?user=postgres&password=cse132b";
-					String dbURL = "jdbc:postgresql://ec2-54-235-90-0.compute-1.amazonaws.com:5432/ddpko2antmanq7?user=yqajgjdfdywxwf&password=c0d32a119c31956b3159809231b8167066e7ae0af40f09dea640db5ede8e0dde";
+					String dbURL = "jdbc:postgresql://localhost:5432/springffbe?user=postgres&password=cse132b";
+					//String dbURL = "jdbc:postgresql://ec2-54-235-90-0.compute-1.amazonaws.com:5432/ddpko2antmanq7?user=yqajgjdfdywxwf&password=c0d32a119c31956b3159809231b8167066e7ae0af40f09dea640db5ede8e0dde";
 					Connection con = DriverManager.getConnection(dbURL);
 				%>
 				<%
@@ -31,7 +31,7 @@
 					<li id="navbar"><a class="active" href="weapon">Weapons</a></li>
 					<li id="navbar"><a href="armor">Armors</a></li>
 					<li id="navbar"><a href="accessory">Accessories</a></li>
-					<li><a href="filter">Filter</a></li>
+					<li><a href="filter">Weapon Search</a></li>
 					<li><a href="filter2">Armor Search</a></li>
 				</ul>
 				<button onclick="backToTop()" id="topBtn" title="Scroll to Top">Top</button>
@@ -39,27 +39,27 @@
 				<div id="listcontents">
 					<p><strong>&nbsp;&nbsp;Contents&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a onclick="hide()" id="hide">[hide]</a></strong></p>
 					<ol id="contents">
-						<li><a href="#Daggers">Daggers</a></li>
-						<li><a href="#Swords">Swords</a></li>
-						<li><a href="#Great Swords">Great Swords</a></li>
-						<li><a href="#Katanas">Katanas</a></li>
-						<li><a href="#Staves">Staves</a></li>
-						<li><a href="#Rods">Rods</a></li>
-						<li><a href="#Bows">Bows</a></li>
-						<li><a href="#Axes">Axes</a></li>
-						<li><a href="#Hammers">Hammers</a></li>
-						<li><a href="#Spears">Spears</a></li>
-						<li><a href="#Harps">Harps</a></li>
-						<li><a href="#Whips">Whips</a></li>
-						<li><a href="#Throwing Weapons">Throwing Weapons</a></li>
-						<li><a href="#Guns">Guns</a></li>
-						<li><a href="#Maces">Maces</a></li>
-						<li><a href="#Fists">Fists</a></li>
+						<li><a href="#daggers">Daggers</a></li>
+						<li><a href="#swords">Swords</a></li>
+						<li><a href="#great_swords">Great Swords</a></li>
+						<li><a href="#katanas">Katanas</a></li>
+						<li><a href="#staves">Staves</a></li>
+						<li><a href="#rods">Rods</a></li>
+						<li><a href="#bows">Bows</a></li>
+						<li><a href="#axes">Axes</a></li>
+						<li><a href="#hammers">Hammers</a></li>
+						<li><a href="#spears">Spears</a></li>
+						<li><a href="#harps">Harps</a></li>
+						<li><a href="#whips">Whips</a></li>
+						<li><a href="#throwing_weapons">Throwing Weapons</a></li>
+						<li><a href="#guns">Guns</a></li>
+						<li><a href="#maces">Maces</a></li>
+						<li><a href="#fists">Fists</a></li>
 					</ol>
 				</div>
 				<br>
 				<br>
-				<div id="daggerDiv">
+				<div id="genDiv"><a id="daggers"></a>
 				<h1><strong>Daggers</strong></h1>
 				<input id="CBdaggerTMR" type="checkbox" name="daggerTMR">Ignore TMR(s)
 				<input id="CBdaggerSTMR" type="checkbox" name="daggerSTMR">Ignore STMR(s)
@@ -104,7 +104,7 @@
 				Statement statement_sword = con.createStatement();
 				ResultSet rs_sword = statement_sword.executeQuery("SELECT * FROM public.sword");
 				%>
-				<div id = "swordDiv">
+				<div id = "genDiv"><a id="swords"></a>
 				<h1><strong>Swords</strong></h1>
 				<input id="CBswordTMR" type="checkbox" name="swordTMR">Ignore TMR(s)
 				<input id="CBswordSTMR" type="checkbox" name="swordSTMR">Ignore STMR(s)
@@ -149,8 +149,8 @@
 				Statement statement_gsword = con.createStatement();
 				ResultSet rs_gsword = statement_gsword.executeQuery("SELECT * FROM public.gsword");
 				%>
-				<div id ="gswordDiv">
-				<h1><strong>Swords</strong></h1>
+				<div id ="genDiv"><a id="great_swords"></a>
+				<h1><strong>Great Swords</strong></h1>
 				<input id="CBgswordTMR" type="checkbox" name="gswordTMR">Ignore TMR(s)
 				<input id="CBgswordSTMR" type="checkbox" name="gswordSTMR">Ignore STMR(s)
 				<input id="CBgswordLT" type="checkbox" name="gswordLT">Ignore Limited Time Item(s) (i.e. King Mog, Story Event, Premium Bundles, etc.)
@@ -195,7 +195,7 @@
 				Statement statement_staff = con.createStatement();
 				ResultSet rs_staff = statement_staff.executeQuery("SELECT * FROM public.staff");
 				%>
-				<div id = "staffDiv">
+				<div id = "genDiv"><a id="staves"></a>
 				<h1><strong>Staves</strong></h1>
 				<input id="CBstaffTMR" type="checkbox" name="staffTMR">Ignore TMR(s)
 				<input id="CBstaffSTMR" type="checkbox" name="staffSTMR">Ignore STMR(s)
@@ -240,7 +240,7 @@
 				Statement statement_katana = con.createStatement();
 				ResultSet rs_katana = statement_katana.executeQuery("SELECT * FROM public.katana");
 				%>
-				<div id = "katanaDiv">
+				<div id = "genDiv"><a id="katanas"></a>
 				<h1><strong>Katanas</strong></h1>
 				<input id="CBkatanaTMR" type="checkbox" name="katanaTMR">Ignore TMR(s)
 				<input id="CBkatanaSTMR" type="checkbox" name="katanaSTMR">Ignore STMR(s)
@@ -285,7 +285,7 @@
 				Statement statement_rod = con.createStatement();
 				ResultSet rs_rod = statement_rod.executeQuery("SELECT * FROM public.rod");
 				%>
-				<div id = "rodDiv">
+				<div id = "genDiv"><a id="rods"></a>
 				<h1><strong>Rods</strong></h1>
 				<input id="CBrodTMR" type="checkbox" name="rodTMR">Ignore TMR(s)
 				<input id="CBrodSTMR" type="checkbox" name="rodSTMR">Ignore STMR(s)
@@ -330,7 +330,7 @@
 				Statement statement_bow = con.createStatement();
 				ResultSet rs_bow = statement_bow.executeQuery("SELECT * FROM public.bow");
 				%>
-				<div id = "bowDiv">
+				<div id = "genDiv"><a id="bows"></a>
 				<h1><strong>Bows</strong></h1>
 				<input id="CBbowTMR" type="checkbox" name="bowTMR">Ignore TMR(s)
 				<input id="CBbowSTMR" type="checkbox" name="bowSTMR">Ignore STMR(s)
@@ -375,7 +375,7 @@
 				Statement statement_axe = con.createStatement();
 				ResultSet rs_axe = statement_axe.executeQuery("SELECT * FROM public.axe");
 				%>
-				<div id = "axeDiv">
+				<div id = "genDiv"><a id="axes"></a>
 				<h1><strong>Axes</strong></h1>
 				<input id="CBaxeTMR" type="checkbox" name="axeTMR">Ignore TMR(s)
 				<input id="CBaxeSTMR" type="checkbox" name="axeSTMR">Ignore STMR(s)
@@ -420,7 +420,7 @@
 				Statement statement_hammer = con.createStatement();
 				ResultSet rs_hammer = statement_hammer.executeQuery("SELECT * FROM public.hammer");
 				%>
-				<div id = "hammerDiv">
+				<div id = "genDiv"><a id="hammers"></a>
 				<h1><strong>Hammers</strong></h1>
 				<input id="CBhammerTMR" type="checkbox" name="hammerTMR">Ignore TMR(s)
 				<input id="CBhammerSTMR" type="checkbox" name="hammerSTMR">Ignore STMR(s)
@@ -465,7 +465,7 @@
 				Statement statement_spear = con.createStatement();
 				ResultSet rs_spear = statement_spear.executeQuery("SELECT * FROM public.spear");
 				%>
-				<div id = "spearDiv">
+				<div id = "genDiv"><a id="spears"></a>
 				<h1><strong>Spears</strong></h1>
 				<input id="CBspearTMR" type="checkbox" name="spearTMR">Ignore TMR(s)
 				<input id="CBspearSTMR" type="checkbox" name="spearSTMR">Ignore STMR(s)
@@ -510,7 +510,7 @@
 				Statement statement_harp = con.createStatement();
 				ResultSet rs_harp = statement_harp.executeQuery("SELECT * FROM public.harp");
 				%>
-				<div id = "harpDiv">
+				<div id = "genDiv"><a id="harps"></a>
 				<h1><strong>Harps</strong></h1>
 				<input id="CBharpTMR" type="checkbox" name="harpTMR">Ignore TMR(s)
 				<input id="CBharpSTMR" type="checkbox" name="harpSTMR">Ignore STMR(s)
@@ -555,7 +555,7 @@
 				Statement statement_whip = con.createStatement();
 				ResultSet rs_whip = statement_whip.executeQuery("SELECT * FROM public.whip");
 				%>
-				<div id = "whipDiv">
+				<div id = "genDiv"><a id="whips"></a>
 				<h1><strong>Whips</strong></h1>
 				<input id="CBwhipTMR" type="checkbox" name="whipTMR">Ignore TMR(s)
 				<input id="CBwhipSTMR" type="checkbox" name="whipSTMR">Ignore STMR(s)
@@ -600,7 +600,7 @@
 				Statement statement_tw = con.createStatement();
 				ResultSet rs_tw = statement_tw.executeQuery("SELECT * FROM public.tw");
 				%>
-				<div id = "twDiv">
+				<div id = "genDiv"><a id="throwing_weapons"></a>
 				<h1><strong>Throwing Weapons</strong></h1>
 				<input id="CBtwTMR" type="checkbox" name="twTMR">Ignore TMR(s)
 				<input id="CBtwSTMR" type="checkbox" name="twSTMR">Ignore STMR(s)
@@ -645,7 +645,7 @@
 				Statement statement_gun = con.createStatement();
 				ResultSet rs_gun = statement_gun.executeQuery("SELECT * FROM public.gun");
 				%>
-				<div id = "gunDiv">
+				<div id = "genDiv"><a id="guns"></a>
 				<h1><strong>Guns</strong></h1>
 				<input id="CBgunTMR" type="checkbox" name="gunTMR">Ignore TMR(s)
 				<input id="CBgunSTMR" type="checkbox" name="gunSTMR">Ignore STMR(s)
@@ -690,7 +690,7 @@
 				Statement statement_mace = con.createStatement();
 				ResultSet rs_mace = statement_mace.executeQuery("SELECT * FROM public.mace");
 				%>
-				<div id = "maceDiv">
+				<div id = "genDiv"><a id="maces"></a>
 				<h1><strong>Maces</strong></h1>
 				<input id="CBmaceTMR" type="checkbox" name="maceTMR">Ignore TMR(s)
 				<input id="CBmaceSTMR" type="checkbox" name="maceSTMR">Ignore STMR(s)
@@ -735,7 +735,7 @@
 				Statement statement_fist = con.createStatement();
 				ResultSet rs_fist = statement_fist.executeQuery("SELECT * FROM public.fist");
 				%>
-				<div id = "fistDiv">
+				<div id = "genDiv"><a id="fists"></a>
 				<h1><strong>Fists</strong></h1>
 				<input id="CBfistTMR" type="checkbox" name="fistTMR">Ignore TMR(s)
 				<input id="CBfistSTMR" type="checkbox" name="fistSTMR">Ignore STMR(s)
@@ -1006,5 +1006,1128 @@ daggerLTCB.addEventListener('change', function() {
 	}
 });
 
+let swordTMRCB = document.querySelector("input[name=swordTMR]");
+swordTMRCB.addEventListener('change', function() {
+	let table = document.getElementById("sword");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[8];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[8];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
+
+let swordSTMRCB = document.querySelector("input[name=swordSTMR]");
+swordSTMRCB.addEventListener('change', function() {
+	let table = document.getElementById("sword");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[9];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[9];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
+
+let swordLTCB = document.querySelector("input[name=swordLT]");
+swordLTCB.addEventListener('change', function() {
+	let table = document.getElementById("sword");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[10];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[10];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
+
+let gswordTMRCB = document.querySelector("input[name=gswordTMR]");
+gswordTMRCB.addEventListener('change', function() {
+	let table = document.getElementById("gsword");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[8];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[8];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
+
+let gswordSTMRCB = document.querySelector("input[name=gswordSTMR]");
+gswordSTMRCB.addEventListener('change', function() {
+	let table = document.getElementById("gsword");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[9];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[9];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
+
+let gswordLTCB = document.querySelector("input[name=gswordLT]");
+gswordLTCB.addEventListener('change', function() {
+	let table = document.getElementById("gsword");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[10];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[10];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
+
+let katanaTMRCB = document.querySelector("input[name=katanaTMR]");
+katanaTMRCB.addEventListener('change', function() {
+	let table = document.getElementById("katana");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[8];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[8];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
+
+let katanaSTMRCB = document.querySelector("input[name=katanaSTMR]");
+katanaSTMRCB.addEventListener('change', function() {
+	let table = document.getElementById("katana");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[9];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[9];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
+
+let katanaLTCB = document.querySelector("input[name=katanaLT]");
+katanaLTCB.addEventListener('change', function() {
+	let table = document.getElementById("katana");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[10];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[10];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
+
+let staffTMRCB = document.querySelector("input[name=staffTMR]");
+staffTMRCB.addEventListener('change', function() {
+	let table = document.getElementById("staff");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[8];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[8];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
+
+let staffSTMRCB = document.querySelector("input[name=staffSTMR]");
+staffSTMRCB.addEventListener('change', function() {
+	let table = document.getElementById("staff");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[9];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[9];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
+
+let staffLTCB = document.querySelector("input[name=staffLT]");
+staffLTCB.addEventListener('change', function() {
+	let table = document.getElementById("staff");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[10];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[10];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
+
+let rodTMRCB = document.querySelector("input[name=rodTMR]");
+rodTMRCB.addEventListener('change', function() {
+	let table = document.getElementById("rod");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[8];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[8];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
+
+let rodSTMRCB = document.querySelector("input[name=rodSTMR]");
+rodSTMRCB.addEventListener('change', function() {
+	let table = document.getElementById("rod");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[9];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[9];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
+
+let rodLTCB = document.querySelector("input[name=rodLT]");
+rodLTCB.addEventListener('change', function() {
+	let table = document.getElementById("rod");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[10];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[10];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
+let bowTMRCB = document.querySelector("input[name=bowTMR]");
+bowTMRCB.addEventListener('change', function() {
+	let table = document.getElementById("bow");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[8];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[8];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
+
+let bowSTMRCB = document.querySelector("input[name=bowSTMR]");
+bowSTMRCB.addEventListener('change', function() {
+	let table = document.getElementById("bow");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[9];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[9];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
+
+let bowLTCB = document.querySelector("input[name=bowLT]");
+bowLTCB.addEventListener('change', function() {
+	let table = document.getElementById("bow");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[10];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[10];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
+
+let axeTMRCB = document.querySelector("input[name=axeTMR]");
+axeTMRCB.addEventListener('change', function() {
+	let table = document.getElementById("axe");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[8];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[8];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
+
+let axeSTMRCB = document.querySelector("input[name=axeSTMR]");
+axeSTMRCB.addEventListener('change', function() {
+	let table = document.getElementById("axe");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[9];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[9];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
+
+let axeLTCB = document.querySelector("input[name=axeLT]");
+axeLTCB.addEventListener('change', function() {
+	let table = document.getElementById("axe");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[10];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[10];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
+
+let hammerTMRCB = document.querySelector("input[name=hammerTMR]");
+hammerTMRCB.addEventListener('change', function() {
+	let table = document.getElementById("hammer");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[8];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[8];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
+
+let hammerSTMRCB = document.querySelector("input[name=hammerSTMR]");
+hammerSTMRCB.addEventListener('change', function() {
+	let table = document.getElementById("hammer");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[9];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[9];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
+
+let hammerLTCB = document.querySelector("input[name=hammerLT]");
+hammerLTCB.addEventListener('change', function() {
+	let table = document.getElementById("hammer");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[10];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[10];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
+
+let spearTMRCB = document.querySelector("input[name=spearTMR]");
+spearTMRCB.addEventListener('change', function() {
+	let table = document.getElementById("spear");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[8];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[8];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
+
+let spearSTMRCB = document.querySelector("input[name=spearSTMR]");
+spearSTMRCB.addEventListener('change', function() {
+	let table = document.getElementById("spear");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[9];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[9];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
+
+let spearLTCB = document.querySelector("input[name=spearLT]");
+spearLTCB.addEventListener('change', function() {
+	let table = document.getElementById("spear");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[10];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[10];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
+
+let harpTMRCB = document.querySelector("input[name=harpTMR]");
+harpTMRCB.addEventListener('change', function() {
+	let table = document.getElementById("harp");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[8];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[8];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
+
+let harpSTMRCB = document.querySelector("input[name=harpSTMR]");
+harpSTMRCB.addEventListener('change', function() {
+	let table = document.getElementById("harp");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[9];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[9];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
+
+let harpLTCB = document.querySelector("input[name=harpLT]");
+harpLTCB.addEventListener('change', function() {
+	let table = document.getElementById("harp");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[10];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[10];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
+
+let whipTMRCB = document.querySelector("input[name=whipTMR]");
+whipTMRCB.addEventListener('change', function() {
+	let table = document.getElementById("whip");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[8];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[8];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
+
+let whipSTMRCB = document.querySelector("input[name=whipSTMR]");
+whipSTMRCB.addEventListener('change', function() {
+	let table = document.getElementById("whip");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[9];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[9];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
+
+let whipLTCB = document.querySelector("input[name=whipLT]");
+whipLTCB.addEventListener('change', function() {
+	let table = document.getElementById("whip");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[10];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[10];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
+
+let twTMRCB = document.querySelector("input[name=twTMR]");
+twTMRCB.addEventListener('change', function() {
+	let table = document.getElementById("tw");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[8];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[8];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
+
+let twSTMRCB = document.querySelector("input[name=twSTMR]");
+twSTMRCB.addEventListener('change', function() {
+	let table = document.getElementById("tw");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[9];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[9];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
+
+let twLTCB = document.querySelector("input[name=twLT]");
+twLTCB.addEventListener('change', function() {
+	let table = document.getElementById("tw");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[10];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[10];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
+
+let gunTMRCB = document.querySelector("input[name=gunTMR]");
+gunTMRCB.addEventListener('change', function() {
+	let table = document.getElementById("gun");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[8];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[8];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
+
+let gunSTMRCB = document.querySelector("input[name=gunSTMR]");
+gunSTMRCB.addEventListener('change', function() {
+	let table = document.getElementById("gun");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[9];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[9];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
+
+let gunLTCB = document.querySelector("input[name=gunLT]");
+gunLTCB.addEventListener('change', function() {
+	let table = document.getElementById("gun");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[10];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[10];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
+
+let maceTMRCB = document.querySelector("input[name=maceTMR]");
+maceTMRCB.addEventListener('change', function() {
+	let table = document.getElementById("mace");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[8];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[8];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
+
+let maceSTMRCB = document.querySelector("input[name=maceSTMR]");
+maceSTMRCB.addEventListener('change', function() {
+	let table = document.getElementById("mace");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[9];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[9];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
+
+let maceLTCB = document.querySelector("input[name=maceLT]");
+maceLTCB.addEventListener('change', function() {
+	let table = document.getElementById("mace");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[10];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[10];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
+
+let fistTMRCB = document.querySelector("input[name=fistTMR]");
+fistTMRCB.addEventListener('change', function() {
+	let table = document.getElementById("fist");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[8];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[8];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
+
+let fistSTMRCB = document.querySelector("input[name=fistSTMR]");
+fistSTMRCB.addEventListener('change', function() {
+	let table = document.getElementById("fist");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[9];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[9];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
+
+let fistLTCB = document.querySelector("input[name=fistLT]");
+fistLTCB.addEventListener('change', function() {
+	let table = document.getElementById("fist");
+	let rows = table.rows;
+	let x, i = 0;
+	
+	if(this.checked) {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[10];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = 'none';
+			}
+		}
+	}
+	else {
+		for (i = 1; i < (rows.length - 1); i++) {
+			x = rows[i].getElementsByTagName("TD")[10];
+			if(x.innerHTML === 'true') {
+				rows[i].style.display = '';
+			}
+		}
+		
+	}
+});
 </script>
 </html>

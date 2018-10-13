@@ -80,6 +80,8 @@ ul > li a:hover:not(.active) {
         border:1px solid #000;
         padding:2px;
         background-color: #fffff0;
+        margin-left: 100px;
+		margin-right: 100px;
 }
 
 #hide {
@@ -99,8 +101,10 @@ html {
   background-size: cover;
 }
 
-#daggerDiv {
+#genDiv {
 	background-color: #fffff0;
+	margin-left: 100px;
+	margin-right: 100px;
 }
 
 caption {
