@@ -8,5 +8,7 @@ Please note that this app is still in development! It will be updated regularly,
 
 
 10/3/2018 - A beta version of the app is now available on Heroku at ffbewiki1.herokuapp.com/weapon
+
+
 10/12/2018 - Story Event: Piercing Light - CG Citra banner data has been uploaded.
 
