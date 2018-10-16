@@ -37,6 +37,7 @@
 				</ul>
 				<button onclick="backToTop()" id="topBtn" title="Scroll to Top">Top</button>
 				<br>
+				<div id="genDiv">
 				<h2>Accessories</h2>
 				<table id="accs">
 					<tr>
@@ -65,10 +66,9 @@
 					<% }
 					%>
 				</table>
+				</div>
 				<%
 
-				
-				
 				rs.close();
 				statement.close();
 				con.close();

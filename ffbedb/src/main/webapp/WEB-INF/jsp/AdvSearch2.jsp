@@ -981,7 +981,7 @@ larmorIcon.addEventListener('click', function() {
 		}
 	}
 	else {
-		document.getElementById("larmoricon").src = darksImg;	
+		document.getElementById("larmoricon").src = darkImg;	
 		document.getElementById("CBlarmor").checked = false;
 		
 		let x, i = 0;

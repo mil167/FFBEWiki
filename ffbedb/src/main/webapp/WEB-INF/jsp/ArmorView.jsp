@@ -40,19 +40,19 @@
 				<div id="listcontents">
 					<p><strong>&nbsp;&nbsp;Contents&nbsp;&nbsp;&nbsp;&nbsp;<a onclick="hide()" id="hide">[hide]</a></strong></p>
 					<ol id="contents">
-						<li><a href="#Light Shields">Light Shields</a></li>
-						<li><a href="#Heavy Shields">Heavy Shields</a></li>
-						<li><a href="#Hats">Hats</a></li>
-						<li><a href="#Helms">Helms</a></li>
-						<li><a href="#Clothes">Clothes</a></li>
-						<li><a href="#Light Armors">Light Armors</a></li>
-						<li><a href="#Heavy Armors">Heavy Armors</a></li>
-						<li><a href="#Robes">Robes</a></li>
+						<li><a href="#lshields">Light Shields</a></li>
+						<li><a href="#hshields">Heavy Shields</a></li>
+						<li><a href="#hats">Hats</a></li>
+						<li><a href="#helms">Helms</a></li>
+						<li><a href="#clothes">Clothes</a></li>
+						<li><a href="#larmors">Light Armors</a></li>
+						<li><a href="#harmors">Heavy Armors</a></li>
+						<li><a href="#robes">Robes</a></li>
 					</ol>
 				</div>		
 				<br>
 				<br>		
-				
+				<div id="genDiv"><a id="lshields"></a>
 				<table id="lshield">
 					<caption><strong>Light Shields</strong></caption>
 					<tr>
@@ -81,12 +81,14 @@
 					<% }
 					%>
 				</table>
+				</div>
 				<br>
 				<br>
 				<%
 				Statement statement_hshield = con.createStatement();
 				ResultSet rs_hshield = statement_hshield.executeQuery("SELECT * FROM public.hshield");
 				%>
+				<div id="genDiv"><a id="hshields"></a>
 				<table id="hshield">
 					<caption><strong>Heavy Shields</strong></caption>
 					<tr>
@@ -115,12 +117,14 @@
 					<% }
 					%>
 				</table>
+				</div>
 				<br>	
 				<br>
 				<%
 				Statement statement_hat = con.createStatement();
 				ResultSet rs_hat = statement_hat.executeQuery("SELECT * FROM public.hat");
 				%>
+				<div id="genDiv"><a id="hats"></a>
 				<table id="hat">
 					<caption><strong>Hats</strong></caption>
 					<tr>
@@ -149,12 +153,14 @@
 					<% }
 					%>
 				</table>
+				</div>
 				<br>
 				<br>	
 				<%
 				Statement statement_helm = con.createStatement();
 				ResultSet rs_helm = statement_helm.executeQuery("SELECT * FROM public.helm");
 				%>
+				<div id="genDiv"><a id="helms"></a>
 				<table id="helm">
 					<caption><strong>Helms</strong></caption>
 					<tr>
@@ -183,12 +189,14 @@
 					<% }
 					%>
 				</table>
+				</div>
 				<br>
 				<br>	
 				<%
 				Statement statement_clothes = con.createStatement();
 				ResultSet rs_clothes = statement_clothes.executeQuery("SELECT * FROM public.clothes");
 				%>
+				<div id="genDiv"><a id="clothes"></a>
 				<table id="clothes">
 					<caption><strong>Clothes</strong></caption>
 					<tr>
@@ -217,12 +225,14 @@
 					<% }
 					%>
 				</table>
+				</div>
 				<br>
 				<br>
 				<%
 				Statement statement_larmor = con.createStatement();
 				ResultSet rs_larmor = statement_larmor.executeQuery("SELECT * FROM public.larmor");
 				%>
+				<div id="genDiv"><a id="larmors"></a>
 				<table id="larmor">
 					<caption><strong>Light Armors</strong></caption>
 					<tr>
@@ -251,12 +261,14 @@
 					<% }
 					%>
 				</table>
+				</div>
 				<br>
 				<br>
 				<%
 				Statement statement_harmor = con.createStatement();
 				ResultSet rs_harmor = statement_harmor.executeQuery("SELECT * FROM public.harmor");
 				%>
+				<div id="genDiv"><a id="harmors"></a>
 				<table id="harmor">
 					<caption><strong>Heavy Armors</strong></caption>
 					<tr>
@@ -285,12 +297,14 @@
 					<% }
 					%>
 				</table>
+				</div>
 				<br>
 				<br>
 				<%
 				Statement statement_robe = con.createStatement();
 				ResultSet rs_robe = statement_robe.executeQuery("SELECT * FROM public.robe");
 				%>
+				<div id="genDiv"><a id="robes"></a>
 				<table id="robe">
 					<caption><strong>Robes</strong></caption>
 					<tr>
@@ -319,6 +333,7 @@
 					<% }
 					%>
 				</table>
+				</div>
 				<br>	
 				<br>																																		
 				<%

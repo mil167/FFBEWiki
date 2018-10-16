@@ -128,22 +128,12 @@ img:hover {
 	cursor: pointer;	
 }
 
-.col-container {
-	display: table;
-	width: 100%;
-	margin-left: 100px;
-	margin-right: 100px;
-}
-
-.col {
-	display: table-cell;
-}
 
 .switch {
 	position: relative;
 	display: inline-block;
-	width: 60px;
-	height: 34px;
+	width: 40px;
+	height: 16px;
 }
 
 .switch input {
@@ -165,8 +155,8 @@ img:hover {
 .slider:before {
   	position: absolute;
   	content: "";
-  	height: 26px;
-  	width: 26px;
+  	height: 8px;
+  	width: 8px;
   	left: 4px;
   	bottom: 4px;
   	background-color: white;
@@ -194,4 +184,16 @@ input:checked + .slider:before {
 
 .slider.round:before {
 	border-radius: 50%;
+}
+
+#CBLT {
+	font-size: 24px;
+}
+
+#CBTMR {
+	font-size: 24px;
+}
+
+#CBSTMR {
+	font-size: 24px;
 }
