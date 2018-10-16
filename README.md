@@ -12,3 +12,4 @@ Please note that this app is still in development! It will be updated regularly,
 
 10/12/2018 - Story Event: Piercing Light - CG Citra banner data has been uploaded.
 
+10/16/2018 - App has been updated to support filtering of weapons and armors
