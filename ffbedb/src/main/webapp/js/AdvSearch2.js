@@ -3128,3 +3128,1285 @@ ltFilter.addEventListener('click', function() {
 		}
 	}
 });		
+let tmrFilter = document.querySelector("input[id=ignoreTMR]");
+tmrFilter.addEventListener('click', function() {
+	if(document.getElementById("ignoreTMR").checked == true) {
+		let i = 0;
+		let lshieldTable = document.getElementById("lshield");
+		let lshieldRows = lshieldTable.rows;
+		
+		for(i = 1; i < (lshieldRows.length); i++) {
+			let tmr = lshieldRows[i].getElementsByTagName("td")[8];
+			
+			if(tmr.innerHTML == "false" && lshieldRows[i].style.display == "") {
+				lshieldRows[i].style.display = "";
+			}
+			else if(tmr.innerHTML == "true" && lshieldRows[i].style.display == ""){
+				lshieldRows[i].style.display = "none";
+			}		
+		}
+		
+		let hshieldTable = document.getElementById("hshield");
+		let hshieldRows = hshieldTable.rows;
+		
+		for(i = 1; i < (hshieldRows.length); i++) {
+			let tmr = hshieldRows[i].getElementsByTagName("td")[8];
+			
+			if(tmr.innerHTML == "false" && hshieldRows[i].style.display == "") {
+				hshieldRows[i].style.display = "";
+			}
+			else if(tmr.innerHTML == "true" && hshieldRows[i].style.display == ""){
+				hshieldRows[i].style.display = "none";
+			}
+		}
+		
+		let hatTable = document.getElementById("hat");
+		let hatRows = hatTable.rows;
+		
+		for(i = 1; i < (hatRows.length); i++) {
+			let tmr = hatRows[i].getElementsByTagName("td")[8];
+			
+			if(tmr.innerHTML == "false" && hatRows[i].style.display == "") {
+				hatRows[i].style.display = "";
+			}
+			else if(tmr.innerHTML == "true" && hatRows[i].style.display == ""){
+				hatRows[i].style.display = "none";
+			}
+		}
+		
+		let helmTable = document.getElementById("helm");
+		let helmRows = helmTable.rows;
+		
+		for(i = 1; i < (helmRows.length); i++) {
+			let tmr = helmRows[i].getElementsByTagName("td")[8];
+			
+			if(tmr.innerHTML == "false" && helmRows[i].style.display == "") {
+				helmRows[i].style.display = "";
+			}
+			else if(tmr.innerHTML == "true" && helmRows[i].style.display == ""){
+				helmRows[i].style.display = "none";
+			}
+		}	
+		
+		let clothesTable = document.getElementById("clothes");
+		let clothesRows = clothesTable.rows;
+		
+		for(i = 1; i < (clothesRows.length); i++) {
+			let tmr = clothesRows[i].getElementsByTagName("td")[8];
+			
+			if(tmr.innerHTML == "false" && clothesRows[i].style.display == "") {
+				clothesRows[i].style.display = "";
+			}
+			else if(tmr.innerHTML == "true" && clothesRows[i].style.display == ""){
+				clothesRows[i].style.display = "none";
+			}
+		}
+		
+		let larmorTable = document.getElementById("larmor");
+		let larmorRows = larmorTable.rows;
+		
+		for(i = 1; i < (larmorRows.length); i++) {
+			let tmr = larmorRows[i].getElementsByTagName("td")[8];
+			
+			if(tmr.innerHTML == "false" && larmorRows[i].style.display == "") {
+				larmorRows[i].style.display = "";
+			}
+			else if(tmr.innerHTML == "true" && larmorRows[i].style.display == ""){
+				larmorRows[i].style.display = "none";
+			}
+		}
+		
+		let harmorTable = document.getElementById("harmor");
+		let harmorRows = harmorTable.rows;
+		
+		for(i = 1; i < (harmorRows.length); i++) {
+			let tmr = harmorRows[i].getElementsByTagName("td")[8];
+			
+			if(tmr.innerHTML == "false" && harmorRows[i].style.display == "") {
+				harmorRows[i].style.display = "";
+			}
+			else if(tmr.innerHTML == "true" && harmorRows[i].style.display == ""){
+				harmorRows[i].style.display = "none";
+			}
+		}
+		
+		let robeTable = document.getElementById("robe");
+		let robeRows = robeTable.rows;
+		
+		for(i = 1; i < (robeRows.length); i++) {
+			let tmr = robeRows[i].getElementsByTagName("td")[8];
+			
+			if(tmr.innerHTML == "false" && robeRows[i].style.display == "") {
+				robeRows[i].style.display = "";
+			}
+			else if(tmr.innerHTML == "true" && robeRows[i].style.display == ""){
+				robeRows[i].style.display = "none";
+			}
+		}
+		
+	}
+	else {
+		let i = 0;
+		let lshieldTable = document.getElementById("lshield");
+		let lshieldRows = lshieldTable.rows;
+		
+		for(i = 1; i < (lshieldRows.length); i++) {
+			let lshield = lshieldRows[i].getElementsByTagName("td")[7];
+			let tmr = lshieldRows[i].getElementsByTagName("td")[8];
+		
+			
+			if(tmr.innerHTML == "true" && lshieldRows[i].style.display == "none" &&
+					(lshield.innerHTML.indexOf("Resistance: Fire (+") != -1 || lshield.innerHTML.indexOf(", Fire (+") != -1 ||
+							lshield.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBfire").checked == true &&
+					document.getElementById("CBlshield").checked == true) {
+				lshieldRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && lshieldRows[i].style.display == "none" &&
+					(lshield.innerHTML.indexOf("Resistance: Ice (+") != -1 || lshield.innerHTML.indexOf(", Ice (+") != -1 ||
+							lshield.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBice").checked == true &&
+					document.getElementById("CBlshield").checked == true) {
+				lshieldRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && lshieldRows[i].style.display == "none" &&
+					(lshield.innerHTML.indexOf("Resistance: Lightning (+") != -1 || lshield.innerHTML.indexOf(", Lightning (+") != -1 ||
+							lshield.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBlightning").checked == true &&
+					document.getElementById("CBlshield").checked == true) {
+				lshieldRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && lshieldRows[i].style.display == "none" &&
+					(lshield.innerHTML.indexOf("Resistance: Water (+") != -1 || lshield.innerHTML.indexOf(", Water (+") != -1 ||
+							lshield.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBwater").checked == true &&
+					document.getElementById("CBlshield").checked == true) {
+				lshieldRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && lshieldRows[i].style.display == "none" &&
+					(lshield.innerHTML.indexOf("Resistance: Wind (+") != -1 || lshield.innerHTML.indexOf(", Wind (+") != -1 ||
+							lshield.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBwind").checked == true &&
+					document.getElementById("CBlshield").checked == true) {
+				lshieldRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && lshieldRows[i].style.display == "none" &&
+					(lshield.innerHTML.indexOf("Resistance: Earth (+") != -1 || lshield.innerHTML.indexOf(", Earth (+") != -1 ||
+							lshield.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBearth").checked == true &&
+					document.getElementById("CBlshield").checked == true) {
+				lshieldRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && lshieldRows[i].style.display == "none" &&
+					(lshield.innerHTML.indexOf("Resistance: Light (+") != -1 || lshield.innerHTML.indexOf(", Light (+") != -1 ||
+							lshield.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBlight").checked == true &&
+					document.getElementById("CBlshield").checked == true) {
+				lshieldRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && lshieldRows[i].style.display == "none" &&
+					(lshield.innerHTML.indexOf("Resistance: Dark (+") != -1 || lshield.innerHTML.indexOf(", Dark (+") != -1 ||
+							lshield.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBdark").checked == true &&
+					document.getElementById("CBlshield").checked == true) {
+				lshieldRows[i].style.display = "";
+			}
+		}
+		
+		let hshieldTable = document.getElementById("hshield");
+		let hshieldRows = hshieldTable.rows;
+		
+		for(i = 1; i < (hshieldRows.length); i++) {
+			let hshield = hshieldRows[i].getElementsByTagName("td")[7];
+			let tmr = hshieldRows[i].getElementsByTagName("td")[8];
+			
+			if(tmr.innerHTML == "true" && hshieldRows[i].style.display == "none" &&
+					(hshield.innerHTML.indexOf("Resistance: Fire (+") != -1 || hshield.innerHTML.indexOf(", Fire (+") != -1 ||
+							hshield.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBfire").checked == true &&
+					document.getElementById("CBhshield").checked == true) {
+				hshieldRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && hshieldRows[i].style.display == "none" &&
+					(hshield.innerHTML.indexOf("Resistance: Ice (+") != -1 || hshield.innerHTML.indexOf(", Ice (+") != -1 ||
+							hshield.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBice").checked == true &&
+					document.getElementById("CBhshield").checked == true) {
+				hshieldRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && hshieldRows[i].style.display == "none" &&
+					(hshield.innerHTML.indexOf("Resistance: Lightning (+") != -1 || hshield.innerHTML.indexOf(", Lightning (+") != -1 ||
+							hshield.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBlightning").checked == true &&
+					document.getElementById("CBhshield").checked == true) {
+				hshieldRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && hshieldRows[i].style.display == "none" &&
+					(hshield.innerHTML.indexOf("Resistance: Water (+") != -1 || hshield.innerHTML.indexOf(", Water (+") != -1 ||
+							hshield.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBwater").checked == true &&
+					document.getElementById("CBhshield").checked == true) {
+				hshieldRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && hshieldRows[i].style.display == "none" &&
+					(hshield.innerHTML.indexOf("Resistance: Wind (+") != -1 || hshield.innerHTML.indexOf(", Wind (+") != -1 ||
+							hshield.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBwind").checked == true &&
+					document.getElementById("CBhshield").checked == true) {
+				hshieldRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && hshieldRows[i].style.display == "none" &&
+					(hshield.innerHTML.indexOf("Resistance: Earth (+") != -1 || hshield.innerHTML.indexOf(", Earth (+") != -1 ||
+							hshield.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBearth").checked == true &&
+					document.getElementById("CBhshield").checked == true) {
+				hshieldRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && hshieldRows[i].style.display == "none" &&
+					(hshield.innerHTML.indexOf("Resistance: Light (+") != -1 || hshield.innerHTML.indexOf(", Light (+") != -1 ||
+							hshield.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBlight").checked == true &&
+					document.getElementById("CBhshield").checked == true) {
+				hshieldRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && hshieldRows[i].style.display == "none" &&
+					(hshield.innerHTML.indexOf("Resistance: Dark (+") != -1 || hshield.innerHTML.indexOf(", Dark (+") != -1 ||
+							hshield.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBdark").checked == true &&
+					document.getElementById("CBhshield").checked == true) {
+				hshieldRows[i].style.display = "";
+			}
+		}
+		
+		let hatTable = document.getElementById("hat");
+		let hatRows = hatTable.rows;
+		
+		for(i = 1; i < (hatRows.length); i++) {
+			let hat = hatRows[i].getElementsByTagName("td")[7];
+			let tmr = hatRows[i].getElementsByTagName("td")[8];
+			
+			if(tmr.innerHTML == "true" && hatRows[i].style.display == "none" &&
+					(hat.innerHTML.indexOf("Resistance: Fire (+") != -1 || hat.innerHTML.indexOf(", Fire (+") != -1 ||
+							hat.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBfire").checked == true &&
+					document.getElementById("CBhat").checked == true) {
+				hatRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && hatRows[i].style.display == "none" &&
+					(hat.innerHTML.indexOf("Resistance: Ice (+") != -1 || hat.innerHTML.indexOf(", Ice (+") != -1 ||
+							hat.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBice").checked == true &&
+					document.getElementById("CBhat").checked == true) {
+				hatRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && hatRows[i].style.display == "none" &&
+					(hat.innerHTML.indexOf("Resistance: Lightning (+") != -1 || hat.innerHTML.indexOf(", Lightning (+") != -1 ||
+							hat.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBlightning").checked == true &&
+					document.getElementById("CBhat").checked == true) {
+				hatRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && hatRows[i].style.display == "none" &&
+					(hat.innerHTML.indexOf("Resistance: Water (+") != -1 || hat.innerHTML.indexOf(", Water (+") != -1 ||
+							hat.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBwater").checked == true &&
+					document.getElementById("CBhat").checked == true) {
+				hatRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && hatRows[i].style.display == "none" &&
+					(hat.innerHTML.indexOf("Resistance: Wind (+") != -1 || hat.innerHTML.indexOf(", Wind (+") != -1 ||
+							hat.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBwind").checked == true &&
+					document.getElementById("CBhat").checked == true) {
+				hatRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && hatRows[i].style.display == "none" &&
+					(hat.innerHTML.indexOf("Resistance: Earth (+") != -1 || hat.innerHTML.indexOf(", Earth (+") != -1 ||
+							hat.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBearth").checked == true &&
+					document.getElementById("CBhat").checked == true) {
+				hatRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && hatRows[i].style.display == "none" &&
+					(hat.innerHTML.indexOf("Resistance: Light (+") != -1 || hat.innerHTML.indexOf(", Light (+") != -1 ||
+							hat.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBlight").checked == true &&
+					document.getElementById("CBhat").checked == true) {
+				hatRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && hatRows[i].style.display == "none" &&
+					(hat.innerHTML.indexOf("Resistance: Dark (+") != -1 || hat.innerHTML.indexOf(", Dark (+") != -1 ||
+							hat.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBdark").checked == true &&
+					document.getElementById("CBhat").checked == true) {
+				hatRows[i].style.display = "";
+			}
+		}	
+		
+		let helmTable = document.getElementById("helm");
+		let helmRows = helmTable.rows;
+		
+		for(i = 1; i < (helmRows.length); i++) {
+			let helm = helmRows[i].getElementsByTagName("td")[7];
+			let tmr = helmRows[i].getElementsByTagName("td")[8];
+			
+			if(tmr.innerHTML == "true" && helmRows[i].style.display == "none" &&
+					(helm.innerHTML.indexOf("Resistance: Fire (+") != -1 || helm.innerHTML.indexOf(", Fire (+") != -1 ||
+							helm.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBfire").checked == true &&
+					document.getElementById("CBhelm").checked == true) {
+				helmRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && helmRows[i].style.display == "none" &&
+					(helm.innerHTML.indexOf("Resistance: Ice (+") != -1 || helm.innerHTML.indexOf(", Ice (+") != -1 ||
+							helm.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBice").checked == true &&
+					document.getElementById("CBhelm").checked == true) {
+				helmRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && helmRows[i].style.display == "none" &&
+					(helm.innerHTML.indexOf("Resistance: Lightning (+") != -1 || helm.innerHTML.indexOf(", Lightning (+") != -1 ||
+							helm.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBlightning").checked == true &&
+					document.getElementById("CBhelm").checked == true) {
+				helmRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && helmRows[i].style.display == "none" &&
+					(helm.innerHTML.indexOf("Resistance: Water (+") != -1 || helm.innerHTML.indexOf(", Water (+") != -1 ||
+							helm.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBwater").checked == true &&
+					document.getElementById("CBhelm").checked == true) {
+				helmRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && helmRows[i].style.display == "none" &&
+					(helm.innerHTML.indexOf("Resistance: Wind (+") != -1 || helm.innerHTML.indexOf(", Wind (+") != -1 ||
+							helm.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBwind").checked == true &&
+					document.getElementById("CBhelm").checked == true) {
+				helmRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && helmRows[i].style.display == "none" &&
+					(helm.innerHTML.indexOf("Resistance: Earth (+") != -1 || helm.innerHTML.indexOf(", Earth (+") != -1 ||
+							helm.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBearth").checked == true &&
+					document.getElementById("CBhelm").checked == true) {
+				helmRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && helmRows[i].style.display == "none" &&
+					(helm.innerHTML.indexOf("Resistance: Light (+") != -1 || helm.innerHTML.indexOf(", Light (+") != -1 ||
+							helm.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBlight").checked == true &&
+					document.getElementById("CBhelm").checked == true) {
+				helmRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && helmRows[i].style.display == "none" &&
+					(helm.innerHTML.indexOf("Resistance: Dark (+") != -1 || helm.innerHTML.indexOf(", Dark (+") != -1 ||
+							helm.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBdark").checked == true &&
+					document.getElementById("CBhelm").checked == true) {
+				helmRows[i].style.display = "";
+			}
+		}
+		
+		let clothesTable = document.getElementById("clothes");
+		let clothesRows = clothesTable.rows;
+		
+		for(i = 1; i < (clothesRows.length); i++) {
+			let clothes = clothesRows[i].getElementsByTagName("td")[7];
+			let tmr = clothesRows[i].getElementsByTagName("td")[8];
+			
+			if(tmr.innerHTML == "true" && clothesRows[i].style.display == "none" &&
+					(clothes.innerHTML.indexOf("Resistance: Fire (+") != -1 || clothes.innerHTML.indexOf(", Fire (+") != -1 ||
+							clothes.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBfire").checked == true &&
+					document.getElementById("CBclothes").checked == true) {
+				clothesRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && clothesRows[i].style.display == "none" &&
+					(clothes.innerHTML.indexOf("Resistance: Ice (+") != -1 || clothes.innerHTML.indexOf(", Ice (+") != -1 ||
+							clothes.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBice").checked == true &&
+					document.getElementById("CBclothes").checked == true) {
+				clothesRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && clothesRows[i].style.display == "none" &&
+					(clothes.innerHTML.indexOf("Resistance: Lightning (+") != -1 || clothes.innerHTML.indexOf(", Lightning (+") != -1 ||
+							clothes.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBlightning").checked == true &&
+					document.getElementById("CBclothes").checked == true) {
+				clothesRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && clothesRows[i].style.display == "none" &&
+					(clothes.innerHTML.indexOf("Resistance: Water (+") != -1 || clothes.innerHTML.indexOf(", Water (+") != -1 ||
+							clothes.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBwater").checked == true &&
+					document.getElementById("CBclothes").checked == true) {
+				clothesRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && clothesRows[i].style.display == "none" &&
+					(clothes.innerHTML.indexOf("Resistance: Wind (+") != -1 || clothes.innerHTML.indexOf(", Wind (+") != -1 ||
+							clothes.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBwind").checked == true &&
+					document.getElementById("CBclothes").checked == true) {
+				clothesRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && clothesRows[i].style.display == "none" &&
+					(clothes.innerHTML.indexOf("Resistance: Earth (+") != -1 || clothes.innerHTML.indexOf(", Earth (+") != -1 ||
+							clothes.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBearth").checked == true &&
+					document.getElementById("CBclothes").checked == true) {
+				clothesRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && clothesRows[i].style.display == "none" &&
+					(clothes.innerHTML.indexOf("Resistance: Light (+") != -1 || clothes.innerHTML.indexOf(", Light (+") != -1 ||
+							clothes.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBlight").checked == true &&
+					document.getElementById("CBclothes").checked == true) {
+				clothesRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && clothesRows[i].style.display == "none" &&
+					(clothes.innerHTML.indexOf("Resistance: Dark (+") != -1 || clothes.innerHTML.indexOf(", Dark (+") != -1 ||
+							clothes.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBdark").checked == true &&
+					document.getElementById("CBclothes").checked == true) {
+				clothesRows[i].style.display = "";
+			}
+		}
+		
+		let larmorTable = document.getElementById("larmor");
+		let larmorRows = larmorTable.rows;
+		
+		for(i = 1; i < (larmorRows.length); i++) {
+			let larmor = larmorRows[i].getElementsByTagName("td")[7];
+			let tmr = larmorRows[i].getElementsByTagName("td")[8];
+			
+			if(tmr.innerHTML == "true" && larmorRows[i].style.display == "none" &&
+					(larmor.innerHTML.indexOf("Resistance: Fire (+") != -1 || larmor.innerHTML.indexOf(", Fire (+") != -1 ||
+							larmor.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBfire").checked == true &&
+					document.getElementById("CBlarmor").checked == true) {
+				larmorRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && larmorRows[i].style.display == "none" &&
+					(larmor.innerHTML.indexOf("Resistance: Ice (+") != -1 || larmor.innerHTML.indexOf(", Ice (+") != -1 ||
+							larmor.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBice").checked == true &&
+					document.getElementById("CBlarmor").checked == true) {
+				larmorRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && larmorRows[i].style.display == "none" &&
+					(larmor.innerHTML.indexOf("Resistance: Lightning (+") != -1 || larmor.innerHTML.indexOf(", Lightning (+") != -1 ||
+							larmor.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBlightning").checked == true &&
+					document.getElementById("CBlarmor").checked == true) {
+				larmorRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && larmorRows[i].style.display == "none" &&
+					(larmor.innerHTML.indexOf("Resistance: Water (+") != -1 || larmor.innerHTML.indexOf(", Water (+") != -1 ||
+							larmor.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBwater").checked == true &&
+					document.getElementById("CBlarmor").checked == true) {
+				larmorRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && larmorRows[i].style.display == "none" &&
+					(larmor.innerHTML.indexOf("Resistance: Wind (+") != -1 || larmor.innerHTML.indexOf(", Wind (+") != -1 ||
+							larmor.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBwind").checked == true &&
+					document.getElementById("CBlarmor").checked == true) {
+				larmorRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && larmorRows[i].style.display == "none" &&
+					(larmor.innerHTML.indexOf("Resistance: Earth (+") != -1 || larmor.innerHTML.indexOf(", Earth (+") != -1 ||
+							larmor.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBearth").checked == true &&
+					document.getElementById("CBlarmor").checked == true) {
+				larmorRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && larmorRows[i].style.display == "none" &&
+					(larmor.innerHTML.indexOf("Resistance: Light (+") != -1 || larmor.innerHTML.indexOf(", Light (+") != -1 ||
+							larmor.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBlight").checked == true &&
+					document.getElementById("CBlarmor").checked == true) {
+				larmorRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && larmorRows[i].style.display == "none" &&
+					(larmor.innerHTML.indexOf("Resistance: Dark (+") != -1 || larmor.innerHTML.indexOf(", Dark (+") != -1 ||
+							larmor.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBdark").checked == true &&
+					document.getElementById("CBlarmor").checked == true) {
+				larmorRows[i].style.display = "";
+			}
+		}
+		
+		let harmorTable = document.getElementById("harmor");
+		let harmorRows = harmorTable.rows;
+		
+		for(i = 1; i < (harmorRows.length); i++) {
+			let harmor = harmorRows[i].getElementsByTagName("td")[7];
+			let tmr = harmorRows[i].getElementsByTagName("td")[8];
+			
+			if(tmr.innerHTML == "true" && harmorRows[i].style.display == "none" &&
+					(harmor.innerHTML.indexOf("Resistance: Fire (+") != -1 || harmor.innerHTML.indexOf(", Fire (+") != -1 ||
+							harmor.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBfire").checked == true &&
+					document.getElementById("CBharmor").checked == true) {
+				harmorRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && harmorRows[i].style.display == "none" &&
+					(harmor.innerHTML.indexOf("Resistance: Ice (+") != -1 || harmor.innerHTML.indexOf(", Ice (+") != -1 ||
+							harmor.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBice").checked == true &&
+					document.getElementById("CBharmor").checked == true) {
+				harmorRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && harmorRows[i].style.display == "none" &&
+					(harmor.innerHTML.indexOf("Resistance: Lightning (+") != -1 || harmor.innerHTML.indexOf(", Lightning (+") != -1 ||
+							harmor.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBlightning").checked == true &&
+					document.getElementById("CBharmor").checked == true) {
+				harmorRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && harmorRows[i].style.display == "none" &&
+					(harmor.innerHTML.indexOf("Resistance: Water (+") != -1 || harmor.innerHTML.indexOf(", Water (+") != -1 ||
+							harmor.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBwater").checked == true &&
+					document.getElementById("CBharmor").checked == true) {
+				harmorRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && harmorRows[i].style.display == "none" &&
+					(harmor.innerHTML.indexOf("Resistance: Wind (+") != -1 || harmor.innerHTML.indexOf(", Wind (+") != -1 ||
+							harmor.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBwind").checked == true &&
+					document.getElementById("CBharmor").checked == true) {
+				harmorRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && harmorRows[i].style.display == "none" &&
+					(harmor.innerHTML.indexOf("Resistance: Earth (+") != -1 || harmor.innerHTML.indexOf(", Earth (+") != -1 ||
+							harmor.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBearth").checked == true &&
+					document.getElementById("CBharmor").checked == true) {
+				harmorRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && harmorRows[i].style.display == "none" &&
+					(harmor.innerHTML.indexOf("Resistance: Light (+") != -1 || harmor.innerHTML.indexOf(", Light (+") != -1 ||
+							harmor.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBlight").checked == true &&
+					document.getElementById("CBharmor").checked == true) {
+				harmorRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && harmorRows[i].style.display == "none" &&
+					(harmor.innerHTML.indexOf("Resistance: Dark (+") != -1 || harmor.innerHTML.indexOf(", Dark (+") != -1 ||
+							harmor.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBdark").checked == true &&
+					document.getElementById("CBharmor").checked == true) {
+				lshieldRows[i].style.display = "";
+			}
+		}
+		
+		let robeTable = document.getElementById("robe");
+		let robeRows = robeTable.rows;
+		
+		for(i = 1; i < (robeRows.length); i++) {
+			let robe = robeRows[i].getElementsByTagName("td")[7];
+			let tmr = robeRows[i].getElementsByTagName("td")[8];
+			
+			if(tmr.innerHTML == "true" && robeRows[i].style.display == "none" &&
+					(robe.innerHTML.indexOf("Resistance: Fire (+") != -1 || robe.innerHTML.indexOf(", Fire (+") != -1 ||
+							robe.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBfire").checked == true &&
+					document.getElementById("CBrobe").checked == true) {
+				robeRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && robeRows[i].style.display == "none" &&
+					(robe.innerHTML.indexOf("Resistance: Ice (+") != -1 || robe.innerHTML.indexOf(", Ice (+") != -1 ||
+							robe.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBice").checked == true &&
+					document.getElementById("CBrobe").checked == true) {
+				robeRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && robeRows[i].style.display == "none" &&
+					(robe.innerHTML.indexOf("Resistance: Lightning (+") != -1 || robe.innerHTML.indexOf(", Lightning (+") != -1 ||
+							robe.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBlightning").checked == true &&
+					document.getElementById("CBrobe").checked == true) {
+				robeRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && robeRows[i].style.display == "none" &&
+					(robe.innerHTML.indexOf("Resistance: Water (+") != -1 || robe.innerHTML.indexOf(", Water (+") != -1 ||
+							robe.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBwater").checked == true &&
+					document.getElementById("CBrobe").checked == true) {
+				robeRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && robeRows[i].style.display == "none" &&
+					(robe.innerHTML.indexOf("Resistance: Wind (+") != -1 || robe.innerHTML.indexOf(", Wind (+") != -1 ||
+							robe.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBwind").checked == true &&
+					document.getElementById("CBrobe").checked == true) {
+				robeRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && robeRows[i].style.display == "none" &&
+					(robe.innerHTML.indexOf("Resistance: Earth (+") != -1 || robe.innerHTML.indexOf(", Earth (+") != -1 ||
+							robe.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBearth").checked == true &&
+					document.getElementById("CBrobe").checked == true) {
+				robeRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && robeRows[i].style.display == "none" &&
+					(robe.innerHTML.indexOf("Resistance: Light (+") != -1 || robe.innerHTML.indexOf(", Light (+") != -1 ||
+							robe.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBlight").checked == true &&
+					document.getElementById("CBrobe").checked == true) {
+				robeRows[i].style.display = "";
+			}
+			if(tmr.innerHTML == "true" && robeRows[i].style.display == "none" &&
+					(robe.innerHTML.indexOf("Resistance: Dark (+") != -1 || robe.innerHTML.indexOf(", Dark (+") != -1 ||
+							robe.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBdark").checked == true &&
+					document.getElementById("CBrobe").checked == true) {
+				robeRows[i].style.display = "";
+			}
+		}
+	}
+});		
+let stmrFilter = document.querySelector("input[id=ignoreSTMR]");
+stmrFilter.addEventListener('click', function() {
+	if(document.getElementById("ignoreSTMR").checked == true) {
+		let i = 0;
+		let lshieldTable = document.getElementById("lshield");
+		let lshieldRows = lshieldTable.rows;
+		
+		for(i = 1; i < (lshieldRows.length); i++) {
+			let stmr = lshieldRows[i].getElementsByTagName("td")[9];
+			
+			if(stmr.innerHTML == "false" && lshieldRows[i].style.display == "") {
+				lshieldRows[i].style.display = "";
+			}
+			else if(stmr.innerHTML == "true" && lshieldRows[i].style.display == ""){
+				lshieldRows[i].style.display = "none";
+			}		
+		}
+		
+		let hshieldTable = document.getElementById("hshield");
+		let hshieldRows = hshieldTable.rows;
+		
+		for(i = 1; i < (hshieldRows.length); i++) {
+			let stmr = hshieldRows[i].getElementsByTagName("td")[9];
+			
+			if(stmr.innerHTML == "false" && hshieldRows[i].style.display == "") {
+				hshieldRows[i].style.display = "";
+			}
+			else if(stmr.innerHTML == "true" && hshieldRows[i].style.display == ""){
+				hshieldRows[i].style.display = "none";
+			}
+		}
+		
+		let hatTable = document.getElementById("hat");
+		let hatRows = hatTable.rows;
+		
+		for(i = 1; i < (hatRows.length); i++) {
+			let stmr = hatRows[i].getElementsByTagName("td")[9];
+			
+			if(stmr.innerHTML == "false" && hatRows[i].style.display == "") {
+				hatRows[i].style.display = "";
+			}
+			else if(stmr.innerHTML == "true" && hatRows[i].style.display == ""){
+				hatRows[i].style.display = "none";
+			}
+		}
+		
+		let helmTable = document.getElementById("helm");
+		let helmRows = helmTable.rows;
+		
+		for(i = 1; i < (helmRows.length); i++) {
+			let stmr = helmRows[i].getElementsByTagName("td")[9];
+			
+			if(stmr.innerHTML == "false" && helmRows[i].style.display == "") {
+				helmRows[i].style.display = "";
+			}
+			else if(stmr.innerHTML == "true" && helmRows[i].style.display == ""){
+				helmRows[i].style.display = "none";
+			}
+		}	
+		
+		let clothesTable = document.getElementById("clothes");
+		let clothesRows = clothesTable.rows;
+		
+		for(i = 1; i < (clothesRows.length); i++) {
+			let stmr = clothesRows[i].getElementsByTagName("td")[9];
+			
+			if(stmr.innerHTML == "false" && clothesRows[i].style.display == "") {
+				clothesRows[i].style.display = "";
+			}
+			else if(stmr.innerHTML == "true" && clothesRows[i].style.display == ""){
+				clothesRows[i].style.display = "none";
+			}
+		}
+		
+		let larmorTable = document.getElementById("larmor");
+		let larmorRows = larmorTable.rows;
+		
+		for(i = 1; i < (larmorRows.length); i++) {
+			let stmr = larmorRows[i].getElementsByTagName("td")[9];
+			
+			if(stmr.innerHTML == "false" && larmorRows[i].style.display == "") {
+				larmorRows[i].style.display = "";
+			}
+			else if(stmr.innerHTML == "true" && larmorRows[i].style.display == ""){
+				larmorRows[i].style.display = "none";
+			}
+		}
+		
+		let harmorTable = document.getElementById("harmor");
+		let harmorRows = harmorTable.rows;
+		
+		for(i = 1; i < (harmorRows.length); i++) {
+			let stmr = harmorRows[i].getElementsByTagName("td")[9];
+			
+			if(stmr.innerHTML == "false" && harmorRows[i].style.display == "") {
+				harmorRows[i].style.display = "";
+			}
+			else if(stmr.innerHTML == "true" && harmorRows[i].style.display == ""){
+				harmorRows[i].style.display = "none";
+			}
+		}
+		
+		let robeTable = document.getElementById("robe");
+		let robeRows = robeTable.rows;
+		
+		for(i = 1; i < (robeRows.length); i++) {
+			let stmr = robeRows[i].getElementsByTagName("td")[9];
+			
+			if(stmr.innerHTML == "false" && robeRows[i].style.display == "") {
+				robeRows[i].style.display = "";
+			}
+			else if(stmr.innerHTML == "true" && robeRows[i].style.display == ""){
+				robeRows[i].style.display = "none";
+			}
+		}
+		
+	}
+	else {
+		let i = 0;
+		let lshieldTable = document.getElementById("lshield");
+		let lshieldRows = lshieldTable.rows;
+		
+		for(i = 1; i < (lshieldRows.length); i++) {
+			let lshield = lshieldRows[i].getElementsByTagName("td")[7];
+			let stmr = lshieldRows[i].getElementsByTagName("td")[9];
+		
+			
+			if(stmr.innerHTML == "true" && lshieldRows[i].style.display == "none" &&
+					(lshield.innerHTML.indexOf("Resistance: Fire (+") != -1 || lshield.innerHTML.indexOf(", Fire (+") != -1 ||
+							lshield.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBfire").checked == true &&
+					document.getElementById("CBlshield").checked == true) {
+				lshieldRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && lshieldRows[i].style.display == "none" &&
+					(lshield.innerHTML.indexOf("Resistance: Ice (+") != -1 || lshield.innerHTML.indexOf(", Ice (+") != -1 ||
+							lshield.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBice").checked == true &&
+					document.getElementById("CBlshield").checked == true) {
+				lshieldRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && lshieldRows[i].style.display == "none" &&
+					(lshield.innerHTML.indexOf("Resistance: Lightning (+") != -1 || lshield.innerHTML.indexOf(", Lightning (+") != -1 ||
+							lshield.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBlightning").checked == true &&
+					document.getElementById("CBlshield").checked == true) {
+				lshieldRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && lshieldRows[i].style.display == "none" &&
+					(lshield.innerHTML.indexOf("Resistance: Water (+") != -1 || lshield.innerHTML.indexOf(", Water (+") != -1 ||
+							lshield.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBwater").checked == true &&
+					document.getElementById("CBlshield").checked == true) {
+				lshieldRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && lshieldRows[i].style.display == "none" &&
+					(lshield.innerHTML.indexOf("Resistance: Wind (+") != -1 || lshield.innerHTML.indexOf(", Wind (+") != -1 ||
+							lshield.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBwind").checked == true &&
+					document.getElementById("CBlshield").checked == true) {
+				lshieldRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && lshieldRows[i].style.display == "none" &&
+					(lshield.innerHTML.indexOf("Resistance: Earth (+") != -1 || lshield.innerHTML.indexOf(", Earth (+") != -1 ||
+							lshield.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBearth").checked == true &&
+					document.getElementById("CBlshield").checked == true) {
+				lshieldRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && lshieldRows[i].style.display == "none" &&
+					(lshield.innerHTML.indexOf("Resistance: Light (+") != -1 || lshield.innerHTML.indexOf(", Light (+") != -1 ||
+							lshield.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBlight").checked == true &&
+					document.getElementById("CBlshield").checked == true) {
+				lshieldRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && lshieldRows[i].style.display == "none" &&
+					(lshield.innerHTML.indexOf("Resistance: Dark (+") != -1 || lshield.innerHTML.indexOf(", Dark (+") != -1 ||
+							lshield.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBdark").checked == true &&
+					document.getElementById("CBlshield").checked == true) {
+				lshieldRows[i].style.display = "";
+			}
+		}
+		
+		let hshieldTable = document.getElementById("hshield");
+		let hshieldRows = hshieldTable.rows;
+		
+		for(i = 1; i < (hshieldRows.length); i++) {
+			let hshield = hshieldRows[i].getElementsByTagName("td")[7];
+			let stmr = hshieldRows[i].getElementsByTagName("td")[9];
+			
+			if(stmr.innerHTML == "true" && hshieldRows[i].style.display == "none" &&
+					(hshield.innerHTML.indexOf("Resistance: Fire (+") != -1 || hshield.innerHTML.indexOf(", Fire (+") != -1 ||
+							hshield.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBfire").checked == true &&
+					document.getElementById("CBhshield").checked == true) {
+				hshieldRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && hshieldRows[i].style.display == "none" &&
+					(hshield.innerHTML.indexOf("Resistance: Ice (+") != -1 || hshield.innerHTML.indexOf(", Ice (+") != -1 ||
+							hshield.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBice").checked == true &&
+					document.getElementById("CBhshield").checked == true) {
+				hshieldRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && hshieldRows[i].style.display == "none" &&
+					(hshield.innerHTML.indexOf("Resistance: Lightning (+") != -1 || hshield.innerHTML.indexOf(", Lightning (+") != -1 ||
+							hshield.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBlightning").checked == true &&
+					document.getElementById("CBhshield").checked == true) {
+				hshieldRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && hshieldRows[i].style.display == "none" &&
+					(hshield.innerHTML.indexOf("Resistance: Water (+") != -1 || hshield.innerHTML.indexOf(", Water (+") != -1 ||
+							hshield.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBwater").checked == true &&
+					document.getElementById("CBhshield").checked == true) {
+				hshieldRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && hshieldRows[i].style.display == "none" &&
+					(hshield.innerHTML.indexOf("Resistance: Wind (+") != -1 || hshield.innerHTML.indexOf(", Wind (+") != -1 ||
+							hshield.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBwind").checked == true &&
+					document.getElementById("CBhshield").checked == true) {
+				hshieldRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && hshieldRows[i].style.display == "none" &&
+					(hshield.innerHTML.indexOf("Resistance: Earth (+") != -1 || hshield.innerHTML.indexOf(", Earth (+") != -1 ||
+							hshield.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBearth").checked == true &&
+					document.getElementById("CBhshield").checked == true) {
+				hshieldRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && hshieldRows[i].style.display == "none" &&
+					(hshield.innerHTML.indexOf("Resistance: Light (+") != -1 || hshield.innerHTML.indexOf(", Light (+") != -1 ||
+							hshield.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBlight").checked == true &&
+					document.getElementById("CBhshield").checked == true) {
+				hshieldRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && hshieldRows[i].style.display == "none" &&
+					(hshield.innerHTML.indexOf("Resistance: Dark (+") != -1 || hshield.innerHTML.indexOf(", Dark (+") != -1 ||
+							hshield.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBdark").checked == true &&
+					document.getElementById("CBhshield").checked == true) {
+				hshieldRows[i].style.display = "";
+			}
+		}
+		
+		let hatTable = document.getElementById("hat");
+		let hatRows = hatTable.rows;
+		
+		for(i = 1; i < (hatRows.length); i++) {
+			let hat = hatRows[i].getElementsByTagName("td")[7];
+			let stmr = hatRows[i].getElementsByTagName("td")[9];
+			
+			if(stmr.innerHTML == "true" && hatRows[i].style.display == "none" &&
+					(hat.innerHTML.indexOf("Resistance: Fire (+") != -1 || hat.innerHTML.indexOf(", Fire (+") != -1 ||
+							hat.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBfire").checked == true &&
+					document.getElementById("CBhat").checked == true) {
+				hatRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && hatRows[i].style.display == "none" &&
+					(hat.innerHTML.indexOf("Resistance: Ice (+") != -1 || hat.innerHTML.indexOf(", Ice (+") != -1 ||
+							hat.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBice").checked == true &&
+					document.getElementById("CBhat").checked == true) {
+				hatRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && hatRows[i].style.display == "none" &&
+					(hat.innerHTML.indexOf("Resistance: Lightning (+") != -1 || hat.innerHTML.indexOf(", Lightning (+") != -1 ||
+							hat.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBlightning").checked == true &&
+					document.getElementById("CBhat").checked == true) {
+				hatRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && hatRows[i].style.display == "none" &&
+					(hat.innerHTML.indexOf("Resistance: Water (+") != -1 || hat.innerHTML.indexOf(", Water (+") != -1 ||
+							hat.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBwater").checked == true &&
+					document.getElementById("CBhat").checked == true) {
+				hatRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && hatRows[i].style.display == "none" &&
+					(hat.innerHTML.indexOf("Resistance: Wind (+") != -1 || hat.innerHTML.indexOf(", Wind (+") != -1 ||
+							hat.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBwind").checked == true &&
+					document.getElementById("CBhat").checked == true) {
+				hatRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && hatRows[i].style.display == "none" &&
+					(hat.innerHTML.indexOf("Resistance: Earth (+") != -1 || hat.innerHTML.indexOf(", Earth (+") != -1 ||
+							hat.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBearth").checked == true &&
+					document.getElementById("CBhat").checked == true) {
+				hatRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && hatRows[i].style.display == "none" &&
+					(hat.innerHTML.indexOf("Resistance: Light (+") != -1 || hat.innerHTML.indexOf(", Light (+") != -1 ||
+							hat.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBlight").checked == true &&
+					document.getElementById("CBhat").checked == true) {
+				hatRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && hatRows[i].style.display == "none" &&
+					(hat.innerHTML.indexOf("Resistance: Dark (+") != -1 || hat.innerHTML.indexOf(", Dark (+") != -1 ||
+							hat.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBdark").checked == true &&
+					document.getElementById("CBhat").checked == true) {
+				hatRows[i].style.display = "";
+			}
+		}	
+		
+		let helmTable = document.getElementById("helm");
+		let helmRows = helmTable.rows;
+		
+		for(i = 1; i < (helmRows.length); i++) {
+			let helm = helmRows[i].getElementsByTagName("td")[7];
+			let stmr = helmRows[i].getElementsByTagName("td")[9];
+			
+			if(stmr.innerHTML == "true" && helmRows[i].style.display == "none" &&
+					(helm.innerHTML.indexOf("Resistance: Fire (+") != -1 || helm.innerHTML.indexOf(", Fire (+") != -1 ||
+							helm.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBfire").checked == true &&
+					document.getElementById("CBhelm").checked == true) {
+				helmRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && helmRows[i].style.display == "none" &&
+					(helm.innerHTML.indexOf("Resistance: Ice (+") != -1 || helm.innerHTML.indexOf(", Ice (+") != -1 ||
+							helm.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBice").checked == true &&
+					document.getElementById("CBhelm").checked == true) {
+				helmRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && helmRows[i].style.display == "none" &&
+					(helm.innerHTML.indexOf("Resistance: Lightning (+") != -1 || helm.innerHTML.indexOf(", Lightning (+") != -1 ||
+							helm.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBlightning").checked == true &&
+					document.getElementById("CBhelm").checked == true) {
+				helmRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && helmRows[i].style.display == "none" &&
+					(helm.innerHTML.indexOf("Resistance: Water (+") != -1 || helm.innerHTML.indexOf(", Water (+") != -1 ||
+							helm.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBwater").checked == true &&
+					document.getElementById("CBhelm").checked == true) {
+				helmRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && helmRows[i].style.display == "none" &&
+					(helm.innerHTML.indexOf("Resistance: Wind (+") != -1 || helm.innerHTML.indexOf(", Wind (+") != -1 ||
+							helm.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBwind").checked == true &&
+					document.getElementById("CBhelm").checked == true) {
+				helmRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && helmRows[i].style.display == "none" &&
+					(helm.innerHTML.indexOf("Resistance: Earth (+") != -1 || helm.innerHTML.indexOf(", Earth (+") != -1 ||
+							helm.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBearth").checked == true &&
+					document.getElementById("CBhelm").checked == true) {
+				helmRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && helmRows[i].style.display == "none" &&
+					(helm.innerHTML.indexOf("Resistance: Light (+") != -1 || helm.innerHTML.indexOf(", Light (+") != -1 ||
+							helm.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBlight").checked == true &&
+					document.getElementById("CBhelm").checked == true) {
+				helmRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && helmRows[i].style.display == "none" &&
+					(helm.innerHTML.indexOf("Resistance: Dark (+") != -1 || helm.innerHTML.indexOf(", Dark (+") != -1 ||
+							helm.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBdark").checked == true &&
+					document.getElementById("CBhelm").checked == true) {
+				helmRows[i].style.display = "";
+			}
+		}
+		
+		let clothesTable = document.getElementById("clothes");
+		let clothesRows = clothesTable.rows;
+		
+		for(i = 1; i < (clothesRows.length); i++) {
+			let clothes = clothesRows[i].getElementsByTagName("td")[7];
+			let stmr = clothesRows[i].getElementsByTagName("td")[9];
+			
+			if(stmr.innerHTML == "true" && clothesRows[i].style.display == "none" &&
+					(clothes.innerHTML.indexOf("Resistance: Fire (+") != -1 || clothes.innerHTML.indexOf(", Fire (+") != -1 ||
+							clothes.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBfire").checked == true &&
+					document.getElementById("CBclothes").checked == true) {
+				clothesRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && clothesRows[i].style.display == "none" &&
+					(clothes.innerHTML.indexOf("Resistance: Ice (+") != -1 || clothes.innerHTML.indexOf(", Ice (+") != -1 ||
+							clothes.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBice").checked == true &&
+					document.getElementById("CBclothes").checked == true) {
+				clothesRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && clothesRows[i].style.display == "none" &&
+					(clothes.innerHTML.indexOf("Resistance: Lightning (+") != -1 || clothes.innerHTML.indexOf(", Lightning (+") != -1 ||
+							clothes.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBlightning").checked == true &&
+					document.getElementById("CBclothes").checked == true) {
+				clothesRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && clothesRows[i].style.display == "none" &&
+					(clothes.innerHTML.indexOf("Resistance: Water (+") != -1 || clothes.innerHTML.indexOf(", Water (+") != -1 ||
+							clothes.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBwater").checked == true &&
+					document.getElementById("CBclothes").checked == true) {
+				clothesRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && clothesRows[i].style.display == "none" &&
+					(clothes.innerHTML.indexOf("Resistance: Wind (+") != -1 || clothes.innerHTML.indexOf(", Wind (+") != -1 ||
+							clothes.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBwind").checked == true &&
+					document.getElementById("CBclothes").checked == true) {
+				clothesRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && clothesRows[i].style.display == "none" &&
+					(clothes.innerHTML.indexOf("Resistance: Earth (+") != -1 || clothes.innerHTML.indexOf(", Earth (+") != -1 ||
+							clothes.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBearth").checked == true &&
+					document.getElementById("CBclothes").checked == true) {
+				clothesRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && clothesRows[i].style.display == "none" &&
+					(clothes.innerHTML.indexOf("Resistance: Light (+") != -1 || clothes.innerHTML.indexOf(", Light (+") != -1 ||
+							clothes.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBlight").checked == true &&
+					document.getElementById("CBclothes").checked == true) {
+				clothesRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && clothesRows[i].style.display == "none" &&
+					(clothes.innerHTML.indexOf("Resistance: Dark (+") != -1 || clothes.innerHTML.indexOf(", Dark (+") != -1 ||
+							clothes.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBdark").checked == true &&
+					document.getElementById("CBclothes").checked == true) {
+				clothesRows[i].style.display = "";
+			}
+		}
+		
+		let larmorTable = document.getElementById("larmor");
+		let larmorRows = larmorTable.rows;
+		
+		for(i = 1; i < (larmorRows.length); i++) {
+			let larmor = larmorRows[i].getElementsByTagName("td")[7];
+			let stmr = larmorRows[i].getElementsByTagName("td")[9];
+			
+			if(stmr.innerHTML == "true" && larmorRows[i].style.display == "none" &&
+					(larmor.innerHTML.indexOf("Resistance: Fire (+") != -1 || larmor.innerHTML.indexOf(", Fire (+") != -1 ||
+							larmor.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBfire").checked == true &&
+					document.getElementById("CBlarmor").checked == true) {
+				larmorRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && larmorRows[i].style.display == "none" &&
+					(larmor.innerHTML.indexOf("Resistance: Ice (+") != -1 || larmor.innerHTML.indexOf(", Ice (+") != -1 ||
+							larmor.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBice").checked == true &&
+					document.getElementById("CBlarmor").checked == true) {
+				larmorRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && larmorRows[i].style.display == "none" &&
+					(larmor.innerHTML.indexOf("Resistance: Lightning (+") != -1 || larmor.innerHTML.indexOf(", Lightning (+") != -1 ||
+							larmor.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBlightning").checked == true &&
+					document.getElementById("CBlarmor").checked == true) {
+				larmorRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && larmorRows[i].style.display == "none" &&
+					(larmor.innerHTML.indexOf("Resistance: Water (+") != -1 || larmor.innerHTML.indexOf(", Water (+") != -1 ||
+							larmor.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBwater").checked == true &&
+					document.getElementById("CBlarmor").checked == true) {
+				larmorRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && larmorRows[i].style.display == "none" &&
+					(larmor.innerHTML.indexOf("Resistance: Wind (+") != -1 || larmor.innerHTML.indexOf(", Wind (+") != -1 ||
+							larmor.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBwind").checked == true &&
+					document.getElementById("CBlarmor").checked == true) {
+				larmorRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && larmorRows[i].style.display == "none" &&
+					(larmor.innerHTML.indexOf("Resistance: Earth (+") != -1 || larmor.innerHTML.indexOf(", Earth (+") != -1 ||
+							larmor.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBearth").checked == true &&
+					document.getElementById("CBlarmor").checked == true) {
+				larmorRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && larmorRows[i].style.display == "none" &&
+					(larmor.innerHTML.indexOf("Resistance: Light (+") != -1 || larmor.innerHTML.indexOf(", Light (+") != -1 ||
+							larmor.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBlight").checked == true &&
+					document.getElementById("CBlarmor").checked == true) {
+				larmorRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && larmorRows[i].style.display == "none" &&
+					(larmor.innerHTML.indexOf("Resistance: Dark (+") != -1 || larmor.innerHTML.indexOf(", Dark (+") != -1 ||
+							larmor.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBdark").checked == true &&
+					document.getElementById("CBlarmor").checked == true) {
+				larmorRows[i].style.display = "";
+			}
+		}
+		
+		let harmorTable = document.getElementById("harmor");
+		let harmorRows = harmorTable.rows;
+		
+		for(i = 1; i < (harmorRows.length); i++) {
+			let harmor = harmorRows[i].getElementsByTagName("td")[7];
+			let stmr = harmorRows[i].getElementsByTagName("td")[9];
+			
+			if(stmr.innerHTML == "true" && harmorRows[i].style.display == "none" &&
+					(harmor.innerHTML.indexOf("Resistance: Fire (+") != -1 || harmor.innerHTML.indexOf(", Fire (+") != -1 ||
+							harmor.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBfire").checked == true &&
+					document.getElementById("CBharmor").checked == true) {
+				harmorRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && harmorRows[i].style.display == "none" &&
+					(harmor.innerHTML.indexOf("Resistance: Ice (+") != -1 || harmor.innerHTML.indexOf(", Ice (+") != -1 ||
+							harmor.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBice").checked == true &&
+					document.getElementById("CBharmor").checked == true) {
+				harmorRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && harmorRows[i].style.display == "none" &&
+					(harmor.innerHTML.indexOf("Resistance: Lightning (+") != -1 || harmor.innerHTML.indexOf(", Lightning (+") != -1 ||
+							harmor.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBlightning").checked == true &&
+					document.getElementById("CBharmor").checked == true) {
+				harmorRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && harmorRows[i].style.display == "none" &&
+					(harmor.innerHTML.indexOf("Resistance: Water (+") != -1 || harmor.innerHTML.indexOf(", Water (+") != -1 ||
+							harmor.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBwater").checked == true &&
+					document.getElementById("CBharmor").checked == true) {
+				harmorRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && harmorRows[i].style.display == "none" &&
+					(harmor.innerHTML.indexOf("Resistance: Wind (+") != -1 || harmor.innerHTML.indexOf(", Wind (+") != -1 ||
+							harmor.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBwind").checked == true &&
+					document.getElementById("CBharmor").checked == true) {
+				harmorRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && harmorRows[i].style.display == "none" &&
+					(harmor.innerHTML.indexOf("Resistance: Earth (+") != -1 || harmor.innerHTML.indexOf(", Earth (+") != -1 ||
+							harmor.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBearth").checked == true &&
+					document.getElementById("CBharmor").checked == true) {
+				harmorRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && harmorRows[i].style.display == "none" &&
+					(harmor.innerHTML.indexOf("Resistance: Light (+") != -1 || harmor.innerHTML.indexOf(", Light (+") != -1 ||
+							harmor.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBlight").checked == true &&
+					document.getElementById("CBharmor").checked == true) {
+				harmorRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && harmorRows[i].style.display == "none" &&
+					(harmor.innerHTML.indexOf("Resistance: Dark (+") != -1 || harmor.innerHTML.indexOf(", Dark (+") != -1 ||
+							harmor.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBdark").checked == true &&
+					document.getElementById("CBharmor").checked == true) {
+				lshieldRows[i].style.display = "";
+			}
+		}
+		
+		let robeTable = document.getElementById("robe");
+		let robeRows = robeTable.rows;
+		
+		for(i = 1; i < (robeRows.length); i++) {
+			let robe = robeRows[i].getElementsByTagName("td")[7];
+			let stmr = robeRows[i].getElementsByTagName("td")[9];
+			
+			if(stmr.innerHTML == "true" && robeRows[i].style.display == "none" &&
+					(robe.innerHTML.indexOf("Resistance: Fire (+") != -1 || robe.innerHTML.indexOf(", Fire (+") != -1 ||
+							robe.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBfire").checked == true &&
+					document.getElementById("CBrobe").checked == true) {
+				robeRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && robeRows[i].style.display == "none" &&
+					(robe.innerHTML.indexOf("Resistance: Ice (+") != -1 || robe.innerHTML.indexOf(", Ice (+") != -1 ||
+							robe.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBice").checked == true &&
+					document.getElementById("CBrobe").checked == true) {
+				robeRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && robeRows[i].style.display == "none" &&
+					(robe.innerHTML.indexOf("Resistance: Lightning (+") != -1 || robe.innerHTML.indexOf(", Lightning (+") != -1 ||
+							robe.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBlightning").checked == true &&
+					document.getElementById("CBrobe").checked == true) {
+				robeRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && robeRows[i].style.display == "none" &&
+					(robe.innerHTML.indexOf("Resistance: Water (+") != -1 || robe.innerHTML.indexOf(", Water (+") != -1 ||
+							robe.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBwater").checked == true &&
+					document.getElementById("CBrobe").checked == true) {
+				robeRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && robeRows[i].style.display == "none" &&
+					(robe.innerHTML.indexOf("Resistance: Wind (+") != -1 || robe.innerHTML.indexOf(", Wind (+") != -1 ||
+							robe.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBwind").checked == true &&
+					document.getElementById("CBrobe").checked == true) {
+				robeRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && robeRows[i].style.display == "none" &&
+					(robe.innerHTML.indexOf("Resistance: Earth (+") != -1 || robe.innerHTML.indexOf(", Earth (+") != -1 ||
+							robe.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBearth").checked == true &&
+					document.getElementById("CBrobe").checked == true) {
+				robeRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && robeRows[i].style.display == "none" &&
+					(robe.innerHTML.indexOf("Resistance: Light (+") != -1 || robe.innerHTML.indexOf(", Light (+") != -1 ||
+							robe.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBlight").checked == true &&
+					document.getElementById("CBrobe").checked == true) {
+				robeRows[i].style.display = "";
+			}
+			if(stmr.innerHTML == "true" && robeRows[i].style.display == "none" &&
+					(robe.innerHTML.indexOf("Resistance: Dark (+") != -1 || robe.innerHTML.indexOf(", Dark (+") != -1 ||
+							robe.innerHTML.indexOf("Resistance: All elements (+") != -1) &&
+					document.getElementById("CBdark").checked == true &&
+					document.getElementById("CBrobe").checked == true) {
+				robeRows[i].style.display = "";
+			}
+		}
+	}
+});		

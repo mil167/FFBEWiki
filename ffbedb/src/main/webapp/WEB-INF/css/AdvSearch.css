@@ -197,3 +197,17 @@ input:checked + .slider:before {
 #CBSTMR {
 	font-size: 24px;
 }
+
+html { 
+  background: url("resources/FFBE_Farplane_BG_1.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#genDiv {
+	background-color: #fffff0;
+	margin-left: 100px;
+	margin-right: 100px;
+}

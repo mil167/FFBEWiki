@@ -37,9 +37,9 @@
 				</ul>
 				<button onclick="backToTop()" id="topBtn" title="Scroll to Top">Top</button>
 				<br>
-				<p> Advanced Weapon Search (WIP) </p>
-				
+				<div id="genDiv">
 						<div class="row">
+							<h2>1) Choose a weapon category to filter by:</h2>
 							<div class="column">
 								<img src="../../resources/darkdagger.png" alt="dagger" id="daggericon">
 								<img src="../../resources/darksword.png" alt="sword" id="swordicon">
@@ -62,6 +62,7 @@
 							</div>							
 						</div>	
 						<div class="row">
+							<h2>2) Choose an element category to filter by:</h2>
 							<div class="column">
 								<img src ="../../resources/darkfire.png" alt="fire" id="fireicon">
 								<img src ="../../resources/darkice.png" alt="ice" id="iceicon">
@@ -70,19 +71,35 @@
 								<img src ="../../resources/darkwind.png" alt="wind" id="windicon">
 								<img src ="../../resources/darkearth.png" alt="earth" id="earthicon">							
 								<img src ="../../resources/darklight.png" alt="light" id="lighticon">
-								<img src ="../../resources/darkdark.png" alt="dark" id="darkicon">							
+								<img src ="../../resources/darkdark.png" alt="dark" id="darkicon">	
+								<img src ="../../resources/darknon.png" alt="non" id="nonicon">					
 							</div>
 						</div>
 					
-					<div class="col">
 						<div class="row">
+							<h2>3) (Optional) Choose any extra filters below:</h2>
+							<input id="CBTMR" type="checkbox" name="ignoreTMR" style="display:none">Ignore Trust Master Rewards (TMRs)
+							<label class="switch">
+								<input type="checkbox" id="ignoreTMR">
+								<span class="slider"></span>
+							</label>
+						
+						<br>
+						
+							<input id="CBSTMR" type="checkbox" name="ignoreSTMR" style="display:none">Ignore Super Trust Master Rewards (STMRs)
+							<label class="switch">
+								<input type="checkbox" id="ignoreSTMR">
+								<span class="slider"></span>
+							</label>
+						
+						<br>
+						
 							<input id="CBLT" type="checkbox" name="ignoreLT" style="display:none">Ignore Limited Time Item(s) (i.e. King Mog, Story Event, Premium Bundles, etc.)
 							<label class="switch">
 								<input type="checkbox" id="ignoreLT">
 								<span class="slider"></span>
 							</label>						
 						</div>
-					</div>
 					
 				<input id="CBdagger" type="checkbox" name="CBdagger" style="display:none">
 				<input id="CBsword" type="checkbox" name="CBsword" style="display:none">
@@ -109,7 +126,8 @@
 				<input id="CBearth"	type="checkbox" name="CBearth" style="display:none">
 				<input id="CBlight"	type="checkbox" name="CBlight" style="display:none">
 				<input id="CBdark"	type="checkbox" name="CBdark" style="display:none">
-				
+				<input id="CBnon" type="checkbox" name="CBnon" style="display:none">
+
 				<br>
 				
 				<table id="dagger">
@@ -744,7 +762,8 @@
 					</tr>
 					<% }
 					%>
-				</table>																															
+				</table>	
+				</div>																														
 				<% 
 				rs_dagger.close();
 				statement_dagger.close();
@@ -873,6 +892,7 @@ function activateBtn() {
 function backToTop() {
 	document.documentElement.scrollTop = 0;
 }
+
 
 </script>
 
