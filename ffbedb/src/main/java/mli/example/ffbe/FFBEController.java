@@ -7,6 +7,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Controller
 public class FFBEController implements WebMvcConfigurer{
+	@RequestMapping("/")
+	public String home() {
+		return "Home";
+	}
+	
 	@RequestMapping("/weapon")
 	public String weapon() {
 		return "WeaponView";

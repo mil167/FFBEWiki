@@ -19,8 +19,8 @@
 				<%
 				try {
 					Class.forName("org.postgresql.Driver");
-					//String dbURL = "jdbc:postgresql://localhost:5432/springffbe?user=postgres&password=cse132b";
-					String dbURL = "jdbc:postgresql://ec2-54-235-90-0.compute-1.amazonaws.com:5432/ddpko2antmanq7?user=yqajgjdfdywxwf&password=c0d32a119c31956b3159809231b8167066e7ae0af40f09dea640db5ede8e0dde";
+					String dbURL = "jdbc:postgresql://localhost:5432/springffbe?user=postgres&password=cse132b";
+					//String dbURL = "jdbc:postgresql://ec2-54-235-90-0.compute-1.amazonaws.com:5432/ddpko2antmanq7?user=yqajgjdfdywxwf&password=c0d32a119c31956b3159809231b8167066e7ae0af40f09dea640db5ede8e0dde";
 					Connection con = DriverManager.getConnection(dbURL);
 				%>
 				<%
@@ -29,6 +29,7 @@
 				
 				%>
 				<ul id="navbar">
+					<li><a href="/">Home</a></li>
 					<li><a href="weapon">Weapons</a></li>
 					<li><a class="active" href="armor">Armors</a></li>
 					<li><a href="accessory">Accessories</a></li>

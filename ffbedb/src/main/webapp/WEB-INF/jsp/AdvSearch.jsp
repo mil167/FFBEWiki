@@ -29,6 +29,7 @@
 				
 				%>
 				<ul id="navbar">
+					<li><a href="/">Home</a></li>
 					<li><a href="weapon">Weapons</a></li>
 					<li><a href="armor">Armors</a></li>
 					<li><a href="accessory">Accessories</a></li>
