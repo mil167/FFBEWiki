@@ -39,14 +39,14 @@
 				<th colspan="3">Featured Banners</th>
 			</tr>
 			<tr>
-				<td><img src="../../resources/citra.png"></td>
 				<td><img src="../../resources/halloween1.png"></td>
 				<td><img src="../../resources/halloween2.png"></td>
+				<td><img src="../../resources/vpbanner.png"></td>
 			</tr>
 			<tr>
-				<td>CG Citra Banner <br>(10/12/18 01:00 - <br>10/26/18 0:59 PDT)<br><a href="https://lapis-prod-staticnews-gumi-sg.akamaized.net/prod//en/img/gacha_NEWS_Citra_Compilation.jpg">(more info)</a></td>
 				<td>Lucius/Lilith Banner <br>(10/19/18 01:00 - <br>11/4/18 0:59 PDT)<br><a href="https://lapis-prod-staticnews-gumi-sg.akamaized.net/prod//en/img/HalloweenNewUnitsGacha.jpg">(more info)</a></td>
 				<td>Past Halloween Banner <br>(10/19/18 01:00 - <br>11/4/18 0:59 PDT)<br><a href="https://lapis-prod-staticnews-gumi-sg.akamaized.net/prod//en/img/HalloweenOldUnitsGacha.jpg">(more info)</a></td>
+				<td>Valkyrie Profile Banner <br>(10/26/18 01:00 - <br>11/8/18 0:59 PDT)<br><a href="https://lapis-prod-staticnews-gumi-sg.akamaized.net/prod//en/img/ValkyrieProfileFeatureSummon.jpg">(more info)</a></td>
 			</tr>
 		</table>
 		
