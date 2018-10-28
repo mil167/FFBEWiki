@@ -63,7 +63,7 @@
 					<a href="https://exvius.gamepedia.com/Final_Fantasy_Brave_Exvius_Wiki">Exvius Wiki</a>
 					<br>
 					<a href="https://ffbeequip.com/builder.html">FFBE Equip Unit Builder</a>
-					</ul>
+					
 				</td>
 			</tr>
 		</table>

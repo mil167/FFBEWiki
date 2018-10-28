@@ -56,6 +56,7 @@ daggerIcon.addEventListener('click', function() {
 					(x.innerHTML.indexOf("Element: Dark") != -1 || x.innerHTML.indexOf(", Dark") != -1)) {
 				daggerRows[i].style.display = "";
 			}
+			// Non-elemental dagger exists in the database
 			if(document.getElementById("CBnon").checked == true &&
 					x.innerHTML.indexOf("Element:") == -1) {
 				daggerRows[i].style.display = "";
@@ -132,6 +133,11 @@ swordIcon.addEventListener('click', function() {
 					(x.innerHTML.indexOf("Element: Dark") != -1 || x.innerHTML.indexOf(", Dark") != -1)) {
 				swordRows[i].style.display = "";
 			}
+			// Non-elemental sword exists in the database
+			if(document.getElementById("CBnon").checked == true &&
+					x.innerHTML.indexOf("Element:") == -1) {
+				swordRows[i].style.display = "";
+			}
 		}
 	}
 	// Ignore swords in search
@@ -202,6 +208,11 @@ gswordIcon.addEventListener('click', function() {
 			// Dark element great sword exists in the database
 			if(document.getElementById("CBdark").checked == true &&
 					(x.innerHTML.indexOf("Element: Dark") != -1 || x.innerHTML.indexOf(", Dark") != -1)) {
+				gswordRows[i].style.display = "";
+			}
+			// Non-elemental great sword exists in the database
+			if(document.getElementById("CBnon").checked == true &&
+					x.innerHTML.indexOf("Element:") == -1) {
 				gswordRows[i].style.display = "";
 			}
 		}
@@ -276,6 +287,11 @@ katanaIcon.addEventListener('click', function() {
 					(x.innerHTML.indexOf("Element: Dark") != -1 || x.innerHTML.indexOf(", Dark") != -1)) {
 				katanaRows[i].style.display = "";
 			}
+			// Non-elemental katana exists in the database
+			if(document.getElementById("CBnon").checked == true &&
+					x.innerHTML.indexOf("Element:") == -1) {
+				katanaRows[i].style.display = "";
+			}
 		}
 	}
 	// Ignore katanas in search
@@ -346,6 +362,11 @@ staffIcon.addEventListener('click', function() {
 			// Dark element staff exists in the database
 			if(document.getElementById("CBdark").checked == true &&
 					(x.innerHTML.indexOf("Element: Dark") != -1 || x.innerHTML.indexOf(", Dark") != -1)) {
+				staffRows[i].style.display = "";
+			}
+			// Non-elemental staff exists in the database
+			if(document.getElementById("CBnon").checked == true &&
+					x.innerHTML.indexOf("Element:") == -1) {
 				staffRows[i].style.display = "";
 			}
 		}
@@ -420,6 +441,11 @@ rodIcon.addEventListener('click', function() {
 					(x.innerHTML.indexOf("Element: Dark") != -1 || x.innerHTML.indexOf(", Dark") != -1)) {
 				rodRows[i].style.display = "";
 			}
+			// Non-elemental rod exists in the database
+			if(document.getElementById("CBnon").checked == true &&
+					x.innerHTML.indexOf("Element:") == -1) {
+				rodRows[i].style.display = "";
+			}
 		}
 	}
 	// Ignore rods in search
@@ -490,6 +516,11 @@ bowIcon.addEventListener('click', function() {
 			// Dark element bow exists in the database
 			if(document.getElementById("CBdark").checked == true &&
 					(x.innerHTML.indexOf("Element: Dark") != -1 || x.innerHTML.indexOf(", Dark") != -1)) {
+				bowRows[i].style.display = "";
+			}
+			// Non-elemental bow exists in the database
+			if(document.getElementById("CBnon").checked == true &&
+					x.innerHTML.indexOf("Element:") == -1) {
 				bowRows[i].style.display = "";
 			}
 		}
@@ -564,6 +595,11 @@ axeIcon.addEventListener('click', function() {
 					(x.innerHTML.indexOf("Element: Dark") != -1 || x.innerHTML.indexOf(", Dark") != -1)) {
 				axeRows[i].style.display = "";
 			}
+			// Non-elemental axe exists in the database
+			if(document.getElementById("CBnon").checked == true &&
+					x.innerHTML.indexOf("Element:") == -1) {
+				axeRows[i].style.display = "";
+			}
 		}
 	}
 	// Ignore axes in search
@@ -634,6 +670,11 @@ hammerIcon.addEventListener('click', function() {
 			// Dark element hammer exists in the database
 			if(document.getElementById("CBdark").checked == true &&
 					(x.innerHTML.indexOf("Element: Dark") != -1 || x.innerHTML.indexOf(", Dark") != -1)) {
+				hammerRows[i].style.display = "";
+			}
+			// Non-elemental hammer exists in the database
+			if(document.getElementById("CBnon").checked == true &&
+					x.innerHTML.indexOf("Element:") == -1) {
 				hammerRows[i].style.display = "";
 			}
 		}
@@ -708,6 +749,11 @@ spearIcon.addEventListener('click', function() {
 					(x.innerHTML.indexOf("Element: Dark") != -1 || x.innerHTML.indexOf(", Dark") != -1)) {
 				spearRows[i].style.display = "";
 			}
+			// Non-elemental spear exists in the database
+			if(document.getElementById("CBnon").checked == true &&
+					x.innerHTML.indexOf("Element:") == -1) {
+				spearRows[i].style.display = "";
+			}
 		}
 	}
 	// Ignore spears in search
@@ -778,6 +824,11 @@ harpIcon.addEventListener('click', function() {
 			// Dark element harp exists in the database
 			if(document.getElementById("CBdark").checked == true &&
 					(x.innerHTML.indexOf("Element: Dark") != -1 || x.innerHTML.indexOf(", Dark") != -1)) {
+				harpRows[i].style.display = "";
+			}
+			// Non-elemental harp exists in the database
+			if(document.getElementById("CBnon").checked == true &&
+					x.innerHTML.indexOf("Element:") == -1) {
 				harpRows[i].style.display = "";
 			}
 		}
@@ -852,6 +903,11 @@ whipIcon.addEventListener('click', function() {
 					(x.innerHTML.indexOf("Element: Dark") != -1 || x.innerHTML.indexOf(", Dark") != -1)) {
 				whipRows[i].style.display = "";
 			}
+			// Non-elemental whip exists in the database
+			if(document.getElementById("CBnon").checked == true &&
+					x.innerHTML.indexOf("Element:") == -1) {
+				whipRows[i].style.display = "";
+			}
 		}
 	}
 	// Ignore whips in search
@@ -922,6 +978,11 @@ twIcon.addEventListener('click', function() {
 			// Dark element throwing weapon exists in the database
 			if(document.getElementById("CBdark").checked == true &&
 					(x.innerHTML.indexOf("Element: Dark") != -1 || x.innerHTML.indexOf(", Dark") != -1)) {
+				twRows[i].style.display = "";
+			}
+			// Non-elemental throwing weapon exists in the database
+			if(document.getElementById("CBnon").checked == true &&
+					x.innerHTML.indexOf("Element:") == -1) {
 				twRows[i].style.display = "";
 			}
 		}
@@ -996,6 +1057,11 @@ gunIcon.addEventListener('click', function() {
 					(x.innerHTML.indexOf("Element: Dark") != -1 || x.innerHTML.indexOf(", Dark") != -1)) {
 				gunRows[i].style.display = "";
 			}
+			// Non-elemental gun exists in the database
+			if(document.getElementById("CBnon").checked == true &&
+					x.innerHTML.indexOf("Element:") == -1) {
+				gunRows[i].style.display = "";
+			}
 		}
 	}
 	// Ignore guns in search
@@ -1068,6 +1134,11 @@ maceIcon.addEventListener('click', function() {
 					(x.innerHTML.indexOf("Element: Dark") != -1 || x.innerHTML.indexOf(", Dark") != -1)) {
 				maceRows[i].style.display = "";
 			}
+			// Non-elemental mace exists in the database
+			if(document.getElementById("CBnon").checked == true &&
+					x.innerHTML.indexOf("Element:") == -1) {
+				maceRows[i].style.display = "";
+			}
 		}
 	}
 	// Ignore maces in search
@@ -1138,6 +1209,11 @@ fistIcon.addEventListener('click', function() {
 			// Dark element fist exists in the database
 			if(document.getElementById("CBdark").checked == true &&
 					(x.innerHTML.indexOf("Element: Dark") != -1 || x.innerHTML.indexOf(", Dark") != -1)) {
+				fistRows[i].style.display = "";
+			}
+			// Non-elemental fist exists in the database
+			if(document.getElementById("CBnon").checked == true &&
+					x.innerHTML.indexOf("Element:") == -1) {
 				fistRows[i].style.display = "";
 			}
 		}
