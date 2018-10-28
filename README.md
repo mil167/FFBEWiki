@@ -17,3 +17,5 @@ Please note that this app is still in development! It will be updated regularly,
 10/19/2018 - King Mog Farming Event: An Eerie Invitation - Halloween banner data has been uploaded into the database.
 
 10/21/2018 - Live app has been updated to support filtering of armors.
+
+10/26/2018 - Raid: Lost City of Dipan - Valkyrie Profile Collab banner data has been uploaded into the database.
