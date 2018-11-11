@@ -23,3 +23,5 @@ Please note that this app is still in development! It will be updated regularly,
 10/27/2018 - Live app has been updated with a homepage! Users can access the app on Heroku with this new URL: http://ffbewiki1.herokuapp.com/
 
 11/2/2018 - King Mog Farming Event: The Clash on Big Bridge - Type-0 banner data has been uploaded into the database.
+
+11/9/2018 - Story Event: Lion of the Mysterious Woods - Elephim banner data has been uploaded into the database.
