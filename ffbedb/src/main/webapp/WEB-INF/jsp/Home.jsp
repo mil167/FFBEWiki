@@ -25,7 +25,7 @@
 	<div id="genDiv">
 		<table id="welcome">
 			<tr>
-				<th colspan="4">About FFBEWiki</th>
+				<th colspan="2">About FFBEWiki</th>
 			</tr>
 			<tr>
 				<td id="welcome">FFBEWiki is a fan-made project and unofficial resource site for in-game data for the GL version of FFBE. The project is still in its early stages, so stay tuned for future updates! Many thanks for visiting the site!</td> 
@@ -36,19 +36,15 @@
 		
 		<table id="featuredBanners">
 			<tr>
-				<th colspan="4">Featured Banners</th>
+				<th colspan="2">Featured Banners</th>
 			</tr>
 			<tr>
-				<td><img src="../../resources/halloween2.png"></td>
-				<td><img src="../../resources/halloween1.png"></td>
 				<td><img src="../../resources/vpbanner.png"></td>
-				<td><img src="../../resources/type0banner.png"></td>
+				<td><img src="../../resources/elephim.png"></td>
 			</tr>
 			<tr>
-				<td>Past Halloween Banner <br>(10/19/18 01:00 - <br>11/04/18 00:59 PDT)<br><a href="https://lapis-prod-staticnews-gumi-sg.akamaized.net/prod//en/img/HalloweenOldUnitsGacha.jpg">(more info)</a></td>
-				<td>Halloween 2018 Banner <br>(10/19/18 01:00 - <br>11/04/18 00:59 PDT)<br><a href="https://lapis-prod-staticnews-gumi-sg.akamaized.net/prod//en/img/HalloweenNewUnitsGacha.jpg">(more info)</a></td>
-				<td>Valkyrie Profile Banner <br>(10/26/18 01:00 - <br>11/8/18 00:59 PDT)<br><a href="https://lapis-prod-staticnews-gumi-sg.akamaized.net/prod//en/img/ValkyrieProfileFeatureSummon.jpg">(more info)</a></td>
-				<td>Final Fantasy Type-0 Banner <br>(11/2 01:00 - <br>11/16/18 00:59 PDT)<br><a href="https://lapis-prod-staticnews-gumi-sg.akamaized.net/prod//en/img/20181030FFT0gacha.jpg">(more info)</a></td>
+				<td>Final Fantasy Type-0 Banner <br>(11/2 01:00 - <br>11/15/18 23:59 PST)<br><a href="https://lapis-prod-staticnews-gumi-sg.akamaized.net/prod//en/img/20181030FFT0gacha.jpg">(more info)</a></td>
+				<td>FFBE Elephim Banner<br>(11/9/18 00:00 - <br>11/22/18 23:59 PST)<br><a href="https://lapis-prod-staticnews-gumi-sg.akamaized.net/prod//en/img/20181106FFBEElephim_Compilation.jpg">(more info)</a></td>
 			</tr>
 		</table>
 		

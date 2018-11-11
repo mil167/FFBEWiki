@@ -36,4 +36,5 @@ public class FFBEController implements WebMvcConfigurer{
 	public String filter2() {
 		return "AdvSearch2";
 	}
+
 }
