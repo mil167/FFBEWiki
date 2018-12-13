@@ -27,3 +27,5 @@ Please note that this app is still in development! It will be updated regularly,
 11/9/2018 - Story Event: Lion of the Mysterious Woods - Elephim banner data has been uploaded into the database.
 
 11/16/2018 - Revelations of Darkness - Fan Festa banner data has been uploaded into the database.
+
+12/12/2018 - Story Event: Sieghard, The Magnificent - Sieghard banner data and Fan Festa banner data has been uploaded into the database.
