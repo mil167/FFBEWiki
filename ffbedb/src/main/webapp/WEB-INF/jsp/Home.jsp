@@ -39,12 +39,10 @@
 				<th colspan="2">Featured Banners</th>
 			</tr>
 			<tr>
-				<td><img src="../../resources/vpbanner.png"></td>
-				<td><img src="../../resources/elephim.png"></td>
+				<td><img src="../../resources/sieghardbanner.png"></td>
 			</tr>
 			<tr>
-				<td>Final Fantasy Type-0 Banner <br>(11/2 01:00 - <br>11/15/18 23:59 PST)<br><a href="https://lapis-prod-staticnews-gumi-sg.akamaized.net/prod//en/img/20181030FFT0gacha.jpg">(more info)</a></td>
-				<td>FFBE Elephim Banner<br>(11/9/18 00:00 - <br>11/22/18 23:59 PST)<br><a href="https://lapis-prod-staticnews-gumi-sg.akamaized.net/prod//en/img/20181106FFBEElephim_Compilation.jpg">(more info)</a></td>
+				<td>Sieghard Banner<br>(12/7 00:00 - <br>12/20/18 23:59 PST)<br><a href="https://lapis-prod-staticnews-gumi-sg.akamaized.net/prod//en/img/20181204SieghardFeaturedSummon.jpg">(more info)</a></td>
 			</tr>
 		</table>
 		

@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+table{
+	border-spacing: 0;
+	width: 100%;
+	border: 1px solid #ddd;
+	align: center;
+	z-index: 1;
+	background-color: #fffff0;
+}
+
+th{ 
+	background-color: #669999;
+	font-weight: bold;
+	font-size: 1em;
+	border: 1px solid #ddd;
+}
+
+#name {
+	width: 25%;
+	text-align: center;
+}
+
+#desc {
+	width: 75%;
+	text-align: left;
+}
+
+
+td {
+	border: 1px solid #ddd;
+}
