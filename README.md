@@ -1,7 +1,7 @@
 # FFBEWiki
-A mini "wiki" that can be used for the mobile game Final Fantasy Brave Exvius made using Spring Boot (Work in Progress). 
+A mini "wiki" that can be used for the mobile game Final Fantasy Brave Exvius made using Spring Boot. 
 
----Update Logs (Work in Progress)---
+---Update Logs---
 
 
 Please note that this app is still in development! It will be updated regularly, so stay tuned for more updates!
