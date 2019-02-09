@@ -35,3 +35,9 @@ Please note that this app is still in development! It will be updated regularly,
 12/28/2018 - Heartless: Guard Armor - Kingdom Hearts collab banner data has been uploaded into the database.
 
 1/11/2018 - King Mog Farming Event: Gaea's Cliff - FF7 banner data has been uploaded into the database.
+
+2/8/2019 - Story Event: Priestess of the Crystalline Waters - Folka banner data has been uploaded into the database.
+
+2/8/2019 - King Mog Farming Event: Zanarkand Ruins - FFX banner data has been uploaded into the database.
+
+2/8/2019 - Wave Battle Event: Yearning For Peace - Lunar New Year 2019 banner data has been uploaded into the database.
